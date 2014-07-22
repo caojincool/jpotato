@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WebServer-Admin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebServer_Admin_jar</output-path>
+    <root id="archive" name="WebServer-Admin.jar">
+      <element id="module-output" name="WebServer-Admin" />
+    </root>
+  </artifact>
+</component>

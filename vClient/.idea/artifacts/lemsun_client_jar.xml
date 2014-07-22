@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="lemsun-client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_client_jar</output-path>
+    <root id="root">
+      <element id="archive" name="lemsun-client.jar">
+        <element id="module-output" name="lemsun-client" />
+      </element>
+    </root>
+  </artifact>
+</component>

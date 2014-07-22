@@ -1,0 +1,21 @@
+.add-24 { background-image: url(../images/icons/add24.png) !important; }
+.add-16 { background-image: url(../images/icons/add16.png) !important; }
+.remove-24 { background-image: url(../images/icons/remove24.png) !important; }
+.remove-16 { background-image: url(../images/icons/remove16.png) !important; }
+.signature { background-image: url(../images/icons/signature.png) !important; }
+.eye-16 { background-image: url(../images/icons/eye_16x16.png) !important; }
+.edit-1{ background-image: url(../../ext/images/cog_edit.png) !important; }
+.action-column-margin { margin-right: 5px; cursor: pointer; }
+
+.ok-16 {background-image: url(../images/icons/button_ok_16x16.png) !important; cursor:hand; }
+.cancel-16 {background-image: url(../images/icons/button_cancel_16x16.png) !important; cursor:hand; }
+.search-22 {background-image: url(../images/icons/search_22x22.png) !important; cursor: hand;}
+.search-32 {background-image: url(../images/icons/search_32x32.png) !important; cursor: hand;}
+.search-64 {background-image: url(../images/icons/search_64x64.png) !important; cursor: hand;}
+.import-16 {background-image: url(../images/icons/import_16x16.png) !important; cursor: hand;}
+.files-16 {background-image: url(../images/icons/files_16x16.png) !important; cursor: hand;}
+
+/*权限浏览树形图片*/
+.node-close{background-image: url(../images/icons/auth/c.png) !important;}
+.node-open{background-image: url(../images/icons/auth/o.png) !important;}
+.node-left{background-image: url(../images/icons/auth/z.png) !important;}

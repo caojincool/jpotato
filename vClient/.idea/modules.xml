@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebServer-Client/WebServer-Client.iml" filepath="$PROJECT_DIR$/WebServer-Client/WebServer-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-client/lemsun-client.iml" filepath="$PROJECT_DIR$/lemsun-client/lemsun-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-client-formula/lemsun-client-formula.iml" filepath="$PROJECT_DIR$/lemsun-client-formula/lemsun-client-formula.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-test/lemsun-test.iml" filepath="$PROJECT_DIR$/lemsun-test/lemsun-test.iml" />
+    </modules>
+  </component>
+</project>
+

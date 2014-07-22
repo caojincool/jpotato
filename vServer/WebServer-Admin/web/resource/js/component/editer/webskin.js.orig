@@ -1,0 +1,829 @@
+/**
+ * 创建关于web组件的页面布局信息
+ * User: dpyang
+ * Date: 13-3-19
+ * Time: 下午1:40
+ */
+Ext.onReady(function () {
+
+    var panelEl = Ext.get('webEditor');
+
+    //输出类型
+    var outStore = Ext.create('Ext.data.Store', {
+        fields: ['id', 'oType'],
+        data: [
+            {'id': 'text/html', 'oType': 'HTML文档'},
+            {'id': 'application/octet-stream', 'oType': '任意的二进制数据'}
+        ]
+    });
+
+    //开始参数的类型
+    var paramTypeStore = Ext.create('Ext.data.Store', {
+        fields: ['id', 'cate'],
+        data: [
+            {id: 1, cate: '区域'},
+            {id: 2, cate: '表达�},
+            {id: 3, cate: '字符'},
+            {id: 4, cate: '公式'}
+        ]
+    });
+
+    //父组件开始参数模�
+    Ext.define('startParamsModel', {
+        extend: 'Ext.data.Model',
+        fields: ['name', 'cate', 'value', 'status', {
+            name: 'parent',         //控制父组件禁止删�
+            type: 'bool',
+            defaultValue: false
+        }, 'remark'],
+        idProperty: 'name'
+    });
+
+    //获取某个组件的开始参�
+    var startParamsStore = Ext.create('Ext.data.Store', {
+        model: 'startParamsModel',
+        data: lr.startParam,
+        autoLoad: false,
+        //获取全部的开始参� 除去没用改变的父级参� 返回定义的数�
+        getAllParam: function () {
+            var data = [];
+
+            this.each(function (r) {
+                var row = {
+                    name: r.get('name'),
+                    value: r.get('value'),
+                    cate: r.get('cate'),
+                    parent: r.get('parent')
+                };
+                data.push(row);
+            });
+            return data;
+        }
+    });
+
+    //资源附件模型
+    Ext.define('webResourceAttachModel', {
+        extend: 'Ext.data.Model',
+        fields: [
+            'name',
+            'type',
+            {name: 'size', type: 'int'}
+        ],
+        idProperty: 'name'
+    });
+
+    //获取组件的附�
+    var webResourceAttachStore = Ext.create('Ext.data.Store', {
+        model: 'webResourceAttachModel',
+        proxy: {
+            type: 'ajax',
+            url: rootPath + 'component/webskin/attaches',
+            reader: {
+                root: 'entity'
+            },
+            simpleSortMode: true
+        },
+        autoLoad: true
+    });
+
+    //父组件的开始参�选中的开始组件参�
+    var strparms, checkedparm = {name: '', cate: 1, value: '', remark: ''};
+
+    //当父组件文本框离开焦点获取或删除父组件的开始参�
+    var parentPidTextBlurEvent = function (value, insert) {
+        Ext.Ajax.request({
+            url: rootPath + 'component/webskin/getWebPateresourceStartParams',
+            params: {pid: value},
+            success: function (response, e1) {
+                strparms = Ext.decode(response.responseText).entity;
+
+                if (strparms != '') {
+                    for (var i = 0; i < strparms.length; i++) {
+                        var name = strparms[i].name;
+                        var cate = strparms[i].cate;
+                        var r = startParamsStore.getById(name);
+
+                        //如果本组件的开始参数与父组件的开始参数相�那么先移除本组件的开始参�
+                        if (r != null && cate == 1) {
+                            startParamsStore.remove(r);
+                        }
+                        //如果插入开始参�并且父组件的开始参数类型为区域那么就插入一条开始参�
+                        if (insert == true && cate == 1) {
+                            strparms[i].parent = true;
+                            startParamsStore.insert(0, strparms[i]);
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    var webResourceform = Ext.widget('form', {
+        height: 750,
+        frame: true,
+        layout: 'border',
+        items: [
+            {
+                title: '必填信息',
+                xype: 'panel',
+                height: 200,
+                margin: '2 2 5 2',
+                region: 'north',
+                layout: {
+                    type: 'hbox',
+                    padding: '5',
+                    align: 'middle'
+                },
+                defaults: {
+                    margins: '0 5 0 5',
+                    height: 146
+                },
+                defaultType: 'fieldset',
+                items: [
+                    {
+                        title: '页面属�,
+                        flex: 1,
+                        layout: {
+                            type: 'vbox',
+                            align: 'center'
+                        },
+                        defaults: {
+                            labelWidth: 60,
+                            width: '80%'
+                        },
+                        items: [
+                            {
+                                fieldLabel: '输出类型',
+                                xtype: 'combobox',
+                                store: outStore,
+                                queryMode: 'local',
+                                displayField: 'oType',
+                                valueField: 'id',
+                                value: lr.contextType,
+                                name: 'contextType'
+                            },
+                            {
+                                fieldLabel: '是否缓存',
+                                xtype: 'checkboxfield',
+                                name: 'cache',
+                                inputValue: true,
+                                checked: lr.cache
+                            },
+                            {
+                                xtype: 'fieldcontainer',
+                                fieldLabel: '缓存时间',
+                                layout: 'hbox',
+                                combineErrors: false,
+                                defaults: {
+                                    hideLabel: true
+                                },
+                                items: [
+                                    {
+                                        xtype: 'numberfield',
+                                        name: 'cacheTime',
+                                        value: lr.cacheTime,
+                                        flex: 4 / 5,
+                                        allowBlank: false
+                                    },
+                                    {
+                                        xtype: 'displayfield',
+                                        value: '分钟',
+                                        width: 30,
+                                        margin: '0 0 0 10'
+                                    }
+                                ]
+                            },
+                            {
+                                fieldLabel: '是否页面',
+                                xtype: 'checkboxfield',
+                                inputValue: true,
+                                checked: lr.page,
+                                name: 'page'
+                            }
+                        ]},
+                    {
+                        title: '组件关系',
+                        flex: 1,
+                        margin: '3 0',
+                        layout: {
+                            type: 'vbox',
+                            align: 'center'
+                        },
+                        defaults: {
+                            labelWidth: 60,
+                            width: '80%'
+                        },
+                        defaultType: 'textfield',
+                        items: [
+                            {
+                                fieldLabel: '父级组件',
+                                name: 'parentPid',
+                                value: lr.parentPid,
+                                listeners: {
+                                    blur: function (t, the, e) {
+                                        var r = new RegExp('^[S|C]\\d{9}$'),///^[C]\\d{9}$/
+                                            value = t.value,
+                                            original = t.originalValue == undefined ? '' : t.originalValue;
+
+                                        //如果组件是一个合法的组件编码|循环加入父组件的区域参数
+                                        if (r.test(value)) {
+                                            parentPidTextBlurEvent(value, true);
+                                        }
+                                        if (!r.test(value) && original != '' && r.test(original)) {
+                                            parentPidTextBlurEvent(original, false);
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                fieldLabel: '预留',
+                                name: 'yu'
+                            },
+                            {
+                                fieldLabel: '预留',
+                                name: 'yu'
+                            },
+                            {
+                                fieldLabel: '预留',
+                                name: 'yu'
+                            }
+                        ]
+                    },
+                    {
+                        title: '预留属�,
+                        flex: 1,
+                        margin: 3,
+                        layout: {
+                            type: 'vbox',
+                            align: 'center'
+                        },
+                        defaults: {
+                            labelWidth: 60,
+                            width: '80%'
+                        },
+                        defaultType: 'textfield',
+                        items: [
+                            {
+                                fieldLabel: '预留',
+                                name: 'yu'
+                            },
+                            {
+                                fieldLabel: '预留2',
+                                name: 'yu'
+                            },
+                            {
+                                fieldLabel: '预留3',
+                                name: 'yu'
+                            },
+                            {
+                                fieldLabel: '预留4',
+                                name: 'yu'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: '网页编辑�,
+                region: 'center',
+                id: 'webpanel',
+                layout: 'fit',
+                items: [
+                    {
+                        xtype: 'container',
+                        margins: '2',
+                        name: 'content',
+                        id: 'editor',
+                        editor: null,
+                        editorEl: null,
+                        listeners: {
+                            afterrender: function () {
+                                this.editor = UE.getEditor('editor', {
+                                });
+                                this.editor.autoHeightEnabled = false;
+
+                                var panel = this;
+                                this.editor.ready(function () {
+                                    panel.editorEl = new Ext.dom.Element(this.container);
+                                    var el = panel.editorEl;
+                                    panel.editorHeader = new Ext.dom.Element(el.query('.edui-editor-toolbarbox')[0]);
+                                    panel.doLayout();
+                                });
+                            },
+                            afterlayout: function () {
+                                if (this.editorEl != null) {
+                                    var size = this.getSize();
+                                    this.editor.getDialog("attachment").attach = webResourceAttachStore;
+                                    this.editor.getDialog('insertimage').attach = webResourceAttachStore;
+
+                                    this.editorEl.setSize(size.width, size.height);
+                                    this.editor.setHeight(size.height - this.editorHeader.getHeight() - 30);
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                title: '网页属性区',
+                width: 380,
+                collapsible: true,
+                split: true,
+                region: 'east',
+                xtype: 'tabpanel',
+                items: [
+                    {
+                        title: '基本信息',
+                        defaultType: 'fieldcontainer',
+                        flex: 1,
+                        layout: {
+                            type: 'vbox',
+                            align: 'left',
+                            defaultMargins: {top: 20, right: 5, bottom: 0, left: 15}
+                        },
+                        defaults: {
+                            labelWidth: 68,
+                            layout: 'hbox',
+                            width: '90%'
+                        },
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                name: 'pid',
+                                hidden: true,
+                                value: lr.pid
+                            },
+                            {
+                                xtype: 'textfield',
+                                name: 'name',
+                                hidden: true,
+                                value: lr.name
+                            },
+                            {
+                                fieldLabel: '组件名称',
+                                items: {
+                                    xtype: 'displayfield',
+                                    value: lr.name
+                                }
+                            },
+                            {
+                                xtype: 'textfield',
+                                name: 'category',
+                                hidden: true,
+                                value: lr.category
+                            },
+                            {
+                                fieldLabel: '组件类别',
+                                items: {
+                                    xtype: 'displayfield',
+                                    value: 'WEB组件'
+                                }
+                            },
+                            {
+                                xtype: 'textfield',
+                                name: 'createUser',
+                                hidden: true,
+                                value: lr.createUser
+                            },
+                            {
+                                fieldLabel: '创建�,
+                                items: {
+                                    xtype: 'displayfield',
+                                    value: lr.createUser
+                                }
+                            },
+                            {
+                                xtype: 'textfield',
+                                name: 'updateTime',
+                                hidden: true,
+                                value: lr.updateTime
+                            },
+                            {
+                                fieldLabel: '创建时间',
+                                items: {
+                                    xtype: 'displayfield',
+                                    value: lr.updateTime
+                                }
+                            },
+                            {
+                                fieldLabel: '说明',
+                                width: 80
+                            },
+                            {
+                                width: 330,
+                                height: 75,
+                                xtype: 'textareafield',
+                                value: lr.remark,
+                                name: 'remark'
+                            },
+                            {
+                                fieldLabel: '参数',
+                                width: 80
+                            },
+                            {
+                                width: 330,
+                                height: 75,
+                                xtype: 'textareafield',
+                                value: lr.strParams,
+                                name: 'strParams'
+                            }
+                        ]
+                    },
+                    {
+                        title: '页面附件',
+                        layout: 'fit',
+                        store: webResourceAttachStore,
+                        xtype: 'gridpanel',
+                        columns: [
+                            {
+                                text: '附件名称',
+                                dataIndex: 'name',
+                                flex: 1
+                            },
+                            {
+                                text: '类型',
+                                dataIndex: 'type',
+                                width: 50
+                            },
+                            {
+                                text: '大小',
+                                dataIndex: 'size',
+                                renderer: function (val) {
+                                    return (val / 1024).toFixed(2) + 'KB';
+                                }
+                            },
+                            {
+                                text: '操作',
+                                xtype: 'actioncolumn',
+                                layout: 'vbox',
+                                align: 'center',
+                                width: 60,
+                                items: [
+                                    {
+                                        tooltip: '删除',
+                                        tips: '删除',
+                                        iconCls: 'action-column-margin',
+                                        icon: 'resource/icons/deletelayer_16x16.png',
+                                        handler: function (grid, rowIndex, colIndex) {
+                                            var rec = grid.getStore().getAt(rowIndex).get("name");
+                                            Ext.Ajax.request({
+                                                url: rootPath + 'component/webskin/remove/attach',
+                                                method: 'POST',
+                                                params: {
+                                                    filename: rec
+                                                },
+                                                success: function (response) {
+                                                    webResourceAttachStore.load();
+                                                }
+                                            })
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        dockedItems: [
+                            {
+                                xtype: 'toolbar',
+                                dock: 'top',
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        text: '上传',
+                                        iconCls: 'add-16',
+                                        handler: function () {
+                                            var myEditorFiles = Ext.getCmp('editor').editor.getDialog("attachment");
+                                            myEditorFiles.attach = webResourceAttachStore;
+                                            myEditorFiles.open();
+                                        }
+                                    }
+                                ]
+                            }
+                        ]},
+                    {
+                        title: '开始参�,
+                        layout: 'border',
+                        items: [
+                            {
+                                xtype: 'gridpanel',
+                                region: 'center',
+                                border: false,
+                                height: 200,
+                                store: startParamsStore,
+                                tbar: [
+                                    {
+                                        iconCls: 'add-16',
+                                        text: '创建',
+                                        handler: function (el) {
+                                            createStartParamWin(el);
+                                        }
+                                    }
+                                ],
+                                viewConfig: {
+                                    stripeRows: true,
+                                    forceFit: true,
+                                    enableRowBody: true,
+                                    getRowClass: function (record) {
+                                        return record.get('parent') == true ? 'child-row' : '';
+                                    }
+                                },
+                                columns: [
+                                    {
+                                        text: '名称',
+                                        width: 80,
+                                        dataIndex: 'name'
+                                    },
+                                    {
+                                        text: '类型',
+                                        width: 60,
+                                        dataIndex: 'cate',
+                                        renderer: function (val) {
+                                            return  paramTypeStore.data.items[val - 1].data.cate;
+                                        }
+                                    },
+                                    {
+                                        text: '参数�,
+                                        flex: 1,
+                                        dataIndex: 'value',
+                                        draggable: false
+                                    },
+                                    {
+                                        text: '操作',
+                                        width: 40,
+                                        xtype: 'actioncolumn',
+                                        layout: 'vbox',
+                                        align: 'center',
+                                        width: 60,
+                                        items: [
+                                            {
+                                                tooltip: '编辑',
+                                                iconCls: 'action-column-margin',
+                                                icon: 'ext/images/cog_edit.png',
+                                                handler: function (grid, rowIndex, colIndex) {
+                                                    var rec = grid.getStore().getAt(rowIndex);
+                                                    createStartParamWin(rec);
+                                                }
+                                            },
+                                            {
+                                                tooltip: '删除',
+                                                itemId: 'btnDel',
+                                                iconCls: 'action-column-margin',
+                                                icon: 'resource/icons/deletelayer_16x16.png',
+                                                handler: function (grid, rowIndex, colIndex) {
+                                                    var rec = grid.getStore().getAt(rowIndex);
+
+                                                    if (!rec.get('parent'))
+                                                        startParamsStore.remove(rec);
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                listeners: {
+                                    selectionchange: function (m, selectedRecord) {
+                                        if (selectedRecord.length) {
+                                            checkedparm = selectedRecord[0].data;
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                title: '详细信息',
+                                xtype: 'panel',
+                                height: 200,
+                                border: false,
+                                region: 'south',
+                                defaultType: 'fieldcontainer',
+                                flex: 1,
+                                layout: {
+                                    type: 'vbox',
+                                    align: 'left',
+                                    defaultMargins: {top: 5, right: 5, bottom: 0, left: 15}
+                                },
+                                defaults: {
+                                    labelWidth: 68,
+                                    layout: 'hbox',
+                                    width: '90%'
+                                },
+                                items: [
+                                    {
+                                        fieldLabel: '名称',
+                                        items: {
+                                            xtype: 'displayfield',
+                                            value: checkedparm.name
+                                        }
+                                    },
+                                    {
+                                        fieldLabel: '类别',
+                                        items: {
+                                            xtype: 'displayfield',
+                                            name: 'cate',
+                                            value: paramTypeStore.data.items[checkedparm.cate - 1].data.cate
+                                        }
+                                    },
+                                    {
+                                        fieldLabel: '�,
+                                        items: {
+                                            xtype: 'displayfield',
+                                            name: 'value',
+                                            value: checkedparm.value
+                                        }
+                                    },
+                                    {
+                                        fieldLabel: '说明',
+                                        width: 80
+                                    },
+                                    {
+                                        width: 330,
+                                        height: 75,
+                                        xtype: 'displayfield',
+                                        name: 'remark',
+                                        value: checkedparm.remark
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: '请求脚本',
+                        layout: {
+                            type: 'vbox',
+                            align: 'stretch'
+                        },
+                        defaultType: 'textareafield',
+                        items: [
+                            {
+                                xtype: 'displayfield',
+                                value: '开始脚�
+                            },
+                            {
+                                name: 'initScript',
+                                value: lr.initScript,
+                                margin: 3,
+                                flex: 1 / 2
+                            },
+                            {
+                                xtype: 'displayfield',
+                                value: '结束脚本'
+                            },
+                            {
+                                name: 'endScript',
+                                value: lr.endScript,
+                                margin: 3,
+                                flex: 1 / 2
+                            }
+                        ]
+                    },
+                    {
+                        title: '提交脚本',
+                        layout: 'fit',
+                        items: [
+                            {
+                                xtype: 'textareafield',
+                                margin: 5,
+                                name: 'formScript',
+                                value: lr.formScript
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        renderTo: panelEl
+    })
+
+    Ext.Ajax.request({
+        url: rootPath + 'component/webskin/getContext',
+        method: 'POST',
+        success: function (r, e) {
+            Ext.getCmp('editor').editor.setContent(r.responseText);
+        },
+        failure: function (r, e) {
+
+        }
+    });
+
+    Ext.fly('btnOk').on('click', function () {
+
+        //开始参�
+        webPageParams = [];
+        if (startParamsStore.data != null) {
+            startParamsStore.each(function (record) {
+                var webPageParam = {
+                    name: record.get('name'),
+                    cate: record.get('cate'),
+                    value: record.get('value'),
+                    parent: record.get('parent'),
+                    remark: record.get('remark')
+                };
+                webPageParams.push(webPageParam);
+            });
+        }
+        //获取参数
+        var param = webResourceform.getForm().getValues();
+        param.startParams = webPageParams;
+        param.context = Ext.getCmp('editor').editor.getContent();
+
+        Ext.Ajax.request({
+            url: rootPath + 'component/webskin/doEdit',
+            jsonData: param,
+            method: 'POST',
+            success: function (r, e) {
+                var result = Ext.decode(r.responseText);
+                var lmsResoult = Ext.decode(result.entity);
+                if (result.success) {
+                    location.href = rootPath + 'index?current=component/main/view';
+                } else {
+                    window.location.href = rootPath + 'index?current=component/main/view';
+                }
+            },
+            failure: function (r, e) {
+
+            }
+        });
+    });
+
+    //创建开始参数窗�
+    function createStartParamWin(el) {
+        var win = Ext.create('Ext.Window', {
+            height: 270,
+            width: 400,
+            title: '创建或者编辑开始参�,
+            plain: true,
+            modal: true,
+            layout: 'form',
+            defaultType: 'textfield',
+            bodyPadding: 5,
+            items: [
+                {
+                    fieldLabel: '参数名称',
+                    itemId: 'paramName',
+                    disabled: !(el.data == undefined),
+                    value: (el.data == undefined) ? '' : el.data.name,
+                    listeners: {
+                        change: function (t, n, o, e) {
+                            if (t.value != '') {
+                                t.up().down('button[text=确定]').enable()
+                            }
+                            startParamsStore.each(function (r) {
+                                if (r.get('name') == n) {
+                                    t.up().down('button[text=确定]').disable();
+                                }
+                            })
+                        }
+                    }
+                },
+                {
+                    fieldLabel: '参数类型',
+                    itemId: 'paramCate',
+                    xtype: 'combo',
+                    displayField: 'cate',
+                    valueField: 'id',
+                    store: paramTypeStore,
+                    disabled: !(el.data == undefined),
+                    value: (el.data == undefined) ? 1 : el.data.cate
+                },
+                {
+                    fieldLabel: '参数�,
+                    xtype: 'textarea',
+                    itemId: 'paramValue',
+                    value: (el.data == undefined) ? '' : el.data.value
+                },
+                {
+                    fieldLabel: '参数说明',
+                    xtype: 'textarea',
+                    itemId: 'paramRemark',
+                    value: (el.data == undefined) ? '' : el.data.remark
+                }
+            ],
+            buttons: [
+                {
+                    text: '确定',
+                    iconCls: 'ok-16',
+                    disabled: (el.data == undefined),
+                    handler: function () {
+                        var row = {
+                            name: win.getComponent('paramName').getValue(),
+                            cate: win.getComponent('paramCate').getValue(),
+                            value: win.getComponent('paramValue').getValue(),
+                            remark: win.getComponent('paramRemark').getValue(),
+                            parent: (el.data == undefined) ? false : el.get('parent')
+                        };
+                        if (el.data != undefined)
+                            startParamsStore.remove(el);
+                        startParamsStore.add(row);
+                        win.close();
+                    }
+                },
+                {
+                    text: '取消',
+                    iconCls: 'cancel-16',
+                    handler: function () {
+                        win.close();
+                    }
+                }
+            ]
+        });
+
+        win.show();
+    }
+});

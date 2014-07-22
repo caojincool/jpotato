@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="XML Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/resources/websocket-commands.xml</file>
+          <file>file://$MODULE_DIR$/../lemsun-listener-commands/src/java/resources/applicationContext-commands.xml</file>
+          <file>file://$MODULE_DIR$/../lemsun-form-control/src/resource/applicationContext-controls.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="db" level="project" />
+    <orderEntry type="library" name="lemsun" level="project" />
+    <orderEntry type="module" module-name="lemsun-authentication" />
+    <orderEntry type="module" module-name="lemsun-core" />
+    <orderEntry type="module" module-name="lemsun-data" />
+    <orderEntry type="module" module-name="lemsun-data-sqlserver" />
+    <orderEntry type="module" module-name="Lemsun-data-viproject" />
+    <orderEntry type="module" module-name="lemsun-form" />
+    <orderEntry type="module" module-name="lemsun-form-control" />
+    <orderEntry type="module" module-name="lemsun-websocket" />
+    <orderEntry type="module" module-name="lemsun-ldbc" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8" level="application_server_libraries" />
+    <orderEntry type="module" module-name="lemsun-formula" />
+  </component>
+</module>
+

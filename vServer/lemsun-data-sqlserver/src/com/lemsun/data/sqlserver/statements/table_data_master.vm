@@ -1,0 +1,16 @@
+#*
+* 获取表格数据
+* *#
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#* @vtlvariable name="query" type="com.lemsun.ldbc.TableQuery" *#
+SELECT DISTINCT ##查询同步字段的表格
+#foreach($c in $rs.columns)
+#if($c.sync != 0)
+[$c.col], ##
+#end
+#end
+[Code]
+FROM $rs.dbTable
+WHERE Code = $query.code AND _adate = '${query.adate}'
+ORDER BY Code

@@ -1,0 +1,15 @@
+#*
+修改表格
+@vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#*  删除列
+*#
+#foreach($col in $cols)
+ALTER TABLE $rs.dbTable DROP COLUMN $col.col
+##如果是大字段删除表
+    #if($col.isExtCol())
+    IF OBJECT_ID (N'${rs.dbTable}_$col.col',N'U') IS NOT NULL
+    DROP TABLE [dbo].[${rs.dbTable}_${col.col}_AND]
+    DROP TABLE [dbo].[${rs.dbTable}_$col.col]
+    #end
+#end

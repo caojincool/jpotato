@@ -1,0 +1,45 @@
+#*
+* 创建表格
+* *#
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+CREATE TABLE [dbo].[${rs.dbTable}] (
+[_key] [uniqueidentifier] ROWGUIDCOL NOT NULL PRIMARY KEY DEFAULT NEWID()
+#foreach($col in $rs.columns)#if(!$col.keyCol) ##不创建Key字段
+   ,#columnInfo($col)
+#end#end
+#if($rs.uniqueCode)
+, CONSTRAINT UN_$rs.dbTable UNIQUE ( Code)
+#end
+#if($rs.adate)
+, CONSTRAINT UN_$rs.dbTable UNIQUE (_adate, Code)
+#end
+#if($rs.form)
+, CONSTRAINT UN_$rs.dbTable UNIQUE (_adate, Code#if($rs.formSec),$rs.formSec.col#end)
+#end
+)
+
+#foreach($col in $rs.columns) ##创建文件集合与HTML类型的子表
+#if($col.isExtCol())
+
+CREATE TABLE [${rs.dbTable}_${col.col}_AND] (
+_row_key [UNIQUEIDENTIFIER] NOT NULL ROWGUIDCOL PRIMARY KEY,
+_file_key UNIQUEIDENTIFIER DEFAULT NEWID()
+)
+
+CREATE TABLE [${rs.dbTable}_${col.col}] (
+_key[UNIQUEIDENTIFIER] ROWGUIDCOL PRIMARY KEY DEFAULT NEWID(),
+_parent_key UNIQUEIDENTIFIER NOT NULL,
+_filename NVARCHAR(500),
+_type VARCHAR(20),
+_remark NVARCHAR(2000),
+_lastupdate DATETIME DEFAULT GETDATE(),
+_file IMAGE
+)
+
+ALTER TABLE [${rs.dbTable}_${col.col}_AND]
+WITH CHECK ADD  CONSTRAINT [FK_${rs.dbTable}_${rs.dbTable}_${col.col}_parent_key] FOREIGN KEY([_row_key])
+REFERENCES [${rs.dbTable}] ([_key])
+ON DELETE CASCADE
+
+#end#end

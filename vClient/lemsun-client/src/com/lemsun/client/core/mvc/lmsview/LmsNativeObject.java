@@ -1,0 +1,257 @@
+package com.lemsun.client.core.mvc.lmsview;
+
+import com.lemsun.client.core.Host;
+import com.lemsun.client.core.LemsunException;
+import com.lemsun.client.core.Utils;
+import com.lemsun.client.core.formula.FormulaException;
+import com.lemsun.client.core.model.WebPageParam;
+import com.lemsun.client.core.model.WebPageResource;
+import com.lemsun.client.core.mvc.view.FormulaRunner;
+import com.lemsun.client.core.service.IFormulaService;
+import com.lemsun.client.core.service.ILmsViewService;
+import com.lemsun.client.core.service.IWebPageResourceService;
+import org.apache.commons.lang3.StringUtils;
+import org.mozilla.javascript.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * 视图的导航对象
+ * User: xudong
+ * Date: 13-12-13
+ * Time: 下午3:49
+ */
+public class LmsNativeObject extends NativeObject {
+
+    private static Logger log = LoggerFactory.getLogger(LmsNativeObject.class);
+    private ViewScope currentScope;
+    private IWebPageResourceService webPageResourceService;
+    private ILmsViewService viewService;
+    private FormulaRunner formulaRunner;
+
+
+
+    public LmsNativeObject(IViewEngine viewEngine) {
+        this.webPageResourceService = Host.getApplicationContext().getBean(IWebPageResourceService.class);
+        this.viewService = Host.getApplicationContext().getBean(ILmsViewService.class);
+        ScriptRuntime.setBuiltinProtoAndParent(this, viewEngine.getGlobelScriptable(), TopLevel.Builtins.Object);
+        this.setPrototype(viewEngine.getGlobelScriptable());
+        this.setParentScope(null);
+        this.formulaRunner = new FormulaRunner(this, Host.getApplicationContext().getBean(IFormulaService.class));
+    }
+
+
+    void setViewScope(ViewScope scope)
+    {
+        this.currentScope = scope;
+
+    }
+
+
+    public ViewScope getCurrentScope() {
+        return currentScope;
+    }
+
+
+
+    @Override
+    public void put(String name, Scriptable start, Object value) {
+        super.put(name, start, value);
+    }
+
+    @Override
+    public Object get(String name, Scriptable start) {
+
+        if(StringUtils.equals("scope", name)) {
+            return currentScope;
+        }
+        else if(StringUtils.equals("writer", name)) {
+            return currentScope.getWriter();
+        }
+        else if(StringUtils.equals("request", name)) {
+            return currentScope.getRequest();
+        }
+        else if(StringUtils.equals("response", name)) {
+            return currentScope.getResource();
+        }
+        else if(StringUtils.equals("formula", name)) {
+            return formulaRunner;
+        }
+        else if(StringUtils.equals("param", name)) {
+            return currentScope.getParam();
+        }
+        else if(StringUtils.equals("resource", name)) {
+            return currentScope.getResource();
+        }
+        else {
+
+        }
+
+        Object value = super.get(name, start);
+
+        if(value == NOT_FOUND && currentScope != null) {
+
+            Map<String, ?> startParam = currentScope.getParam();
+
+            //开始参数不为空且开始开始参数包含组件编码
+            if(startParam != null && startParam.containsKey(name)) {
+                Object param = startParam.get(name);
+                if(param == null)
+                {
+                    //return NOT_FOUND;
+                }
+                else if(param instanceof WebPageParam){
+                    value = getParamValue((WebPageParam) param);
+                }
+                else {
+                    value = param;
+                }
+
+            }
+            else if(Utils.isResourceId(name)) {
+
+                value = getLemsunResourceContext(name);
+                put(name, this, value);
+            }
+
+            if(log.isDebugEnabled()&&value==null)
+                log.debug("查找对象失败. 检查是否是一个预定义的格式 : {}", name);
+        }
+
+        return value;
+    }
+
+    @Override
+    protected int findInstanceIdInfo(String name) {
+
+        return super.findInstanceIdInfo(name);
+    }
+
+    @Override
+    protected Object getInstanceIdValue(int id) {
+
+        return super.getInstanceIdValue(id);
+    }
+
+    /**
+     * 返回一个创建的参数值
+     */
+    protected Object getParamValue(WebPageParam param)  {
+
+        Object value = NOT_FOUND;
+
+        if(param.getCate() == WebPageParam.AERY) {
+
+            value = get(param.getValue(), this);
+
+            if(value == NOT_FOUND) {
+                value = getLemsunResourceContext(param.getValue());
+            }
+            else {
+                return value;
+            }
+        }
+        else if(param.getCate() == WebPageParam.REF) {
+            ViewScope scope = (ViewScope) this.get("scope");
+            //ViewScope scope = (ViewScope) get("ViewScope");   原来这里的获取的scope是null 所以显示不出来
+            Context cx = Context.enter();
+            value = cx.evaluateString(scope.getLocalScope(), param.getValue(), "启动参数 : " + param.getName(), 1, null);
+            Context.exit();
+
+        }else if(param.getCate()==WebPageParam.CHARS){
+            //这里的赋值机制是读取session->param的value
+            String req=currentScope.getRequest().getParameter(param.getName());
+            String se= (String) currentScope.getRequest().getSession().getAttribute(param.getName());
+
+            try {
+                if(StringUtils.isNotEmpty(req)){
+                      value=new String(req.getBytes("ISO-8859-1"),"utf-8");
+                }else if(StringUtils.isNotEmpty(se))
+                    value=new String(se.getBytes("ISO-8859-1"),"utf-8");
+                else if(StringUtils.isNotEmpty(param.getValue()))
+                    value=param.getValue();
+                else {
+                    value = null;
+                }
+            } catch (UnsupportedEncodingException e) {
+                throw new LemsunException(e.getMessage());
+            }
+
+        }else if(param.getCate()==WebPageParam.FORMULA){
+
+            String formala=param.getValue();
+
+            Map<String,Object> map=new HashMap<>();
+            Map<String,?> temp=currentScope.getParam();
+
+            for (String o:temp.keySet()){
+                if (temp.get(o) instanceof String){
+                    map.put(o,temp.get(o));
+                }else if(((WebPageParam)temp.get(o)).getCate()==WebPageParam.CHARS){
+                    map.put(o,get(o));
+                }
+            }
+
+            try {
+                FormulaRunner f=new FormulaRunner(map,currentScope.getFormula());
+                value=f.run(formala);
+            } catch (FormulaException e) {
+                log.error(e.getMessage());
+                if (log.isDebugEnabled())
+                    log.debug("执行公式异常:"+e.getMessage());
+            }
+        }
+
+        if(value != NOT_FOUND){
+            put(param.getName(), this, value);
+        }
+
+        return value;
+    }
+
+    /**
+     * 获取嵌入组件内容
+     * @param pid 嵌入组件
+     * @return
+     */
+    protected String getLemsunResourceContext(String pid) {
+        String context = null;
+        try {
+            WebPageResource webPageResource = webPageResourceService.getWebPageResource(pid);
+            if(webPageResource != null) {
+                ILmsView view =(ILmsView) viewService.getView(webPageResource);
+
+                ViewScope scope = (ViewScope) this.get("scope");
+
+                ViewScope childScope = scope.createScope();
+                view.render(childScope);
+                context = childScope.toString();
+            }
+        } catch (Exception ex) {
+            context = ex.getMessage();
+        }
+
+        return context;
+    }
+
+    @Override
+    public Set<Object> keySet() {
+        return super.keySet();
+    }
+
+    @Override
+    public Collection<Object> values() {
+        return super.values();
+    }
+
+    @Override
+    public Set<Entry<Object, Object>> entrySet() {
+        return super.entrySet();
+    }
+}

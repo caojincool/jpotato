@@ -1,0 +1,10 @@
+
+input[type="submit"]{widows:100px;}
+
+
+table th{text-align:right; width:20%; font-weight:normal;}
+table td span{color:#a40000}
+input.rightformcss,select.rightformcss,textarea.rightformcss{border:1px solid green;}
+.failmsg{color:#a40000;}
+.msgvaluecss{font-style:italic;}
+input.failformcss,select.failformcss,textarea.failformcss{border:1px solid #a40000;}

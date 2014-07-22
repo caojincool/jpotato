@@ -1,0 +1,40 @@
+#* @vtlvariable name="col" type="com.lemsun.data.lmstable.Column" *#
+#macro(columnType $col)
+ #if($col.category == 1) ##文本字段
+ nvarchar(#if($col.length == 0) max #else $col.length #end) ##
+ #elseif($col.category == 2||$col.category == 16||$col.category == 17) ##数值字段 单据编码, 单据序列
+ int ##
+ #elseif($col.category == 3) ##小数字段
+ float ##
+ #elseif($col.category == 4) ##数据字段
+ numeric ##
+ #elseif($col.category == 5) ##日期字段
+ datetime ##
+ #elseif($col.category == 6) ## 多媒体字段
+ varbinary(max) ##
+ #elseif($col.category == 7) ## 布尔字段
+ bit ##
+ #elseif($col.category == 8 or $col.category == -1) ##主外键字段
+ uniqueidentifier ##
+ #elseif($col.category == 9) ## 更新时间
+ datetime ##
+ #elseif($col.category == 10) ##编码字段
+ varchar(500) ##
+ #elseif($col.category == 11 || $col.category == 13) ##HTML字段,  文件集字段, 外表信息
+ nvarchar(500) ##
+ #elseif($col.category == 12) ##图片跟文件字段
+ nvarchar(500) ##
+ #elseif($col.category == 14) ##xm 字段
+ xml ##
+ #elseif($col.category == 15) ## DATE 日期描述字段
+ char(8) ##
+ #else ##未知字段
+ nvarchar(max) ##
+ #end
+#end
+
+
+#macro(columnInfo $col)
+[$col.col] #columnType($col) #if(!$col.empty) not null #end #if($col.category == 8) rowguidcol primary key default newid() #end#if($col.category == 9) default getdate() #end#if($util.isNotEmpty($col.check)) check($col.check) #end #if($util.isNotEmpty($col.defaultValue)) default(${col.defaultValue}) #end
+
+#end

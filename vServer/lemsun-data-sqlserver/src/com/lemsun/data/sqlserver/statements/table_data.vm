@@ -1,0 +1,80 @@
+#*
+* 获取表格数据
+* *#
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#* @vtlvariable name="query" type="com.lemsun.ldbc.TableQuery" *#
+
+#if($rs.form) ##单据类型表格查询, 单据表格的查询需要排除同步字段
+#if($query.isPageRequest())
+SELECT TOP $query.limit
+#foreach($c in $rs.columns)
+    #if($c.sync == 0 && !$c.keyCol && !$c.codeCol)
+    [$c.col],
+    #end ##
+[Code],
+[_key]
+#end
+FROM (
+SELECT row_number() over(order by Code #if($rs.formSec), $rs.formSec.col #end) as rowNumber, * FROM
+(
+#end
+SELECT
+#foreach($c in $rs.columns)
+    #if($c.sync == 0 && !$c.keyCol && !$c.codeCol)
+    [$c.col],
+    #end ##
+#end
+[Code],
+[_key]
+FROM $rs.dbTable
+WHERE 1 = 1
+    #if($query.adateSearch)
+    AND _adate = '$query.adate'
+    #end
+    #if($query.codeSearch)
+    AND Code = $query.code
+    #end
+#if($query.isPageRequest())
+) as tempTable
+) as tempTable2 where rowNumber > $query.start
+#end
+ORDER BY Code #if($rs.formSec), $rs.formSec.col #end
+#end
+## 非单据类型表格查询
+#if(!$rs.form)
+#if($query.isPageRequest())
+SELECT TOP $query.limit
+#foreach($c in $rs.columns)
+    #if(!$c.keyCol && !$c.codeCol)
+    [$c.col],
+    #end ##
+#end
+[Code],
+[_key]
+FROM (
+SELECT row_number() over(order by Code #if($rs.formSec), $rs.formSec.col #end) as rowNumber, * FROM
+(
+#end
+SELECT
+#foreach($c in $rs.columns)
+    #if(!$c.keyCol && !$c.codeCol)
+    [$c.col],
+    #end ##
+#end
+[Code],
+[_key]
+FROM $rs.dbTable
+WHERE 1 = 1
+#if($query.adateSearch)
+AND _adate = '$query.adate'
+#end
+#if($query.isPageRequest())
+) as tempTable
+) as tempTable2 where rowNumber > $query.start
+#end
+ORDER BY Code
+#end
+
+
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="context.xml" url="file://$MODULE_DIR$/web/META-INF/context.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="XML Application Context" removed="false">
+          <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext-formula.xml</file>
+          <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext-data.xml</file>
+          <file>file://$MODULE_DIR$/web/WEB-INF/golfing-servlet.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+    <facet type="JRebel" name="JRebel">
+      <configuration>
+        <option name="autosync" value="false" />
+        <option name="deleteUnindexed" value="true" />
+        <option name="manualXML" value="false" />
+        <option name="masterModuleName" />
+        <option name="remotingEnabled" value="false" />
+        <option name="scanAllFiles" value="false" />
+        <option name="secure" value="true" />
+        <option name="url" />
+        <option name="xmlDir" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resource" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="db" level="project" />
+    <orderEntry type="library" name="lemsun" level="project" />
+    <orderEntry type="module" module-name="lemsun-core" />
+    <orderEntry type="module" module-name="lemsun-authentication" />
+    <orderEntry type="module" module-name="lemsun-data" />
+    <orderEntry type="module" module-name="lemsun-data-sqlserver" />
+    <orderEntry type="module" module-name="Lemsun-data-viproject" />
+    <orderEntry type="module" module-name="lemsun-form-control" />
+    <orderEntry type="module" module-name="lemsun-reporter" />
+    <orderEntry type="module" module-name="lemsun-helper" />
+    <orderEntry type="module" module-name="lemsun-web" />
+    <orderEntry type="module" module-name="lemsun-websocket" />
+    <orderEntry type="module" module-name="lemsun-websocket-commands" />
+    <orderEntry type="module" module-name="lemsun-interface" />
+    <orderEntry type="module" module-name="lemsun-script" />
+    <orderEntry type="module" module-name="lemsun-formula" />
+    <orderEntry type="module" module-name="lemsun-ldbc" />
+    <orderEntry type="module" module-name="lemsun-package" />
+    <orderEntry type="module" module-name="lemsun-form" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8" level="application_server_libraries" />
+    <orderEntry type="module" module-name="lemsun-sql" />
+    <orderEntry type="module" module-name="lemsun-task" />
+    <orderEntry type="library" name="poi" level="project" />
+  </component>
+</module>
+

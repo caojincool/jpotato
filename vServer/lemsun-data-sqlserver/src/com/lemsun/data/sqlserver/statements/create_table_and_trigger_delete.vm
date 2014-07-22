@@ -1,0 +1,24 @@
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#* @vtlvariable name="col" type="com.lemsun.data.lmstable.Column" *#
+##进行大字段表格的同步
+CREATE TRIGGER TR_${rs.dbTable}_${col.col}_AND_DELETE on ${rs.dbTable}_${col.col}_AND
+AFTER DELETE
+AS
+BEGIN
+DECLARE @FILE_KEY UNIQUEIDENTIFIER
+DECLARE @KEY UNIQUEIDENTIFIER
+
+SELECT @FILE_KEY = _file_key FROM DELETED
+
+#if($col.sync == 1 || $col.sync == 2)
+IF(NOT EXISTS(SELECT * FROM ${rs.dbTable}_${col.col}_AND WHERE _file_key = @FILE_KEY))
+BEGIN
+    DELETE FROM ${rs.dbTable}_$col.col WHERE _parent_key = @FILE_KEY
+END
+#end
+#if($col.sync == 0)
+DELETE FROM ${rs.dbTable}_$col.col WHERE _parent_key = @FILE_KEY
+#end
+
+END

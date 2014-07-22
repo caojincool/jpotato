@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="lemsun-websocket-commands:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_websocket_commands_jar</output-path>
+    <root id="root">
+      <element id="archive" name="lemsun-websocket-commands.jar">
+        <element id="module-output" name="lemsun-websocket-commands" />
+      </element>
+    </root>
+  </artifact>
+</component>

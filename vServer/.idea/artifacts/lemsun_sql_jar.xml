@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lemsun-sql:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_sql_jar</output-path>
+    <root id="archive" name="lemsun-sql.jar">
+      <element id="module-output" name="lemsun-sql" />
+    </root>
+  </artifact>
+</component>

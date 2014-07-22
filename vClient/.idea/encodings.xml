@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/applicationContext-data.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/golfing-servlet.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/clientaccesspolicy.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/bootstrap.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-all-debug.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-all.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-debug-w-comments.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-debug.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-dev.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-neptune-debug-w-comments.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-neptune-debug.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext-neptune.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/ext.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/images" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/locale" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/pkgs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebServer-Client/web/ext/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/IFunctionStatement.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/FCondition.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/FOperater.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/FormulaException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFCol.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFColRange.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFExpression.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFormula.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFormulaJoin.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IFormulaRef.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/ISoft.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/formula/IStatement.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/model/FunctionParam.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/model/InnerFunctionDefines.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/model/Register.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-test/src/resource/applicationContext.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lemsun-test/src/resource/config.properties" charset="UTF-8" />
+  </component>
+</project>
+

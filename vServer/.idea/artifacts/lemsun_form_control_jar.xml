@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lemsun-form-control:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_form_control_jar</output-path>
+    <root id="archive" name="lemsun-form-control.jar">
+      <element id="module-output" name="lemsun-form-control" />
+    </root>
+  </artifact>
+</component>

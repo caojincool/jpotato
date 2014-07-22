@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="WebServer-Admin:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebServer_Admin_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="db" />
+          <element id="library" level="project" name="lemsun" />
+          <element id="artifact" artifact-name="lemsun-authentication:jar" />
+          <element id="artifact" artifact-name="lemsun-core:jar" />
+          <element id="artifact" artifact-name="lemsun-data-sqlserver:jar" />
+          <element id="artifact" artifact-name="lemsun-data-viproject:jar" />
+          <element id="artifact" artifact-name="lemsun-data:jar" />
+          <element id="artifact" artifact-name="lemsun-form-control:jar" />
+          <element id="artifact" artifact-name="lemsun-form:jar" />
+          <element id="artifact" artifact-name="lemsun-web:jar" />
+          <element id="artifact" artifact-name="lemsun-websocket:jar" />
+          <element id="artifact" artifact-name="lemsun-websocket-commands:jar" />
+          <element id="artifact" artifact-name="lemsun-interface:jar" />
+          <element id="artifact" artifact-name="lemsun-script:jar" />
+          <element id="artifact" artifact-name="lemsun-formula:jar" />
+          <element id="artifact" artifact-name="lemsun-ldbc:jar" />
+          <element id="artifact" artifact-name="lemsun-helper:jar" />
+          <element id="artifact" artifact-name="lemsun-package:jar" />
+          <element id="artifact" artifact-name="WebServer-Admin:jar" />
+          <element id="artifact" artifact-name="lemsun-sql:jar" />
+          <element id="artifact" artifact-name="lemsun-task:jar" />
+          <element id="artifact" artifact-name="lemsun-reporter:jar" />
+          <element id="library" level="project" name="aspose" />
+          <element id="library" level="project" name="poi" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="WebServer-Admin/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,15 @@
+ExtJS MVC入门级开发案例有ITLee博客提供
+
+作者：李坏
+URL： http://www.itlee.name
+QQ：80816909
+
+使用时下载ExtJS4.1源码包，放到根目录即可，若对案例有任何疑问，李坏欢迎各位交流，共同学习！！
+
+项目结构：
+
+  |----- app
+   ----- ExtJS4.1
+   ----- public
+   ----- app.js
+   ----- index.html	

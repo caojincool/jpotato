@@ -1,0 +1,5 @@
+.selftable{width: 400px; font-size: 12; margin: 20px; line-height: 2;  }
+.selftablelef{width: 70px;}
+.selfbutton{width: 60px; margin-left: 20px; cursor:pointer;}
+.treeiconfolder{background: url("../../ext/resources/themes/images/default/tree/folder.gif")  left top no-repeat !important;}
+

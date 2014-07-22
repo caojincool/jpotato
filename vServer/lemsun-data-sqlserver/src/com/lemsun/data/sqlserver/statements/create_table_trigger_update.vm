@@ -1,0 +1,85 @@
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+CREATE TRIGGER TR_${rs.dbTable}_UPDATE on $rs.dbTable
+AFTER UPDATE
+AS
+BEGIN
+
+DECLARE @CODE #columnType(${rs.resource.codeColumn})
+DECLARE @OLDCODE #columnType(${rs.resource.codeColumn})
+DECLARE @KEY UNIQUEIDENTIFIER
+
+
+##单据表格同步
+#if($rs.form)
+
+    #if($rs.sync)
+    IF(#foreach($col in $rs.columns)#if($col.sync == 1)UPDATE($col.col) AND #end#end EXISTS(SELECT * FROM INSERTED))
+
+            BEGIN
+                #foreach($col in $rs.columns)#if($col.sync == 1)
+                DECLARE @$col.col #columnType($col)
+
+                #end#end
+
+                DECLARE @ADATE CHAR(8)
+                SELECT
+                    #foreach($col in $rs.columns)#if($col.sync == 1) @$col.col = [$col.col], #end#end @KEY = _KEY, @CODE = CODE, @ADATE = _adate
+                FROM INSERTED
+                IF EXISTS(SELECT COUNT(1) FROM DELETED WHERE 1=1 #foreach($col in $rs.columns)#if($col.sync == 1) AND $col.col=@$col.col AND 1=1 #end#end)
+                    BEGIN
+                        UPDATE $rs.dbTable
+                        SET
+                            #foreach($col in $rs.columns)#if($col.sync == 1) [$col.col] = @$col.col, #end#end _lastUpdate = getdate()
+                        WHERE
+                        CODE = @CODE AND _KEY <> @KEY AND _adate = @ADATE
+                    END
+            END
+    #end
+#end
+
+##普通日期表格
+#if($rs.sameCodeRecord)
+    SELECT @OLDCODE = CODE FROM DELETED
+#* 同步字段 *#
+    #if($rs.sync)
+    IF(#foreach($col in $rs.columns)#if($col.sync == 1)UPDATE($col.col) AND #end#end EXISTS(SELECT * FROM INSERTED))
+    BEGIN
+        #foreach($col in $rs.columns)#if($col.sync == 1)
+        DECLARE @$col.col #columnType($col)
+
+        #end#end
+    SELECT
+        #foreach($col in $rs.columns)#if($col.sync == 1) @$col.col = [$col.col], #end#end @KEY = _KEY, @CODE = CODE
+    FROM INSERTED
+
+    UPDATE $rs.dbTable
+    SET
+        #foreach($col in $rs.columns)#if($col.sync == 1) [$col.col] = @$col.col, #end#end _lastUpdate = getdate(),CODE=@CODE
+    WHERE
+    CODE = @OLDCODE AND _KEY <> @KEY
+    END
+    #end
+
+#* 向下同步字段 *#
+    #if($rs.sycnDown)
+    IF(#foreach($col in $rs.columns)#if($col.sync == 2)UPDATE($col.col) AND #end#end EXISTS(SELECT * FROM INSERTED))
+    BEGIN
+        #foreach($col in $rs.columns)#if($col.sync == 2)
+        DECLARE @$col.col #columnType($col)
+
+        #end#end
+    DECLARE @ADATE CHAR(8)
+    SELECT
+        #foreach($col in $rs.columns)#if($col.sync == 2) @$col.col = [$col.col], #end#end @KEY = _KEY, @CODE = Code, @ADATE = _adate
+    FROM INSERTED
+
+    UPDATE $rs.dbTable
+    SET
+        #foreach($col in $rs.columns)#if($col.sync == 2) [$col.col] = @$col.col, #end#end _lastUpdate = getdate(),CODE=@CODE
+    WHERE CODE = @OLDCODE AND _KEY <> @KEY AND _adate > @ADATE
+    END
+    #end
+#end
+
+END

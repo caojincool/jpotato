@@ -1,0 +1,9 @@
+#*
+* 查询表格下关联所有表的名称
+* *#
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#*  *#
+select name from sysobjects  where name like '${rs.dbTable}%' and xtype='U' order by name desc
+
+

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="aspose">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/aspose/aspose-cells-8.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspose/aspose-pdf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspose/aspose-words-14.4.1-jdk16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspose/bcprov-jdk16-146.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

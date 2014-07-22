@@ -1,0 +1,281 @@
+package com.lemsun.client.core.mvc.view;
+
+import com.lemsun.client.core.model.ImageResource;
+import com.lemsun.client.core.model.LemsunResource;
+import com.lemsun.client.core.model.ScriptResource;
+import com.lemsun.client.core.model.WebPageResource;
+import com.lemsun.client.core.mvc.lmsview.IViewEngine;
+import com.lemsun.client.core.service.IResourceService;
+import com.lemsun.client.core.service.IScriptService;
+import org.apache.commons.lang3.StringUtils;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.ContextFactory;
+import org.mozilla.javascript.Scriptable;
+import org.mozilla.javascript.ScriptableObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * User: 宗旭东
+ * Date: 13-3-12
+ * Time: 下午1:43
+ * 脚本视图引擎
+ */
+@Component
+public class JsViewEngine implements IViewEngine, DisposableBean, InitializingBean {
+
+    //是否使用动态作用域
+    static boolean useDynamicScope;
+    private static final Logger log = LoggerFactory.getLogger(JsViewEngine.class);
+
+    /**
+     * 自定义工厂
+     */
+    static class MyFactory extends ContextFactory{
+        @Override
+        protected boolean hasFeature(Context cx, int featureIndex)
+        {
+            if (featureIndex == Context.FEATURE_DYNAMIC_SCOPE) {
+                return useDynamicScope;
+            }
+            return super.hasFeature(cx, featureIndex);
+        }
+    }
+
+    static {
+        ContextFactory.initGlobal(new MyFactory());
+    }
+
+    /**
+     * 初始化参数
+     */
+    @Autowired
+    public JsViewEngine(ApplicationContext context,
+                        IResourceService resourceService,
+                        IScriptService scriptService
+                        )
+    {
+        this.applicationContext = context;
+        useDynamicScope = true;
+        this.resourceService = resourceService;
+        this.scriptService=scriptService;
+    }
+
+    private Context context;
+    private Scriptable scope;
+    private Map<String, ICacheView> viewCache = new HashMap<>();
+    private ApplicationContext applicationContext;
+    private IResourceService resourceService;
+    private IScriptService scriptService;
+
+    /**
+     * @return 返回共享环境的内容
+     */
+    public Context getContext() {
+        return context;
+    }
+
+    @Override
+    public ScriptableObject getGlobelScriptable() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    /**
+     * @return 返回共享环境
+     */
+    public Scriptable getScope() {
+        return scope;
+    }
+
+    /**
+     * 获取一个视图
+     *
+     * @param lmsResource 组件
+     * @return 视图
+     */
+    @Override
+    public synchronized ILmsView getView(LemsunResource lmsResource) throws Exception {
+        ILmsView view = null;
+        String pid = lmsResource.getPid();
+        if(false && viewCache.containsKey(pid)
+                && lmsResource.getUpdateTime().getTime() == viewCache.get(pid).getUpdateTime().getTime())
+        {
+           if(log.isDebugEnabled())
+               log.debug("获取一个缓存了的视图{}",viewCache.get(pid).getResource().getPid());
+           view = viewCache.get(pid);
+           return view;
+        }
+        else if(lmsResource instanceof WebPageResource){
+
+            String context = resourceService.getResourceContext(lmsResource);
+
+
+            view = createView(lmsResource, context);
+
+//            if(view instanceof ICacheView)
+//                viewCache.put(lmsResource.getPid(), (ICacheView)view);
+        }
+        else if(lmsResource instanceof  ImageResource){
+            String context = resourceService.getResourceContext(lmsResource);
+
+            view = createView(lmsResource, context);
+//            if(view instanceof ICacheView)
+//                viewCache.put(lmsResource.getPid(), (ICacheView)view);
+        }
+        return view;
+    }
+
+    /**
+     * 创建一个新的视图
+     * @param lmsResource 组件
+     * @return 视图
+     */
+    @Override
+    public ILmsView createView(LemsunResource lmsResource, String context) throws Exception {
+        ILmsView view=null;
+
+        if (lmsResource.getCategory().equalsIgnoreCase("WEBSKIN")){
+            view=getWebResourceView((WebPageResource)lmsResource,context);
+        }
+        else if(lmsResource.getCategory().equalsIgnoreCase("IMAGE")){
+            view=getImageResourceView((ImageResource)lmsResource,context);
+        }
+
+        return view;
+    }
+
+    /**
+     * 获取Image组件的视图
+     * @param lmsResource Image组件信息
+     * @param context Image 图片内容
+     * @return
+     */
+    private  ILmsView getImageResourceView(ImageResource lmsResource,String context){
+        return new ImageView(context);
+    }
+
+    /**
+     * 获取WEB组件的视图
+     * @param lmsResource web组件信息
+     * @param context web组件内容
+     * @return web组件视图
+     * @throws Exception
+     */
+    private ILmsView getWebResourceView(WebPageResource lmsResource,String context) throws Exception {
+        //获取脚本模板
+        JsTemplate template = new JsTemplate(context);
+
+        String js = template.parser();//将内容转化为模板语言
+        if(log.isDebugEnabled()){
+            log.debug("已经将内容转换成了模板语言:{}",js);
+        }
+        //包含脚本
+        if(template.isScript()) {
+
+            if(ScriptableObject.hasProperty(getScope(), lmsResource.getPid())){
+                ScriptableObject.deleteProperty(getScope(), lmsResource.getPid());
+            }
+
+            try
+            {
+                StringBuilder builder = new StringBuilder("function page_");
+                builder.append(lmsResource.getPid()).append("() {\n");
+                builder.append(js);
+                builder.append("\n}\n");
+
+                if(log.isDebugEnabled())    log.debug("转换成函数:"+builder.toString());
+
+                Context cx = Context.enter();
+
+                cx.evaluateString(getScope(), builder.toString(), lmsResource.getPid(), 1, null);
+
+                return new JsView(applicationContext, this, lmsResource);
+            }
+            catch (Throwable ex) {
+                log.error("编译页面发生异常: ", ex);
+                throw new Exception(ex.getMessage());
+            }
+            finally {
+                Context.exit();
+            }
+        }
+        else {
+            return new TextView(applicationContext, this, lmsResource, context);
+        }
+    }
+
+    /**
+     * 初始化全部的脚本类型
+     */
+    public void init(){
+        log.debug("加载全局脚本和网页脚本");
+
+        context = Context.enter();
+        scope = context.initStandardObjects(null, true);
+        
+        try
+        {
+            //获取所有的脚本组件
+            List<ScriptResource> res = scriptService.getGlobelScriptResources();
+            if(!CollectionUtils.isEmpty(res)) {
+                for(ScriptResource r : res) {
+                    runGlobelScript(r);
+                }
+            }
+
+        }
+        catch (Exception ex) {
+            log.error(ex.getMessage());
+        }
+
+        //初始化共享参数
+        ScriptableObject.putProperty(scope, "context", applicationContext);
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        try
+        {
+            Context.exit();
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        init();
+    }
+
+    private void runGlobelScript(ScriptResource resource) {
+        try
+        {
+            String script = resource.toScript();
+
+            if(StringUtils.isEmpty(script))
+                return;
+            if(log.isDebugEnabled())
+                log.debug("开始初始化脚本, 组件:{}, 名称:{}", resource.getPid(), resource.getName());
+            //log.debug(script);
+            context.evaluateString(scope, script, resource.getName(), 1, null);
+            if(log.isDebugEnabled())
+
+                log.debug("----->  初始化完成");
+        }
+        catch (Exception ex) {
+            log.error("在全局脚本组件 ({}), 初始化脚本异常: \n {}", resource.getPid(), ex.getMessage());
+        }
+    }
+}

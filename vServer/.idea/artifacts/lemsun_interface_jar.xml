@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lemsun-interface:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_interface_jar</output-path>
+    <root id="archive" name="lemsun-interface.jar">
+      <element id="module-output" name="lemsun-interface" />
+    </root>
+  </artifact>
+</component>

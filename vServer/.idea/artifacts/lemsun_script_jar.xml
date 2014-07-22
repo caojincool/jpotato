@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lemsun-script:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_script_jar</output-path>
+    <root id="archive" name="lemsun-script.jar">
+      <element id="module-output" name="lemsun-script" />
+    </root>
+  </artifact>
+</component>

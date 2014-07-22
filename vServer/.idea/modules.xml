@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lemsun-data-viproject/Lemsun-data-viproject.iml" filepath="$PROJECT_DIR$/Lemsun-data-viproject/Lemsun-data-viproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebServer-Admin/WebServer-Admin.iml" filepath="$PROJECT_DIR$/WebServer-Admin/WebServer-Admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-authentication/lemsun-authentication.iml" filepath="$PROJECT_DIR$/lemsun-authentication/lemsun-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-core/lemsun-core.iml" filepath="$PROJECT_DIR$/lemsun-core/lemsun-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-data/lemsun-data.iml" filepath="$PROJECT_DIR$/lemsun-data/lemsun-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-data-sqlserver/lemsun-data-sqlserver.iml" filepath="$PROJECT_DIR$/lemsun-data-sqlserver/lemsun-data-sqlserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-form/lemsun-form.iml" filepath="$PROJECT_DIR$/lemsun-form/lemsun-form.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-form-control/lemsun-form-control.iml" filepath="$PROJECT_DIR$/lemsun-form-control/lemsun-form-control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-formula/lemsun-formula.iml" filepath="$PROJECT_DIR$/lemsun-formula/lemsun-formula.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-helper/lemsun-helper.iml" filepath="$PROJECT_DIR$/lemsun-helper/lemsun-helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-interface/lemsun-interface.iml" filepath="$PROJECT_DIR$/lemsun-interface/lemsun-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-ldbc/lemsun-ldbc.iml" filepath="$PROJECT_DIR$/lemsun-ldbc/lemsun-ldbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-package/lemsun-package.iml" filepath="$PROJECT_DIR$/lemsun-package/lemsun-package.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-reporter/lemsun-reporter.iml" filepath="$PROJECT_DIR$/lemsun-reporter/lemsun-reporter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-script/lemsun-script.iml" filepath="$PROJECT_DIR$/lemsun-script/lemsun-script.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-sql/lemsun-sql.iml" filepath="$PROJECT_DIR$/lemsun-sql/lemsun-sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-task/lemsun-task.iml" filepath="$PROJECT_DIR$/lemsun-task/lemsun-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-test/lemsun-test.iml" filepath="$PROJECT_DIR$/lemsun-test/lemsun-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-web/lemsun-web.iml" filepath="$PROJECT_DIR$/lemsun-web/lemsun-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-websocket/lemsun-websocket.iml" filepath="$PROJECT_DIR$/lemsun-websocket/lemsun-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemsun-websocket-commands/lemsun-websocket-commands.iml" filepath="$PROJECT_DIR$/lemsun-websocket-commands/lemsun-websocket-commands.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,11 @@
+﻿
+fieldset{width :99%; margin :10px 0 10px 10px; padding: 5px; border :1px solid #666; background :#FFFFFF;}
+fieldset dl{padding-bottom :15px; border :1px solid #666;background :#FFFFFF;}
+/*fieldset dl div{ margin: 10px 0 0 10px;} 已注释，新增界面，采用ext 日期控件时，如果不注释，样式很难看 */
+filedset p{padding :5px; border :1px solid #666; background :#FFFFFF;}
+input{width :200px;height: 24px;border :1px double #333;line-height: 2;}
+select{width :200px;height: 28px;border :1px double #333;line-height: 2;}
+td{font:normal 12px 'Lucida Grande',Verdana,sans-serif;}
+
+textarea{ border :1px double #333;}
+.SubmitButton{margin :10 0 0 0px; width:100px;height:28px; cursor:pointer;}

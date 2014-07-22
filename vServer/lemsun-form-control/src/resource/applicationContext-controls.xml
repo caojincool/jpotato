@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+        default-autowire="no">
+
+    <bean name="Lemsun.Win.UILibrary.Lemsun_Grid" class="com.lemsun.form.controls.LemsunGridControl" scope="prototype" />
+    <bean name="Lemsun.Win.UILibrary.Lemsun_Panel" class="com.lemsun.form.controls.PanelControl" scope="prototype" />
+    <bean name="Lemsun.Win.UILibrary.Lemsun_CheckedListBox" class="com.lemsun.form.controls.CheckedListBoxControl" scope="prototype" />
+    <bean name="Lemsun.Win.UILibrary.Lemsun_DateTime" class="com.lemsun.form.controls.DateTimeControl" scope="prototype"/>
+    <bean name="Lemsun.Win.UILibrary.Lemsun_Button" class="com.lemsun.form.controls.BaseButtonControl" scope="prototype"/>
+    <bean name="Lemsun.Win.UILibrary.Lemsun_TextBox" class="com.lemsun.form.controls.TextBoxControl" scope="prototype" />
+    <bean name="Lemsun.Win.UILibrary.Lemsun_Label" class="com.lemsun.form.controls.LabelControl" scope="prototype" />
+
+</beans>

@@ -1,0 +1,111 @@
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+##判断是否为日期表格, 如果是日期表格进行日期数据维护
+#set($adate=$rs.allAdate)
+CREATE TRIGGER TR_${rs.dbTable}_INSERT on $rs.dbTable
+AFTER INSERT
+AS
+BEGIN
+DECLARE @ADATE CHAR(8)
+DECLARE @KEY UNIQUEIDENTIFIER
+DECLARE @CODE #columnType(${rs.resource.codeColumn})
+
+SELECT  @KEY = [_Key] FROM INSERTED
+
+##单据表格同步
+#if($rs.form)
+    SELECT @ADATE = [_adate], @CODE = [Code] FROM INSERTED
+    #if($rs.sync)
+    IF(#foreach($col in $rs.columns)#if($col.sync == 1)UPDATE($col.col) AND #end#end EXISTS(SELECT * FROM INSERTED))
+    BEGIN
+            #foreach($col in $rs.columns)#if($col.sync == 1)
+            DECLARE @$col.col #columnType($col)
+
+            #end#end
+
+            SELECT
+                #foreach($col in $rs.columns)#if($col.sync == 1) @$col.col = [$col.col], #end#end @KEY = [_Key]
+            FROM INSERTED
+
+
+            UPDATE $rs.dbTable
+            SET
+                #foreach($col in $rs.columns)#if($col.sync == 1) [$col.col] = @$col.col, #end#end _lastUpdate = getdate()
+            WHERE
+            CODE = @CODE AND _KEY <> @KEY AND _adate = @ADATE
+    END
+    #end
+
+    ##进行大字段表格的同步
+    #foreach($col in $rs.syncBigColumn)
+        #if($col.sync == 1) ##同步列产生一样的数据, 默认用当前行的KEY
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT @KEY, ISNULL((
+        SELECT TOP 1 A._file_key FROM ${rs.dbTable}_${col.col}_AND AS A JOIN ${rs.dbTable} AS B
+        ON A._row_key = B._key
+        WHERE B.CODE = @CODE
+        ), NEWID()) AS _file_key
+        #end
+        #if($col.sync == 0) ##不同步的数据将进行创建主键
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT @KEY, NEWID() AS _file_key
+        #end
+    #end
+#end
+
+#if($rs.sameCodeRecord) ##如果具备操作日期
+    SELECT @ADATE = [_adate], @CODE = [Code] FROM INSERTED
+
+    INSERT INTO $rs.dbTable ([_adate], [Code], #foreach($c in $rs.syncColumns)#if($c.sync != 0) [$c.col], #end#end [_key])
+    SELECT
+    A.[_adate],
+    B.[Code],
+#foreach($c in $rs.syncColumns) ##
+    #if($c.sync == 1) B.[$c.col], #elseif($c.sync == 2) (CASE WHEN A.[_adate] > @ADATE THEN B.[$c.col] ELSE NULL END) AS [$c.col], #end
+#end
+    newid()
+    FROM
+    (
+        ##插入了全部行的数据
+        #foreach($a in $adate)
+        SELECT '$a' AS _adate
+        #if($velocityHasNext) UNION ALL #end
+        #end
+    ) AS A LEFT JOIN INSERTED AS B
+    ON 1 = 1
+    WHERE A.[_adate] <> @ADATE
+
+    #foreach($col in $rs.syncBigColumn)
+
+        #if($col.sync == 1) ##同步列产生一样的数据, 默认用当前行的KEY
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT _KEY, @KEY FROM $rs.dbTable WHERE Code = @CODE
+        #end
+        #if($col.sync == 0) ##不同步的数据将对每个行产生一个新的ID
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT _KEY, NEWID() FROM $rs.dbTable WHERE Code = @CODE
+        #end
+        #if($col.sync == 2) ##向下同步的数据进行两次插入, 先插入不同步的数据然后插入同步数据
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT _KEY, NEWID() FROM $rs.dbTable WHERE Code = @CODE AND _adate < @ADATE
+
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT _KEY, @KEY FROM $rs.dbTable WHERE Code = @CODE AND _adate >= @ADATE
+        #end
+
+    #end
+#end
+
+
+
+
+#if(!$rs.form && !$rs.sameCodeRecord)
+    ## 对同步大字段表进行同步, 标准的表格没有大字段的同步的设置
+    #foreach($col in $rs.syncBigColumn)
+        INSERT INTO ${rs.dbTable}_${col.col}_AND (_row_key, _file_key)
+        SELECT @KEY, @KEY
+    #end
+#end
+
+END
+

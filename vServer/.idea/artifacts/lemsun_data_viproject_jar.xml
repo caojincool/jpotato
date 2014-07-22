@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="lemsun-data-viproject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lemsun_data_viproject_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Lemsun-data-viproject.jar">
+        <element id="module-output" name="Lemsun-data-viproject" />
+      </element>
+    </root>
+  </artifact>
+</component>

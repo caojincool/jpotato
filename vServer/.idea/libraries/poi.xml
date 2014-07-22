@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="poi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/poi/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-examples-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-excelant-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-ooxml-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-ooxml-schemas-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/poi-scratchpad-3.10-FINAL-20140208.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/stax-api-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/poi/xmlbeans-2.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

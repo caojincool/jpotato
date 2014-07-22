@@ -1,0 +1,21 @@
+#*
+* 获取列为大数据的内容
+* *#
+#* @vtlmacrolibrary path="VM_global_library.vm" *#
+#* @vtlvariable name="rs" type="com.lemsun.data.sqlserver.SqlTable5ResourceWrap" *#
+#* @vtlvariable name="col" type="com.lemsun.data.lmstable.Column" *#
+#* @vtlvariable name="cate" type="int" *#
+#if($cate == 1) ##清除行
+DELETE FROM [${rs.dbTable}_$col.col]
+WHERE EXISTS (SELECT * FROM [${rs.dbTable}_$col.col] AS A JOIN [${rs.dbTable}_${col.col}_AND] AS B
+ON A._parent_key = B._file_key
+WHERE B._row_key = ? AND A._filename = ? AND A._type = ?)
+#end
+#if($cate == 2) ##新增数据
+INSERT INTO [${rs.dbTable}_$col.col]
+(_key, _parent_key, _filename, _type, _remark, _file)
+VALUES
+(
+?,?, ?, ?, ?, ?
+)
+#end

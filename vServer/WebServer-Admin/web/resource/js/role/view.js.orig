@@ -1,0 +1,179 @@
+Ext.Loader.setConfig({
+    enabled: true
+});
+Ext.Loader.setPath('Ext.ux',rootPath+ 'ext/ux');
+
+Ext.require([
+    'Ext.selection.CellModel',
+    'Ext.grid.*',
+    'Ext.data.*',
+    'Ext.util.*',
+    'Ext.state.*',
+    'Ext.form.*',
+    'Ext.ux.CheckColumn'
+]);
+
+if (window.location.search.indexOf('scopecss') !== -1) {
+    Ext.scopeResetCSS = true;
+}
+
+Ext.onReady(function(){
+    Ext.tip.QuickTipManager.init();
+    var panelEl = Ext.get('rolePanel');
+
+    Ext.define('Role', {
+        extend: 'Ext.data.Model',
+        fields: [
+            {name: 'name'},
+            {name: 'describe'},
+            {name: 'isSystem', type:'boolean' },
+            {name: 'createTime', type: 'date',  dateFormat: 'c', defaultValue: null},
+            {name:'createAccount'}
+        ],
+        idProperty: 'name'
+    });
+    var pagesize = 2;
+    var store = Ext.create('Ext.data.Store', {
+        model: 'Role',
+        pageSize:  pagesize ,
+        proxy: {
+            type: 'ajax',
+            url: rootPath + 'role/list/get',
+            reader: {
+                root: 'entity.content',
+                totalProperty: 'entity.totalElements'
+            },
+            simpleSortMode: true
+        },
+        autoLoad:true
+    });
+    //数据参数
+    storeParam = {
+        name:'',
+        sysName:''
+    };
+    store.on('beforeload', function (store, options) {
+        storeParam.page= options.page;
+        // resourceParam.name = Ext.getCmp('comname').getValue();
+        // resourceParam.category = Ext.getCmp('txtCombox').getValue();
+        Ext.apply(store.proxy.extraParams, storeParam);
+    });
+    var panel = Ext.create('Ext.panel.Panel', {
+        id:'rolePanel',
+        layout:'fit',
+        height:600,
+        frame: true,
+        renderTo:panelEl,
+        items:[{
+            title:'角色信息',
+            margins: '2 2 0 2',
+                store: store,
+                xtype:'gridpanel',
+                tbar:['->', {
+                    text:'创建角色',
+                iconCls:'add-16',
+                handler:function(){
+                    location.href = rootPath + "role/create";
+                }
+            }],
+            viewConfig: {
+                stripeRows: true,
+                enableTextSelection: true
+            },
+            columns:[{
+                text     : '角色名称',
+                align    : 'left',
+                width:80,
+                flex    : 10,
+                sortable : false,
+                dataIndex: 'name'
+            }, {
+                text     : '角色说明',
+                flex     : 80,
+                sortable : true,
+                dataIndex: 'describe'
+            }, {
+                text     : '内置',
+                width    : 40,
+                xtype    : 'checkcolumn',
+                stopSelection:false,
+                fixed:false,
+                dataIndex: 'isSystem'
+            }, {
+                text     : '创建时间',
+                width    : 140,
+                sortable : true,
+                xtype    : 'datecolumn',
+                format   : 'Y-m-d H:i:s',
+                dataIndex: 'createTime'
+            }, {
+                text     : '创建者',
+                width    : 80,
+                sortable : true,
+                align    : 'right',
+                dataIndex: 'createAccount'
+            }, {
+                text     : '操作',
+                width    : 100,
+                align    : 'center',
+                sortable : false,
+                xtype    : 'actioncolumn',
+                layout: 'vbox',
+                items    : [{
+                    tooltip: '详细信息',
+                    iconCls:'action-column-margin',
+                    icon: 'resource/icons/eye_16x16.png',
+                    handler:function(grid,rowIndex){
+                        var name=store.getAt(rowIndex).get('name');
+                        location.href = rootPath + 'role/detailedByExt/'+name;
+                    }
+                }, {
+                    tooltip:'修改',
+                    iconCls:'action-column-margin',
+                    icon:'resource/icons/settings_16x16.png',
+                    handler:function(gird,rowIndex){
+                        //系统内置角色禁止删除
+                        var isSystem=store.getAt(rowIndex).get('isSystem');
+                        if(isSystem){
+                            Ext.MessageBox.alert('提示','系统内置角色,禁止编辑!');
+                            return;
+                        }
+                        location.href = rootPath + 'role/edit/'+store.getAt(rowIndex).get('name');
+                    }
+                }, {
+                    tooltip: '删除',
+                    iconCls:'action-column-margin',
+                    icon:'resource/icons/deletelayer_16x16.png',
+                    handler:function(grid, rowIndex){
+                        //系统内置角色禁止删除
+                        var isSystem=store.getAt(rowIndex).get('isSystem');
+                        if(isSystem){
+                                Ext.MessageBox.alert('提示','系统内置角色,禁止删除!');
+                                return;
+                        }
+                        var name=store.getAt(rowIndex).get('name');
+                        location.href = rootPath + 'role/delete/'+name;
+                    }
+                }]
+            }],
+            bbar: Ext.create('Ext.PagingToolbar',{
+                pageSize: pagesize,
+                store: store,
+                prependButtons: true,
+                displayInfo: true,
+                displayMsg: '显示第{0}条到{1}条记录,一共{2}条',
+                emptyMsg: '没有数据显示'
+            })
+        }]
+    });
+
+    panelEl.on('DOMNodeRemovedFromDocument', function(){
+        Ext.getCmp('rolePanel').destroy();
+    });
+
+    Ext.EventManager.onWindowResize(function(){
+        Ext.getCmp('rolePanel').doLayout();
+    });
+
+ //   ShowContext();
+});
