@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="WebUI:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebUI_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="WebUI/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="WebUI" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Spring MVC-3.2.11.RELEASE" />
+          <element id="library" level="application" name="Spring-3.2.11.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
