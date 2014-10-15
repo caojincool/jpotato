@@ -11,8 +11,6 @@ import java.util.UUID;
  * Created by dpyang on 2014/10/7.
  */
 public class ForumServiceTest extends SuperTest {
-
-
     @Autowired
     private ForumService forumService;
 
@@ -20,8 +18,8 @@ public class ForumServiceTest extends SuperTest {
     public void testAddForum(){
         Forum forum=new Forum();
         forum.setId(UUID.randomUUID());
-        forum.setName("板块1");
-        forum.setNameEn("bankuaiyi");
+        forum.setName("板块3");
+        forum.setNameEn("bankuaisan");
         forum.setEnabled(true);
 
         forumService.addForum(forum);
@@ -35,5 +33,10 @@ public class ForumServiceTest extends SuperTest {
 
         getLog().info("查询到：d0f6c1ad-c1ec-41bc-870a-467e361d98a4");
         getLog().info(forum.getName());
+    }
+
+    @Test
+    public void testDeleteForum(){
+
     }
 }

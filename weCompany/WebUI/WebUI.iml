@@ -27,6 +27,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Spring-3.2.11.RELEASE" level="application" />
     <orderEntry type="library" name="Spring MVC-3.2.11.RELEASE" level="application" />
+    <orderEntry type="library" name="jstl" level="project" />
   </component>
 </module>
 

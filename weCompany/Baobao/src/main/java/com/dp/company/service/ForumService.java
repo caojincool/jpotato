@@ -23,4 +23,12 @@ public class ForumService {
     public Forum getForum(UUID id){
         return forumDao.getForum(id.toString());
     }
+
+    public void updateForum(Forum forum){
+        forumDao.updateForum(forum);
+    }
+
+    public void deleteForum(UUID forumID){
+        forumDao.deleteForum(forumID);
+    }
 }
