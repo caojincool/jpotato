@@ -12,6 +12,8 @@ public class HomeController {
 
     @RequestMapping(value = {"/"})
     public String index(){
+        String p="http://blog.csdn.net/zrbin153/article/details/6579277";
         return "/user/index";
+
     }
 }

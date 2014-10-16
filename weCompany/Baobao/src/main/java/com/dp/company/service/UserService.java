@@ -5,6 +5,10 @@ import com.dp.company.dao.UserDao;
 import com.dp.company.domain.LoginLog;
 import com.dp.company.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -13,14 +17,13 @@ import java.util.Date;
  * Created by dpyang on 2014/10/5.
  */
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     private UserDao userDao;
 
     @Autowired
     private LoginLogDao loginLogDao;
-
 
     public boolean hasMatchUser(String userName,String password){
         int matchCount=userDao.getMatchCount(userName,password);
@@ -40,5 +43,10 @@ public class UserService {
 
         userDao.updateLoginInfo(user);
         loginLogDao.insertLoginLog(loginLog);
+    }
+
+    @Override
+    public User loadUserByUsername(String s) throws UsernameNotFoundException, DataAccessException {
+        return null;
     }
 }

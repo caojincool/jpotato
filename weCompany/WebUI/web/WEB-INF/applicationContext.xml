@@ -18,6 +18,7 @@
             p:username="${jdbc.username}"
             p:password="${jdbc.password}"/>
 
+    <!--安全框架账户实现对象-->
     <bean id="userDetailsService"
           class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl"
           p:dataSource-ref="dataSource" />
@@ -39,5 +40,7 @@
         <sec:form-login login-page="/login.jsp" />
 
         <sec:logout />
+
+        <sec:session-management session-fixation-protection="none"/>
     </sec:http>
 </beans>
