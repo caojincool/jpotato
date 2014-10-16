@@ -25,9 +25,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Spring-3.2.11.RELEASE" level="application" />
-    <orderEntry type="library" name="Spring MVC-3.2.11.RELEASE" level="application" />
     <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="spring" level="project" />
+    <orderEntry type="library" name="spring-mvc" level="project" />
+    <orderEntry type="library" name="spring-security" level="project" />
   </component>
 </module>
 

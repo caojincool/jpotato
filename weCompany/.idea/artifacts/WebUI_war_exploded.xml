@@ -8,9 +8,10 @@
           <element id="module-output" name="WebUI" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="application" name="Spring MVC-3.2.11.RELEASE" />
-          <element id="library" level="application" name="Spring-3.2.11.RELEASE" />
           <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="spring-mvc" />
+          <element id="library" level="project" name="spring" />
+          <element id="library" level="project" name="spring-security" />
         </element>
       </element>
     </root>

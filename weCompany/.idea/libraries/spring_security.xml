@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="spring-security">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-security/spring-security-acl-3.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-security/spring-security-config-3.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-security/spring-security-taglibs-3.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-security/spring-security-web-3.0.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-security-core-3.0.2.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

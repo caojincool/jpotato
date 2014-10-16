@@ -10,8 +10,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>投资计划统计系统</title>
-    <link href="../../css/main_login.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../../js/Jikey.js"></script>
+    <link href="../css/main_login.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/Jikey.js"></script>
     <script type="text/javascript">
         window.onload = function(){
             J.onBlurText('uname');
@@ -34,7 +34,7 @@
                     <input name="password" id="pwd" type="password" class="ip" value="haoqing" maxlength="10" />
                 </li>
                 <li><span>
-          <input  type="image" src="../../images/ente.png" title="登录系统"/>
+          <input  type="image" src="../images/ente.png" title="登录系统"/>
           </span></li>
             </ul>
             <p id="copy">Version 2.0 Copyright &copy; 2010 <a href="http://jikey.cnblogs.com" target="_blank" >林木森</a></p>

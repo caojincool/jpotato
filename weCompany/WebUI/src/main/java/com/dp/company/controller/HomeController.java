@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by dpyang on 2014/9/29.
  */
 @Controller
+@RequestMapping("/user")
 public class HomeController {
 
-    @RequestMapping(value = {"/","home"})
+    @RequestMapping(value = {"/"})
     public String index(){
-        return "index";
+        return "/user/index";
     }
-
-    @RequestMapping("login")
-    public String logon(){return "login";}
 }
