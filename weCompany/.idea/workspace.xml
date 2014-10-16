@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/FzghbController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/ManagerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/PresidentController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/Baobao.iml" afterPath="$PROJECT_DIR$/Baobao/Baobao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/HomeController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/Test.iml" afterPath="$PROJECT_DIR$/Test/Test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/User.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/UserDao.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/WebUI.iml" afterPath="$PROJECT_DIR$/WebUI/WebUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WebUI_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WebUI_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/jdbc.properties" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\dp\jpotato\weCompany\WebUI\web\WEB-INF\views\index.jsp" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/user/index.jsp" />
-      <change type="MOVED" beforePath="E:\dp\jpotato\weCompany\WebUI\web\WEB-INF\views\login.jsp" afterPath="$PROJECT_DIR$/WebUI/web/login.jsp" />
     </list>
     <ignored path="weCompany.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,10 +118,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JdbcDaoImpl.class" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JdbcDaoImpl.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1700" selection-end="1700" vertical-scroll-proportion="1.0969977" vertical-offset="0" max-vertical-offset="1235">
+            <state line="26" column="0" selection-start="1700" selection-end="1700" vertical-scroll-proportion="-19.0" vertical-offset="0" max-vertical-offset="1235">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="35264">
               <folding />
             </state>
           </provider>
@@ -1364,12 +1352,17 @@
       <workItem from="1413207902244" duration="691000" />
       <workItem from="1413379078521" duration="177000" />
       <workItem from="1413418063438" duration="1834000" />
-      <workItem from="1413424444496" duration="7088000" />
+      <workItem from="1413424444496" duration="7154000" />
     </task>
+    <task id="LOCAL-00001" summary="加入spring security框架">
+      <created>1413431911956</created>
+      <updated>1413431911956</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53773000" />
+    <option name="totallyTimeSpent" value="53839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
@@ -1418,6 +1411,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="加入spring security框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入spring security框架" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1762,7 +1757,14 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1700" selection-end="1700" vertical-scroll-proportion="1.0969977" vertical-offset="0" max-vertical-offset="1235">
+        <state line="26" column="0" selection-start="1700" selection-end="1700" vertical-scroll-proportion="-19.0" vertical-offset="0" max-vertical-offset="1235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="35264">
           <folding />
         </state>
       </provider>
