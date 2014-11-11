@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="完成栏目和类别的管理&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/CategoryDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/CategoryType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/src/main/resource/commons-logging.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/Category.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/jsp/component/add/DB.jsp" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/jsp/component/add/DB.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/ForumDao.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/ForumDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/service/ForumService.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/service/ForumService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/test/com/dp/company/ForumServiceTest.java" afterPath="$PROJECT_DIR$/Test/src/main/test/com/dp/company/ForumServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" afterPath="$PROJECT_DIR$/../vClient/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/HomeController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/company/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/User.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/UserDao.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/service/UserService.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/test/com/dp/company/UserServiceTest.java" afterPath="$PROJECT_DIR$/Test/src/main/test/com/dp/company/UserServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/applicationContext-data.xml" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/applicationContext-data.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/WebServer-Client/web/WEB-INF/config.properties" afterPath="$PROJECT_DIR$/../vClient/WebServer-Client/web/WEB-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/config.properties" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/resource/jdbc.properties" afterPath="$PROJECT_DIR$/Test/src/main/resource/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/jsp/flow/template/view.jsp" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/jsp/flow/template/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" />
+    <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="weCompany.iws" />
@@ -183,10 +156,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForumDao.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ForumDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/ForumDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="25" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.33333334" vertical-offset="198" max-vertical-offset="1444">
+            <state line="30" column="25" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1444">
               <folding>
                 <marker date="1415689176907" expanded="true" signature="675:756" placeholder="INSERT INTO ..." />
                 <marker date="1415689176907" expanded="true" signature="792:853" placeholder="UPDATE t_for..." />
@@ -194,6 +167,15 @@
                 <marker date="1415689176907" expanded="true" signature="987:1018" placeholder="DELETE from ..." />
                 <marker date="1415689176907" expanded="true" signature="2727:2748" placeholder="select * fro..t_forum..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="32775">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1139,24 +1121,28 @@
       <workItem from="1413536422739" duration="82000" />
       <workItem from="1414209542942" duration="1387000" />
       <workItem from="1415667178124" duration="4450000" />
-      <workItem from="1415683993202" duration="15617000" />
+      <workItem from="1415683993202" duration="15675000" />
     </task>
     <task id="LOCAL-00001" summary="加入spring security框架">
       <created>1413431911956</created>
       <updated>1413431911956</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成栏目和类别的管理&#10;">
+      <created>1415704981899</created>
+      <updated>1415704981899</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81940000" />
+    <option name="totallyTimeSpent" value="81998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1322,11 +1308,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
@@ -1625,7 +1606,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/company/dao/ForumDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="25" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.33333334" vertical-offset="198" max-vertical-offset="1444">
+        <state line="30" column="25" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1444">
           <folding>
             <marker date="1415689176907" expanded="true" signature="675:756" placeholder="INSERT INTO ..." />
             <marker date="1415689176907" expanded="true" signature="792:853" placeholder="UPDATE t_for..." />
@@ -1633,6 +1614,13 @@
             <marker date="1415689176907" expanded="true" signature="987:1018" placeholder="DELETE from ..." />
             <marker date="1415689176907" expanded="true" signature="2727:2748" placeholder="select * fro..t_forum..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="32775">
+          <folding />
         </state>
       </provider>
     </entry>
