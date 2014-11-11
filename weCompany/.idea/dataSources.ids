@@ -667,6 +667,28 @@
       <column name="max_user_connections" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <primary-key name="PRIMARY" columns="Host,User"/>
     </table>
+    <table name="authorities" schema="" catalog="sampledb" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="authority" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <index name="ix_auth_username" unique="true" columns="username,authority"/>
+    </table>
+    <table name="group_authorities" schema="" catalog="sampledb" type="TABLE">
+      <column name="group_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="authority" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <index name="fk_group_authorities_group" unique="false" columns="group_id"/>
+    </table>
+    <table name="group_members" schema="" catalog="sampledb" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="group_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="fk_group_members_group" unique="false" columns="group_id"/>
+    </table>
+    <table name="groups" schema="" catalog="sampledb" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="group_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="role" schema="" catalog="sampledb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
@@ -723,6 +745,13 @@
       <column name="login_datetime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="login_log_id"/>
     </table>
+    <table name="t_tree" schema="" catalog="sampledb" type="TABLE">
+      <column name="_id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="_name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_parent" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="_path" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+    </table>
     <table name="t_user" schema="" catalog="sampledb" type="TABLE">
       <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="user_name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
@@ -748,6 +777,12 @@
       <foreign-key name="FK143BF46AF6AD4381" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sampledb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK143BF46A51827FA1" unique="false" columns="role_id"/>
       <index name="FK143BF46AF6AD4381" unique="false" columns="user_id"/>
+    </table>
+    <table name="users" schema="" catalog="sampledb" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="username"/>
     </table>
   </data-source>
 </component>
