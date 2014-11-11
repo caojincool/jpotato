@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 /**
  * Created by dpyang on 2014/10/3.
@@ -19,28 +20,28 @@ public class UserDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public int getMatchCount(String userName,String password){
-        String sql="select count(*) from t_user where user_name=? and password=?";
-        return jdbcTemplate.queryForInt(sql,new Object[]{userName,password});
+    public int getMatchCount(String loginAccount,String password){
+        String sql="select count(*) from t_user where _loginAccount=? and _password=?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{loginAccount,password},Integer.class);
     }
 
     public User findUserByUserName(final String userName){
-        String sql="select user_id,user_name,credits from t_user where user_name=?";
+        String sql="select _id,_showName from t_user where _loginAccount=?";
         final User user=new User();
         jdbcTemplate.query(sql,new Object[]{userName},new RowCallbackHandler() {
             @Override
             public void processRow(ResultSet resultSet) throws SQLException {
-                user.setUserId(resultSet.getInt("user_id"));
-                user.setUsername(userName);
-                user.setCredits(resultSet.getInt("credits"));
+                user.setId(UUID.fromString(resultSet.getString("_id")));
+                user.setLoginAccount(userName);
+                user.setShowName(resultSet.getString("_showName"));
             }
         });
         return user;
     }
 
     public void updateLoginInfo(User user){
-        String sql="update t_user set last_visit=?,last_Ip=?,credits=? where user_id=?";
+        String sql="update t_user set _last_visit=?,_last_Ip=? where _id=?";
 
-        jdbcTemplate.update(sql,new Object[]{user.getLastVisit(),user.getLastIp(),user.getCredits()});
+        jdbcTemplate.update(sql,new Object[]{user.getLastVisit(),user.getLastIp(),user.getId()});
     }
 }

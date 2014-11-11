@@ -17,7 +17,7 @@ import java.util.Date;
  * Created by dpyang on 2014/10/5.
  */
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {
 
     @Autowired
     private UserDao userDao;
@@ -35,18 +35,8 @@ public class UserService implements UserDetailsService {
     }
 
     public void loginSuccess(User user){
-        user.setCredits(5+user.getCredits());
-        LoginLog loginLog=new LoginLog();
-        loginLog.setUserId(user.getUserId());
-        loginLog.setIp(user.getLastIp());
-        loginLog.setLoginDate(user.getLastVisit());
-
         userDao.updateLoginInfo(user);
-        loginLogDao.insertLoginLog(loginLog);
     }
 
-    @Override
-    public User loadUserByUsername(String s) throws UsernameNotFoundException, DataAccessException {
-        return null;
-    }
+
 }

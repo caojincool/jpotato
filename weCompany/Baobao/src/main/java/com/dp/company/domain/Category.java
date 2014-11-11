@@ -17,7 +17,8 @@ public class Category {
     private String description;
     private String descriptionEn;
     private boolean isEnabled;
-    private String categoryType;
+    private CategoryType categoryType;
+    private UUID forumId;
 
     public UUID getId() {
         return id;
@@ -107,11 +108,22 @@ public class Category {
         this.isEnabled = isEnabled;
     }
 
-    public String getCategoryType() {
+    public CategoryType getCategoryType() {
         return categoryType;
     }
 
-    public void setCategoryType(String categoryType) {
+    public void setCategoryType(CategoryType categoryType) {
         this.categoryType = categoryType;
     }
+
+    public UUID getForumId() {
+        return forumId;
+    }
+
+    public void setForumId(UUID forumId) {
+        this.forumId = forumId;
+    }
+
+
 }
+

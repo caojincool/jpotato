@@ -40,7 +40,7 @@ public class UserServiceTest {
 
     @Test
     public void testHasMatchUser() {
-        boolean b1 = userService.hasMatchUser("admin", "123456");
+        boolean b1 = userService.hasMatchUser("admin", "123123");
         Assert.assertTrue(b1);
     }
 

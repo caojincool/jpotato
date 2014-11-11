@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec9452-156e-4d87-b709-0a6d3e5973cc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties" afterPath="$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f6fb9459-1aa3-44bf-a12b-06260da9e5b6" name="view" comment="create view" />
     <ignored path="VProjectClient.iws" />
@@ -161,46 +159,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AccountServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/AccountServiceImpl.java">
+      <file leaf-file-name="HomeController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1881">
+            <state line="93" column="14" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.7574468" vertical-offset="929" max-vertical-offset="1634">
+              <folding>
+                <element signature="method#getResourceAttachment#0;class#HomeController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpServletRequest.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://D:/Program Files/apache-tomcat-8.0.14/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="-3.8" vertical-offset="0" max-vertical-offset="1577">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/RemoteServiceImpl.java">
+      <file leaf-file-name="MultipartHttpServletRequest.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/org.springframework.web-3.1.2.RELEASE.jar!/org/springframework/web/multipart/MultipartHttpServletRequest.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6346">
+            <state line="11" column="60" selection-start="473" selection-end="492" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeReference.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jackson-core-2.0.5.jar!/com/fasterxml/jackson/core/type/TypeReference.class">
+      <file leaf-file-name="golfing-servlet.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/golfing-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="12" selection-start="143" selection-end="143" vertical-scroll-proportion="0.35656837" vertical-offset="0" max-vertical-offset="373">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Md5Test.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lemsun-test/src/java/com/lemsun/client/Md5Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
+            <state line="24" column="18" selection-start="1127" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
               <folding />
             </state>
           </provider>
@@ -254,7 +245,6 @@
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/mvc/lmsview/ScriptResourceView.java" />
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/mvc/lmsview/TextResourceView.java" />
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/mvc/lmsview/ViewScope.java" />
-        <option value="$PROJECT_DIR$/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/model/ResourceAttach.java" />
         <option value="$PROJECT_DIR$/lemsun-test/src/resource/config.properties" />
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/model/PreviewImageSize.java" />
@@ -274,6 +264,7 @@
         <option value="$PROJECT_DIR$/lemsun-test/src/java/com/lemsun/client/Md5Test.java" />
         <option value="$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties" />
+        <option value="$PROJECT_DIR$/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" />
       </list>
     </option>
   </component>
@@ -358,10 +349,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VProjectClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServer-Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VProjectClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServer-Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VProjectClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServer-Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VProjectClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebServer-Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,7 +436,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth1" value="230" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth2" value="237" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/Lms/vClient" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth0" value="229" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder1" value="1" />
@@ -403,6 +466,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1167,6 +1231,8 @@
       <workItem from="1405908253393" duration="1815000" />
       <workItem from="1405935274569" duration="865000" />
       <workItem from="1405937153401" duration="236000" />
+      <workItem from="1414578299778" duration="1390000" />
+      <workItem from="1414802222165" duration="783000" />
     </task>
     <task id="LOCAL-00001" summary="temp">
       <created>1361438627488</created>
@@ -1188,7 +1254,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141027000" />
+    <option name="totallyTimeSpent" value="143200000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1211,8 +1277,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5340454" sideWeight="0.49358973" order="16" side_tool="false" content_ui="tabs" />
@@ -1229,7 +1295,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42175066" sideWeight="0.24426934" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6248331" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25500667" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24641834" sideWeight="0.44258872" order="1" side_tool="true" content_ui="tabs" />
@@ -1249,6 +1314,7 @@
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66755676" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1291,48 +1357,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/jackson-core-2.0.5.jar!/com/fasterxml/jackson/core/type/TypeReference.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="12" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lemsun-test/src/java/com/lemsun/client/Md5Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1311">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/RemoteServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jackson-core-2.0.5.jar!/com/fasterxml/jackson/core/type/TypeReference.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
@@ -1403,11 +1427,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lemsun-test/src/java/com/lemsun/client/core/service/impl/ResourceServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
@@ -1539,11 +1558,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/RemoteServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/WebServer-Client/web/clientapp/reporter/Application Files/WBLemsunV_1_0_0_8/WBLemsunV.xbap">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="679" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lemsun-test/src/java/com/lemsun/client/Md5Test.java">
@@ -1553,24 +1570,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/AccountServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/RemoteServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1881">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebServer-Client/web/clientapp/reporter/Application Files/WBLemsunV_1_0_0_8/WBLemsunV.xbap">
+    <entry file="file://$PROJECT_DIR$/lemsun-client/src/com/lemsun/client/core/service/impl/AccountServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="679">
+        <state line="18" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.37730497" vertical-offset="76" max-vertical-offset="1881">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="12" selection-start="143" selection-end="143" vertical-scroll-proportion="0.35656837" vertical-offset="0" max-vertical-offset="373">
+        <state line="7" column="12" selection-start="143" selection-end="143" vertical-scroll-proportion="0.18523677" vertical-offset="0" max-vertical-offset="718">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer-Client/web/WEB-INF/golfing-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="18" selection-start="1127" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/httpcore-4.2.2.jar!/org/apache/http/message/BasicHttpEntityEnclosingRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.17431192" vertical-offset="0" max-vertical-offset="654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/httpcore-4.2.2.jar!/org/apache/http/message/BasicHttpRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.16764706" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/httpcore-4.2.2.jar!/org/apache/http/HttpRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="0.13708514" vertical-offset="0" max-vertical-offset="693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/apache-tomcat-8.0.14/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="-3.8" vertical-offset="0" max-vertical-offset="1577">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/org.springframework.web-3.1.2.RELEASE.jar!/org/springframework/web/multipart/MultipartHttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="60" selection-start="473" selection-end="492" vertical-scroll-proportion="-7.6" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="14" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.7574468" vertical-offset="929" max-vertical-offset="1634">
+          <folding>
+            <element signature="method#getResourceAttachment#0;class#HomeController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
