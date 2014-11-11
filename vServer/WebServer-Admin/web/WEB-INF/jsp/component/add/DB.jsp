@@ -19,7 +19,11 @@
 <body  class="detailsbody">
 <div class="headerspace"></div>
 <jsp:include page="../../common/noTop.jsp"/>
+<%
+    var result1=sqlr.select('ccc',sql);
 
+response.getWriter().write("");
+%>
 <div class="detailscontent">
     <div class="breadcrumbs">
         <a href="javascript:void(0);">填写基础信息</a>

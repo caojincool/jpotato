@@ -33,7 +33,7 @@
 
     <mongo:mongo id="mongo" host="${db.host}" port="${db.port}" />
 
-    <mongo:db-factory id="mongoDbFactory" dbname="lemsun" mongo-ref="mongo"    />
+    <mongo:db-factory id="mongoDbFactory" dbname="Lymcq" mongo-ref="mongo"    />
 
     <mongo:mapping-converter id="converter" />
 
