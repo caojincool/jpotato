@@ -11,7 +11,7 @@
                            http://www.springframework.org/schema/context/spring-context.xsd
                            ">
     <!--扫描类包-->
-    <context:component-scan base-package="com.dp.ui"/>
+    <context:component-scan base-package="com.dp.baobao"/>
 
     <!--使用配置文件-->
     <context:property-placeholder location="jdbc.properties"/>
