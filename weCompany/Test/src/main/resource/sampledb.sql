@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2014-11-11 19:26:55
+Date: 2014-11-12 18:25:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,6 +27,38 @@ CREATE TABLE `authorities` (
 
 -- ----------------------------
 -- Records of authorities
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_article
+-- ----------------------------
+DROP TABLE IF EXISTS `t_article`;
+CREATE TABLE `t_article` (
+  `_id` char(36) NOT NULL,
+  `_categoryid` char(36) DEFAULT NULL,
+  `_name` varchar(128) DEFAULT NULL,
+  `_nameEn` varchar(128) DEFAULT NULL,
+  `_content` text,
+  `_contentEn` text,
+  `_keyWord` varchar(256) DEFAULT NULL,
+  `_keyWordEn` varchar(256) DEFAULT NULL,
+  `_description` varchar(512) DEFAULT NULL,
+  `_descriptionEn` varchar(512) DEFAULT NULL,
+  `_isEnabled` bit(1) DEFAULT NULL,
+  `_isFirst` bit(1) DEFAULT NULL,
+  `_viewCount` smallint(6) DEFAULT NULL,
+  `_createDate` datetime DEFAULT NULL,
+  `_updateDate` datetime DEFAULT NULL,
+  `_gurl` varchar(256) DEFAULT NULL,
+  `_zpic` varchar(512) DEFAULT NULL,
+  `_homePic` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`_id`),
+  KEY `fk_article_category_id` (`_categoryid`),
+  CONSTRAINT `fk_article_category_id` FOREIGN KEY (`_categoryid`) REFERENCES `t_category` (`_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_article
 -- ----------------------------
 
 -- ----------------------------
@@ -118,6 +150,13 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 INSERT INTO `t_user` VALUES ('87e8b39c-68b3-11e4-9e75-003067974107', '23', '23', null, null, '23');
 INSERT INTO `t_user` VALUES ('c193fb1d-68b3-11e4-9e75-003067974107', 'dpyang', '123123', null, null, 'admin');
+DROP TRIGGER IF EXISTS `tr_article_default_id`;
+DELIMITER ;;
+CREATE TRIGGER `tr_article_default_id` BEFORE INSERT ON `t_article` FOR EACH ROW if(new._id is null or new._id ='')
+then set new._id=uuid();
+end if
+;;
+DELIMITER ;
 DROP TRIGGER IF EXISTS `tr_default_id`;
 DELIMITER ;;
 CREATE TRIGGER `tr_default_id` BEFORE INSERT ON `t_category` FOR EACH ROW if(new._id='' or new._id is null)

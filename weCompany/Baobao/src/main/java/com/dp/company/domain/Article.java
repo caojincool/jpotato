@@ -23,6 +23,10 @@ public class Article {
     private Date createDate;
     private Date updateDate;
     private UUID categoryID;
+    private String gurl;        //购买链接
+    private String zpic;        //主图,以|作为分割
+    private String homePic;     //首页滚动图片
+
 
     public UUID getId() {
         return id;
@@ -142,5 +146,29 @@ public class Article {
 
     public void setCategoryID(UUID categoryID) {
         this.categoryID = categoryID;
+    }
+
+    public String getGurl() {
+        return gurl;
+    }
+
+    public void setGurl(String gurl) {
+        this.gurl = gurl;
+    }
+
+    public String getZpic() {
+        return zpic;
+    }
+
+    public void setZpic(String zpic) {
+        this.zpic = zpic;
+    }
+
+    public String getHomePic() {
+        return homePic;
+    }
+
+    public void setHomePic(String homePic) {
+        this.homePic = homePic;
     }
 }
