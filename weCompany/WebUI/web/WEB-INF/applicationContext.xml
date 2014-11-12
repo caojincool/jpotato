@@ -12,7 +12,7 @@
                            http://www.springframework.org/schema/security/spring-security.xsd">
 
     <context:property-placeholder location="/WEB-INF/jdbc.properties"/>
-
+    <context:component-scan base-package="com.dp.baobao"/>
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
             p:driverClassName="${jdbc.driverClassName}"
             p:url="${jdbc.url}"
@@ -29,13 +29,13 @@
     <!--</sec:authentication-manager>-->
 
     <!--<sec:http>-->
-        <!--&lt;!&ndash;公司领导&ndash;&gt;-->
+        <!--公司领导-->
         <!--<sec:intercept-url pattern="/president_portal/**" access="ROLE_PRESIDENT" />-->
-        <!--&lt;!&ndash;发展规划部&ndash;&gt;-->
+        <!--发展规划部-->
         <!--<sec:intercept-url pattern="/president_fzghb/**" access="ROLE_FZGHB"/>-->
-        <!--&lt;!&ndash;部门审核者&ndash;&gt;-->
+        <!--部门审核者-->
         <!--<sec:intercept-url pattern="/manager_portal/**" access="ROLE_MANAGER" />-->
-        <!--&lt;!&ndash;公司员工&ndash;&gt;-->
+        <!--公司员工-->
         <!--<sec:intercept-url pattern="/user/**" access="ROLE_USER" />-->
 
         <!--<sec:form-login login-page="/login.jsp" />-->

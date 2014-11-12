@@ -29,6 +29,7 @@
     <orderEntry type="library" name="spring" level="project" />
     <orderEntry type="library" name="spring-mvc" level="project" />
     <orderEntry type="library" name="spring-security" level="project" />
+    <orderEntry type="module" module-name="Baobao" />
   </component>
 </module>
 
