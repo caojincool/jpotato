@@ -79,7 +79,6 @@ public class ArticleDao {
         //初始化
         Date date=new Date(new java.util.Date().getTime());
 
-
         article.setUpdateDate(date);
 
         jdbcTemplate.update(UPDATE,new PreparedStatementSetter() {
@@ -113,7 +112,6 @@ public class ArticleDao {
         jdbcTemplate.update(DELETE,new Object[]{id});
     }
 
-
     public Article get(final String id){
         final Article article=new Article();
          jdbcTemplate.query(GET,new Object[]{id},new RowCallbackHandler() {
@@ -135,6 +133,7 @@ public class ArticleDao {
                 article.setCategoryID(UUID.fromString(resultSet.getString("_categoryID")));
                 article.setGurl(resultSet.getString("_gurl"));
                 article.setZpic(resultSet.getString("_zpic"));
+                article.setViewCount(resultSet.getInt("_viewCount"));
                 article.setHomePic(resultSet.getString("_homePic"));
             }
         });
@@ -161,6 +160,7 @@ public class ArticleDao {
                 article.setUpdateDate(resultSet.getDate("_updateDate"));
                 article.setCategoryID(UUID.fromString(resultSet.getString(categoryId)));
                 article.setGurl(resultSet.getString("_gurl"));
+                article.setViewCount(resultSet.getInt("_viewCount"));
                 article.setZpic(resultSet.getString("_zpic"));
                 article.setHomePic(resultSet.getString("_homePic"));
                 return article;
