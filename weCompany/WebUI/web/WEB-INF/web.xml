@@ -26,19 +26,12 @@
 
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/common/*</url-pattern>
+        <url-pattern>/jquery-easyui-1.2.6/*</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/css/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/images/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/js/*</url-pattern>
+        <url-pattern>/style/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

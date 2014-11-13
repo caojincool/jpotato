@@ -4,6 +4,10 @@ import com.dp.baobao.domain.Article;
 import com.dp.baobao.dao.ArticleDao;
 import com.dp.baobao.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,5 +65,14 @@ public class ArticleService implements IArticleService {
             throw new RuntimeException("文章编码不能为空！");
 
         articleDao.updateViewCount(id.toString());
+    }
+
+    @Override
+    public Page<Article> getPageByCategory(UUID categoryId,int page, int size,Sort sort) {
+        if(categoryId==null)
+            throw new RuntimeException("文章所属编码不能为空！");
+        Pageable pageRequest=new PageRequest(page,size,sort==null?new Sort(Sort.Direction.DESC,"name"):sort);
+
+        return articleDao.queryPageByCategory(categoryId.toString(),pageRequest);
     }
 }

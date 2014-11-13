@@ -4,6 +4,8 @@ import com.dp.baobao.domain.Article;
 import com.dp.baobao.service.IArticleService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 
 import java.util.UUID;
 
@@ -16,10 +18,10 @@ public class ArticleServiceTest extends SuperTest {
     private IArticleService articleService;
 
     @Test
-    public void testAddArticle1(){
-        Article article=new Article();
-        article.setName("佛山举办比基尼推手大赛 俊男美女\"肉搏\"(图)");
-        article.setNameEn("foshanjubanbijinituishoudasaijunnanmeinv\"rbbo\"(tu)");
+    public void testAddArticle1() {
+        Article article = new Article();
+        article.setName("佛山举办比基尼推手大赛7 俊男美女\"肉搏\"(图)");
+        article.setNameEn("foshanjubanbijinituishoudasaijunnanmeinv1\"rbbo\"(tu)");
         article.setContent("北京时间11月11日，在全民欢度“双11”节日的时候，广东省佛山市正在庆祝它们获得被国家体育总局武术运动管理中心授予“中国武术之城”称号十周年。佛山市武术协会举办了一系列庆祝活动，“11.11光棍节比基尼”推手大赛正是此次纪念活动之一。\n");
         article.setContentEn("北京时间11月11日，在全民欢度“双11”节日的时候，广东省佛山市正在庆祝它们获得被国家体育总局武术运动管理中心授予“中国武术之城”称号十周年。佛山市武术协会举办了一系列庆祝活动，“11.11光棍节比基尼”推手大赛正是此次纪念活动之一。\n");
         article.setDescription("广东省第十届运动会太极拳冠军、佛山市武术协会副秘书长黄伟忠介绍，今年“双十一”晚上18：00～21：00在佛山市禅城区普君新城设立比基尼推手擂台PK赛，来自高等院校、白领青年和未婚女青年参加了这场中泰武术高手的挑战。此外，还有来自泰国的拳击选手也报名参加“11.11光棍节比基尼”佛山推手大赛，与中国年轻人一道庆祝武术名城十周年纪念活动。\n" +
@@ -38,9 +40,9 @@ public class ArticleServiceTest extends SuperTest {
     }
 
     @Test
-    public void testAddArticle2(){
-        Article article=new Article();
-        article.setName("中方回应日本外相钓鱼岛言论 敦促日方谨言慎行");
+    public void testAddArticle2() {
+        Article article = new Article();
+        article.setName("中方回应日本外相钓鱼岛言论 敦促日方谨言慎行5");
         article.setNameEn("foshanjubanbijinituishoudasaijunnanmeinv\"rbbo\"(tu)");
         article.setContent("中新网11月12日电 据中国驻日本大使馆网站消息，中国驻日使馆发言人12日回应日本外相岸田文雄此前关于钓鱼岛言论，再次强调钓鱼岛是中国固有领土，中方维护国家领土主权的决心和意志坚定不移，敦促日方在钓鱼岛问题上谨言慎行，停止一切损害中国领土主权的行为。\n" +
                 "\n" +
@@ -70,17 +72,44 @@ public class ArticleServiceTest extends SuperTest {
     }
 
     @Test
-    public void testUpdate(){
-        Article article=articleService.getArticle(UUID.fromString("3139fb91-6a7a-11e4-acbe-ce6db74f650d"));
+    public void testUpdate() {
+        Article article = articleService.getArticle(UUID.fromString("3139fb91-6a7a-11e4-acbe-ce6db74f650d"));
         article.setViewCount(1);
         articleService.editArticle(article);
         getLog().info("广告宣传成功！");
     }
 
     @Test
-    public void testUpdateViewCount(){
+    public void testUpdateViewCount() {
 
-        Article article=articleService.getArticle(UUID.fromString("3139fb91-6a7a-11e4-acbe-ce6db74f650d"));
-        getLog().info("新闻"+article.getName()+"点击率"+article.getViewCount());
+        Article article = articleService.getArticle(UUID.fromString("3139fb91-6a7a-11e4-acbe-ce6db74f650d"));
+        getLog().info("新闻" + article.getName() + "点击率" + article.getViewCount());
+    }
+
+
+    @Test
+    public void testGetPageByCategory() {
+        UUID categoryId = UUID.fromString("6016ceda-6982-11e4-9e75-003067974107");
+
+        Page<Article> articles = articleService.getPageByCategory(categoryId, 0, 3,null);
+
+        getLog().info("总页数" + articles.getTotalPages());
+        getLog().info("总行数" + articles.getTotalElements());
+        getLog().info("当前页"+(articles.getNumber()/5)+1);
+        for (Article article : articles) {
+            getLog().info("新闻标题：" + article.getName());
+        }
+
+        Page<Article> p1 = articleService.getPageByCategory(categoryId, 3, 3,null);
+
+        getLog().info("总页数" + p1.getTotalPages());
+        getLog().info("总行数" + p1.getTotalElements());
+        getLog().info("当前页"+(p1.getNumber()/5)+1);
+
+        for (Article article : p1) {
+            getLog().info("2新闻标题：" + article.getName());
+        }
+
+
     }
 }

@@ -24,6 +24,7 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-oxm-3.2.11.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-test-3.2.11.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-tx-3.2.11.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
