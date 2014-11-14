@@ -117,8 +117,10 @@ public class AccountServiceImplTest extends TestSupport {
 
 
         testAccount.setPassword("0");
-        //不存在的账户更新其信�
+        //不存在的账户更新其信
         service.updateAccount(testAccount);
+
+        getLog().debug("更新完成");
     }
 
     @Test
