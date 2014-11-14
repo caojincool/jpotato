@@ -6,267 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/accordion_collapse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/accordion_collapse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/accordion_expand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/accordion_expand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/button_a_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/button_a_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/button_plain_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/button_plain_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/button_span_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/button_span_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/calendar_nextmonth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/calendar_nextmonth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/calendar_nextyear.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/calendar_nextyear.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/calendar_prevmonth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/calendar_prevmonth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/calendar_prevyear.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/calendar_prevyear.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/combo_arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/combo_arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/cut.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_header_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_header_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_row_collapse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_collapse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_row_expand.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_row_expand.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_asc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_asc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_sort_desc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_sort_desc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datagrid_title_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datagrid_title_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/edit_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/edit_remove.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/filesave.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/header_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/help.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/layout_button_down.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/layout_button_down.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/layout_button_left.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/layout_button_left.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/layout_button_right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/layout_button_right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/layout_button_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/layout_button_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/menu.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/menu.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/menu_downarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/menu_downarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/menu_rightarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/menu_rightarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/menu_sep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/menu_sep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/menu_split_downarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/menu_split_downarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/messager_error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/messager_error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/messager_info.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/messager_info.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/messager_question.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/messager_question.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/messager_warning.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/messager_warning.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/mini_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/mini_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/mini_refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_first.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_first.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_last.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_last.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_load.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_load.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_next.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_next.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/pagination_prev.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/pagination_prev.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/panel_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/panel_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/panel_title.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/panel_title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/panel_tool_collapse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/panel_tool_collapse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/panel_tool_expand.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/panel_tool_expand.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/panel_tools.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/panel_tools.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/pencil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/print.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/redo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/reload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_down.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_down.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/spinner_arrow_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/spinner_arrow_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/sum.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tabs_active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tabs_close.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tabs_close.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tabs_enabled.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tabs_enabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tabs_leftarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tabs_leftarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tabs_rightarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tabs_rightarrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_arrows.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_arrows.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_checkbox_2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_checkbox_2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_dnd_no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_dnd_yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_dnd_yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_elbow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_elbow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_file.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_file.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_folder.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_folder.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_folder_open.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_folder_open.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/tree_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/tree_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icons/undo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/validatebox_pointer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/validatebox_pointer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/ForumController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/easyloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/easyui.css.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/forum.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/jquery-1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.combo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.combobox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.combogrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.combotree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.datagrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.datebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.datetimebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.draggable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.droppable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/jquery.easyui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.linkbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.menubutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.messager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.numberbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.numberspinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.pagination.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.panel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.progressbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.propertygrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.resizable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.searchbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.spinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.splitbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.timespinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.treegrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.validatebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/plugins/jquery.window.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/style/manager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/default/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/themes/gray/window.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/dao/ArticleDao.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/dao/ArticleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/impl/ArticleService.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/impl/ArticleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/test/com/dp/ui/ArticleServiceTest.java" afterPath="$PROJECT_DIR$/Test/src/main/test/com/dp/ui/ArticleServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/HomeController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/IArticleService.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/IArticleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/ManagerController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/ManagerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/spring.xml" afterPath="$PROJECT_DIR$/.idea/libraries/spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="" />
     <ignored path="weCompany.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -288,7 +28,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -324,9 +64,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -448,7 +187,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -460,6 +199,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,7 +215,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -485,11 +225,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -499,15 +239,15 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -517,19 +257,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -539,15 +279,15 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -557,15 +297,15 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jquery-easyui-1.2.6" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -575,19 +315,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jquery-easyui-1.2.6" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -597,23 +337,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -623,7 +359,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -633,27 +369,27 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -663,23 +399,23 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -689,32 +425,31 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="baobao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -925,13 +660,13 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -949,7 +684,7 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -1041,7 +776,7 @@
       <option name="launchUrl" value="false" />
       <option name="launcherParameters">
         <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
           <option name="launcherType" value="OSDefault" />
           <option name="newPlayerInstance" value="false" />
           <option name="playerPath" value="FlashPlayerDebugger.exe" />
@@ -1078,13 +813,14 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
         <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
           <option name="launcherType" value="OSDefault" />
           <option name="newPlayerInstance" value="false" />
           <option name="playerPath" value="FlashPlayerDebugger.exe" />
@@ -1128,12 +864,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1151,6 +881,13 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="weCompany" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -1287,6 +1024,7 @@
       <workItem from="1415807830132" duration="1238000" />
       <workItem from="1415841377475" duration="2873000" />
       <workItem from="1415846233144" duration="12920000" />
+      <workItem from="1415889325087" duration="129000" />
     </task>
     <task id="LOCAL-00001" summary="加入spring security框架">
       <created>1413431911956</created>
@@ -1296,10 +1034,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87980000" />
+    <option name="totallyTimeSpent" value="88109000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1317,7 +1055,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34312415" sideWeight="0.31752872" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977304" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26293105" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20761494" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1331,17 +1068,18 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48731643" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977304" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34312415" sideWeight="0.31752872" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1361,13 +1099,16 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977304" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26293105" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20761494" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -1394,7 +1135,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/dao/ArticleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="1" selection-start="7768" selection-end="7768" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1026">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1026">
+          <caret line="171" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#insert#0;class#ArticleDao#0" expanded="false" />
@@ -1407,159 +1149,187 @@
             <element signature="method#queryPageByCategory#0;class#ArticleDao#0" expanded="false" />
             <element signature="e#8514#10210#0" expanded="true" />
             <element signature="e#10191#10192#0" expanded="true" />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="UPDATE t_art..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="UPDATE t_art..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select * fro..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select * fro..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select count..t_article..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-common_3_1.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web_2.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-config-3.0.2.RELEASE.jar!/org/springframework/security/config/spring-security-3.0.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/messages_ko_KR.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
       <provider editor-type-id="ResourceBundle">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-web-3.0.2.RELEASE.jar!/org/springframework/security/web/session/HttpSessionEventPublisher.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetails.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-security/spring-security-core-3.0.2.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/org/apache/commons/logging/Log.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/sampledb.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/Baobao.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="29" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
+          <caret line="21" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/test/com/dp/ui/ForumServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1957">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1957">
+          <caret line="46" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/resource/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
+          <caret line="7" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/impl/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="779" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="779">
+          <caret line="31" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="77" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="855">
+        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="855">
+          <caret line="32" column="77" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#987#1326#0" expanded="true" />
             <element signature="e#1315#1316#0" expanded="true" />
@@ -1569,96 +1339,79 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web_2.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="1962" selection-end="1962" vertical-scroll-proportion="0.35264483" vertical-offset="278" max-vertical-offset="1843" />
+        <state vertical-scroll-proportion="0.35264483" vertical-offset="278" max-vertical-offset="1843">
+          <caret line="23" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
+          <caret line="3" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE-sources.jar!/org/springframework/data/domain/PageImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="7" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4560">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4560">
+          <caret line="43" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE-sources.jar!/org/springframework/data/domain/Pageable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
+          <caret line="22" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE-sources.jar!/org/springframework/data/domain/PageRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="24" selection-start="854" selection-end="865" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2755">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2755">
+          <caret line="26" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="38" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2090">
-          <folding>
-            <element signature="e#0#2481#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2090">
+          <caret line="27" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-data-commons-core-1.4.1.RELEASE-sources.jar!/org/springframework/data/domain/Sort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="38" selection-start="2736" selection-end="2736" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="6460">
-          <folding>
-            <element signature="e#0#8379#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3380#3387#0" expanded="false" />
-            <element signature="e#6579#6591#0" expanded="false" />
-            <element signature="e#6833#6834#0" expanded="false" />
-            <element signature="e#6858#6859#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#6986#6987#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="6460">
+          <caret line="87" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/impl/ArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="48" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1387">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1387">
+          <caret line="73" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/IArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="703">
+        <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="703">
+          <caret line="32" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/src/main/test/com/dp/ui/ArticleServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="5372" selection-end="5373" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1615">
-          <folding>
-            <element signature="method#testAddArticle2#0;class#ArticleServiceTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/api/js/shCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13528">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1615">
+          <caret line="107" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/dao/ArticleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="3274" selection-end="3274" vertical-scroll-proportion="0.24476987" vertical-offset="833" max-vertical-offset="1919">
+        <state vertical-scroll-proportion="0.24476987" vertical-offset="833" max-vertical-offset="1919">
+          <caret line="80" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#insert#0;class#ArticleDao#0" expanded="false" />
@@ -1671,94 +1424,73 @@
             <element signature="method#queryPageByCategory#0;class#ArticleDao#0" expanded="false" />
             <element signature="e#8514#10210#0" expanded="true" />
             <element signature="e#10191#10192#0" expanded="true" />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="UPDATE t_art..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="UPDATE t_art..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select * fro..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select * fro..t_article..." />
-            <marker date="1415851517949" expanded="true" signature="-1:-1" placeholder="select count..t_article..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/style/manager.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="41" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebUI/web/jquery-easyui-1.2.6/index-demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="4" selection-start="9896" selection-end="10209" vertical-scroll-proportion="-8.821428" vertical-offset="570" max-vertical-offset="1007">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="950">
+          <caret line="23" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="55" selection-start="740" selection-end="740" vertical-scroll-proportion="0.7354839" vertical-offset="0" max-vertical-offset="532">
+        <state vertical-scroll-proportion="0.7354839" vertical-offset="0" max-vertical-offset="532">
+          <caret line="12" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="899" selection-end="907" vertical-scroll-proportion="0.82841825" vertical-offset="14" max-vertical-offset="437">
+        <state vertical-scroll-proportion="0.82841825" vertical-offset="14" max-vertical-offset="437">
+          <caret line="17" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="78" selection-start="843" selection-end="843" vertical-scroll-proportion="0.47632313" vertical-offset="0" max-vertical-offset="950">
+        <state vertical-scroll-proportion="0.47632313" vertical-offset="0" max-vertical-offset="950">
+          <caret line="18" column="78" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
+          <caret line="12" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/ForumController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/src/main/java/com/dp/ui/controller/ManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="32" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+          <caret line="14" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="6" selection-start="10808" selection-end="10808" vertical-scroll-proportion="-11.071428" vertical-offset="3110" max-vertical-offset="3800">
-          <folding>
-            <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-11.071428" vertical-offset="3110" max-vertical-offset="3800">
+          <caret line="232" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/forum.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="32" selection-start="2782" selection-end="2782" vertical-scroll-proportion="0.13075061" vertical-offset="1276" max-vertical-offset="1919">
-          <folding>
-            <marker date="1415864627857" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.13075061" vertical-offset="1276" max-vertical-offset="1919">
+          <caret line="70" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
