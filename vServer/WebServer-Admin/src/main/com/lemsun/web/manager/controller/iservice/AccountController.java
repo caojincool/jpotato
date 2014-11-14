@@ -1,6 +1,5 @@
 package com.lemsun.web.manager.controller.iservice;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.lemsun.auth.AccountException;
 import com.lemsun.auth.AccountManager;
 import com.lemsun.auth.BaseAccount;
@@ -23,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Response;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
@@ -49,6 +49,7 @@ public class AccountController {
 
     /**
      * 创建新的账号
+     *
      * @param plateform
      * @param request
      * @return
@@ -60,7 +61,7 @@ public class AccountController {
 
         IAccount acc = mapper.readValue(account, BaseAccount.class);
 
-        if(acc == null || StringUtils.isEmpty(acc.getAccount())) throw new LemsunException("创建账号必须要传入用户名");
+        if (acc == null || StringUtils.isEmpty(acc.getAccount())) throw new LemsunException("创建账号必须要传入用户名");
 
         accountService.save(acc);
 
@@ -72,16 +73,16 @@ public class AccountController {
 
     /**
      * 通过账号ID删除账号
+     *
      * @param plateform
      * @param account
      * @return
      */
     @RequestMapping("delete")
-    public ResponseEntity<String> delete(@PathVariable("plateform") String plateform, String account)
-    {
+    public ResponseEntity<String> delete(@PathVariable("plateform") String plateform, String account) {
         IAccount acc = accountService.get(account);
 
-        if(acc == null) throw new LemsunException("不存在的账号");
+        if (acc == null) throw new LemsunException("不存在的账号");
 
         accountService.deleteAccountById(account);
 
@@ -90,6 +91,7 @@ public class AccountController {
 
     /**
      * 更新账号对象
+     *
      * @param plateform
      * @param account
      * @return
@@ -103,15 +105,20 @@ public class AccountController {
         return new ResponseEntity<>("OK");
     }
 
+    @RequestMapping("changepwd")
+    public ResponseEntity<String> changepwd(String account,String op,String np){
 
+        accountService.changePassword(account,op,np);
+        return new ResponseEntity<>("OK");
+    }
     /**
      * 使用账号获取账号对象
+     *
      * @param account
      * @return
      */
     @RequestMapping("get")
-    public ResponseEntity<IAccount> get(String account)
-    {
+    public ResponseEntity<IAccount> get(String account) {
         IAccount acc = accountService.getAccountByAccount(account);
         return new ResponseEntity<>(acc);
     }
@@ -160,13 +167,14 @@ public class AccountController {
 
     /**
      * 设置用户默认的操作日期
+     *
      * @param plateform
      * @param adate
      * @return
      */
     @RequestMapping("adate")
     public ResponseEntity<Date> setCurrentAdate(@PathVariable("plateform") String plateform, String adate) throws ParseException {
-        AccountManager manager = (AccountManager)accountService.getCurrentAccountManager();
+        AccountManager manager = (AccountManager) accountService.getCurrentAccountManager();
         manager.getConfig().setDefaultActionDate(DateUtils.parseDate(adate, "yyyyMMdd"));
         return new ResponseEntity<>(accountService.getCurrentAdate());
     }
