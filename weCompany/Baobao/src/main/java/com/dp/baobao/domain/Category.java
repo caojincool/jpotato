@@ -124,6 +124,10 @@ public class Category {
         this.forumId = forumId;
     }
 
-
+    public enum CategoryType {
+        ARTICLE,
+        ARTICLELIST,
+        PRODUCTLIST
+    }
 }
 

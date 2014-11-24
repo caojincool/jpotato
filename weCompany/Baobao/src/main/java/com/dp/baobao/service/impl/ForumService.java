@@ -4,9 +4,12 @@ import com.dp.baobao.domain.Forum;
 import com.dp.baobao.dao.CategoryDao;
 import com.dp.baobao.dao.ForumDao;
 import com.dp.baobao.domain.Category;
-import com.dp.baobao.domain.CategoryType;
 import com.dp.baobao.service.IForumService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -53,8 +56,8 @@ public class ForumService implements IForumService {
         forumDao.updateForum(forum);
     }
 
-    public void deleteForum(UUID forumID) {
-        forumDao.deleteForum(forumID);
+    public void removeForum(UUID forumID) {
+        forumDao.deleteForum(forumID.toString());
     }
 
     public List<Forum> getForums() {
@@ -69,7 +72,7 @@ public class ForumService implements IForumService {
         if (StringUtils.isEmpty(category.getNameEn()))
             throw new RuntimeException("请输入英文类别名称");
         if (category.getCategoryType() == null)
-            category.setCategoryType(CategoryType.ARTICLE);
+            category.setCategoryType(Category.CategoryType.ARTICLE);
 
         categoryDao.insert(category);
     }
@@ -103,15 +106,30 @@ public class ForumService implements IForumService {
         if (id == null)
             throw new RuntimeException("缺少类别编码");
 
-        return categoryDao.get(id);
+        return categoryDao.get(id.toString());
     }
 
     public List<Category> getCategoriesByForumId(UUID forumId) {
         if (forumId == null)
             throw new RuntimeException("缺少栏目编码");
         return categoryDao.queryByForumId(forumId.toString());
-
     }
 
+    public Page<Forum> getPageForum(int page,int size,Sort sort){
 
+        if (sort==null){
+            sort=new Sort(Sort.Direction.ASC,"name");
+        }
+        Pageable query=new PageRequest(page,size,sort);
+
+        return forumDao.queryPage(query);
+    }
+
+    public Page<Category> getPageCategories(int page,int size,Sort sort){
+        if (sort==null){
+            sort=new Sort(Sort.Direction.ASC,"name");
+        }
+
+        return categoryDao.queryAllByPage(new PageRequest(page,size,sort));
+    }
 }

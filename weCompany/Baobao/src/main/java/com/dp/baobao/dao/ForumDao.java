@@ -2,6 +2,9 @@ package com.dp.baobao.dao;
 
 import com.dp.baobao.domain.Forum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
@@ -71,7 +74,7 @@ public class ForumDao {
         });
     }
 
-    public void deleteForum(UUID id){
+    public void deleteForum(String id){
        jdbcTemplate.update(DELETE,new Object[]{id});
     }
 
@@ -89,5 +92,26 @@ public class ForumDao {
                 return forum;
             }
         });
+    }
+
+
+    public Page<Forum> queryPage(final Pageable query){
+        String sqlCount="select count(*) from t_forum";
+        int total=jdbcTemplate.queryForObject(sqlCount,Integer.class);
+
+        String sqlPage="select * from t_forum limit ?, ?";
+        List<Forum> forums=jdbcTemplate.query(sqlPage,new Object[]{query.getOffset(),query.getPageSize()},new RowMapper<Forum>() {
+            @Override
+            public Forum mapRow(ResultSet resultSet, int i) throws SQLException {
+                Forum forum=new Forum();
+                forum.setId(UUID.fromString(resultSet.getString("_id")));
+                forum.setName(resultSet.getString("_name"));
+                forum.setNameEn(resultSet.getString("_nameEn"));
+                forum.setEnabled(resultSet.getBoolean("_isenabled"));
+                return forum;
+            }
+        });
+
+        return new PageImpl<Forum>(forums,query,total);
     }
 }

@@ -2,6 +2,8 @@ package com.dp.baobao.service;
 
 import com.dp.baobao.domain.Forum;
 import com.dp.baobao.domain.Category;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +18,7 @@ public interface IForumService {
 
     void updateForum(Forum forum);
 
-    void deleteForum(UUID forumID);
+    void removeForum(UUID forumID);
 
     List<Forum> getForums();
 
@@ -32,4 +34,7 @@ public interface IForumService {
 
     List<Category> getCategoriesByForumId(UUID forumId);
 
+    Page<Category> getPageCategories(int page,int size,Sort sort);
+
+    Page<Forum> getPageForum(int page,int size,Sort sort);
 }

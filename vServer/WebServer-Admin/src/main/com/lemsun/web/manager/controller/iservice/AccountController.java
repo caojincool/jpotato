@@ -105,6 +105,30 @@ public class AccountController {
         return new ResponseEntity<>("OK");
     }
 
+
+    @RequestMapping("resetPwd")
+    public ResponseEntity<String> resetPassword(String account){
+        IAccount account1=accountService.getByAccount(account);
+        accountService.resetPassword(account1.getId());
+
+        return new ResponseEntity<>("OK");
+    }
+
+    @RequestMapping("addAccount")
+    public ResponseEntity<String> addAccount(BaseAccount account){
+        ResponseEntity<String> responseEntity=new ResponseEntity<>();
+        try {
+            accountService.save(account);
+        }catch (AccountException e){
+            responseEntity.setSuccess(false);
+            responseEntity.setMessage("新增账户出现以下异常:"+e.getMessage());
+        }
+        responseEntity.setSuccess(true);
+        responseEntity.setMessage("OK");
+        return responseEntity;
+    }
+
+
     @RequestMapping("changepwd")
     public ResponseEntity<String> changepwd(String account,String op,String np){
 

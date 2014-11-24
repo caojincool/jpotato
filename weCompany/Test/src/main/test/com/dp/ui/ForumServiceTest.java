@@ -1,11 +1,12 @@
 package com.dp.ui;
 
 import com.dp.baobao.domain.Category;
-import com.dp.baobao.domain.CategoryType;
 import com.dp.baobao.domain.Forum;
 import com.dp.baobao.service.IForumService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.UUID;
@@ -21,7 +22,7 @@ public class ForumServiceTest extends SuperTest {
     public void testAddForum(){
         Forum forum=new Forum();
 
-        forum.setName("板块4");
+        forum.setName("板块5");
         forum.setNameEn("bankuaisan4");
         forum.setEnabled(true);
 
@@ -69,7 +70,7 @@ public class ForumServiceTest extends SuperTest {
         category.setKeyWord("类别4关键字");
         category.setContent("类别4内容");
         category.setDescription("类别4描述");
-        category.setCategoryType(CategoryType.ARTICLE);
+        category.setCategoryType(Category.CategoryType.ARTICLE);
         forumService.addCategory(category);
         getLog().info("插入一条类别");
     }
@@ -85,21 +86,20 @@ public class ForumServiceTest extends SuperTest {
     }
 
     @Test
-    public void testEnum(){
-        CategoryType[] categoryTypes=CategoryType.values();
-//        for(CategoryType c:categoryTypes){
-//            getLog().info("name|"+c.name());
-//            getLog().info("toString|"+c.toString());
-//            getLog().info("ordinal|"+c.ordinal());
-//            getLog().info(""+c);
-//        }
+    public void testGetPageForums(){
+        Sort sort=new Sort(Sort.Direction.ASC,"nameEn");
 
-        CategoryType c=CategoryType.valueOf("PRODUCTLIST");
+        Page<Forum> forums=forumService.getPageForum(0,10,sort);
 
+        for (Forum f:forums){
+            getLog().info("中文栏目名称："+f.getName());
+        }
+    }
 
-        getLog().info("name|"+c.name());
-        getLog().info("toString|"+c.toString());
-        getLog().info("ordinal|"+c.ordinal());
-        getLog().info(""+c);
+    @Test
+    public void testRemoveForum(){
+        UUID id=UUID.fromString("6f914ab3-6d5b-11e4-8607-33d79e93045a");
+        forumService.removeForum(id);
+
     }
 }

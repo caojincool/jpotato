@@ -1,8 +1,10 @@
 package com.dp.baobao.dao;
 
-import com.dp.baobao.domain.CategoryType;
 import com.dp.baobao.domain.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -72,7 +74,7 @@ public class CategoryDao {
         });
     }
 
-    public Category get(final UUID id){
+    public Category get(final String id){
         String sql="select * from t_category where _id=?";
         final Category category=new Category();
 
@@ -80,7 +82,7 @@ public class CategoryDao {
             @Override
             public void processRow(ResultSet resultSet) throws SQLException {
 
-                category.setId(id);
+                category.setId(UUID.fromString(id));
                 category.setOrderId(resultSet.getInt("_orderId"));
                 category.setName(resultSet.getString("_name"));
                 category.setNameEn(resultSet.getString("_nameEn"));
@@ -91,7 +93,7 @@ public class CategoryDao {
                 category.setDescription(resultSet.getString("_description"));
                 category.setDescriptionEn(resultSet.getString("_descriptionEn"));
                 category.setEnabled(resultSet.getBoolean("_isEnable"));
-                category.setCategoryType(CategoryType.valueOf(resultSet.getString("_categoryType")));
+                category.setCategoryType(Category.CategoryType.valueOf(resultSet.getString("_categoryType")));
                 category.setForumId(UUID.fromString(resultSet.getString("_forum_id")));
             }
         });
@@ -129,7 +131,7 @@ public class CategoryDao {
                 category.setDescription(resultSet.getString("_description"));
                 category.setDescriptionEn(resultSet.getString("_descriptionEn"));
                 category.setEnabled(resultSet.getBoolean("_isEnable"));
-                category.setCategoryType(CategoryType.valueOf(resultSet.getString("_categoryType")));
+                category.setCategoryType(Category.CategoryType.valueOf(resultSet.getString("_categoryType")));
                 category.setForumId(UUID.fromString(resultSet.getString("_forum_id")));
 
                 return category;
@@ -157,7 +159,7 @@ public class CategoryDao {
                 category.setDescription(resultSet.getString("_description"));
                 category.setDescriptionEn(resultSet.getString("_descriptionEn"));
                 category.setEnabled(resultSet.getBoolean("_isEnable"));
-                category.setCategoryType(CategoryType.valueOf(resultSet.getString("_categoryType")));
+                category.setCategoryType(Category.CategoryType.valueOf(resultSet.getString("_categoryType")));
                 category.setForumId(UUID.fromString(resultSet.getString("_forum_id")));
 
                 return category;
@@ -166,8 +168,33 @@ public class CategoryDao {
 
     }
 
-    //todo 分页数据暂时没有实现
-    public List<Category> queryAllByPage(){
-        return null;
+
+    public Page<Category> queryAllByPage(Pageable query){
+        String sqlCount="select count(*) from t_category";
+        int total=jdbcTemplate.queryForObject(sqlCount,Integer.class);
+
+        String sql="select * from t_category limit ?,?";
+        List<Category> categories=jdbcTemplate.query(sql,new Object[]{query.getOffset(),query.getPageSize()},
+                new RowMapper<Category>() {
+            @Override
+            public Category mapRow(ResultSet resultSet, int i) throws SQLException {
+                Category category = new Category();
+                category.setId(UUID.fromString(resultSet.getString("_id")));
+                category.setOrderId(resultSet.getInt("_orderId"));
+                category.setName(resultSet.getString("_name"));
+                category.setNameEn(resultSet.getString("_nameEn"));
+                category.setContent(resultSet.getString("_content"));
+                category.setContentEn(resultSet.getString("_contentEn"));
+                category.setKeyWord(resultSet.getString("_keyWord"));
+                category.setKeyWordEn(resultSet.getString("_keyWordEn"));
+                category.setDescription(resultSet.getString("_description"));
+                category.setDescriptionEn(resultSet.getString("_descriptionEn"));
+                category.setEnabled(resultSet.getBoolean("_isEnable"));
+                category.setCategoryType(Category.CategoryType.valueOf(resultSet.getString("_categoryType")));
+                category.setForumId(UUID.fromString(resultSet.getString("_forum_id")));
+                return category;
+            }
+        });
+        return new PageImpl<Category>(categories,query,total);
     }
 }

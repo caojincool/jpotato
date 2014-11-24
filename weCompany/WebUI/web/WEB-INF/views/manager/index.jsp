@@ -19,7 +19,7 @@
             if ($('#tabs').tabs('exists', title)){
                 $('#tabs').tabs('select', title);//选中并刷新
                 var currTab = $('#tabs').tabs('getSelected');
-                var url = $(currTab.panel('options').content).attr('src');
+                //var url = $(currTab.panel('options').content).attr('src');
                 if(url != undefined && currTab.panel('options').title != 'Home') {
                     $('#tabs').tabs('update',{
                         tab:currTab,
@@ -42,7 +42,6 @@
             var s = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
             return s;
         }
-
         function tabClose() {
             /*双击关闭TAB选项卡*/
             $(".tabs-inner").dblclick(function(){
@@ -156,6 +155,12 @@
                 var title = $this.text();
                 addTab(title, href);
             });
+            $('#tt').tree({
+                url:'/file/list',
+                onClick:function(node){
+                    addTab("文件管理","/file/index?node="+node.id);
+                }
+            });
         });
     </script>
 </head>
@@ -168,18 +173,12 @@
 
         <div title="主要功能">
             <a href="javascript:void(0);" src="/forum/index" class="cs-navi-tab">栏目管理</a></p>
-            <a href="javascript:void(0);" src="demo/draggable.html" class="cs-navi-tab">分类管理</a></p>
+            <a href="javascript:void(0);" src="/category/index" class="cs-navi-tab">分类管理</a></p>
+        </div>
+        <div title="文件管理">
+            <ul id="tt"></ul>
         </div>
         <!--动态读取所有栏目-->
-        <div title="Layout">
-            <a href="javascript:void(0);" src="demo/accordion.html" class="cs-navi-tab">accordion</a></p>
-            <a href="javascript:void(0);" src="demo/layout.html" class="cs-navi-tab">layout</a></p>
-            <a href="javascript:void(0);" src="demo/layout1.html" class="cs-navi-tab">layout1</a></p>
-            <a href="javascript:void(0);" src="demo/layout2.html" class="cs-navi-tab">layout2</a></p>
-            <a href="javascript:void(0);" src="demo/panel.html" class="cs-navi-tab">panel</a></p>
-            <a href="javascript:void(0);" src="demo/panel2.html" class="cs-navi-tab">panel1</a></p>
-            <a href="javascript:void(0);" src="demo/tabs.html" class="cs-navi-tab">tabs</a></p>
-        </div>
         <div title="Menu and Button">
             <a href="javascript:void(0);" src="demo/menu.html" class="cs-navi-tab">menu</a></p>
             <a href="javascript:void(0);" src="demo/menubutton.html" class="cs-navi-tab">menubutton</a></p>

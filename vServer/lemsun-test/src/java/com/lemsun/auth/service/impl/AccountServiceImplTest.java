@@ -1,11 +1,14 @@
 package com.lemsun.auth.service.impl;
 
 import com.lemsun.TestSupport;
-import com.lemsun.auth.*;
-import com.lemsun.web.manager.controller.model.query.AccountQuery;
+import com.lemsun.auth.AccountException;
+import com.lemsun.auth.BaseAccount;
+import com.lemsun.auth.Permission;
+import com.lemsun.auth.PermissionKey;
 import com.lemsun.auth.service.IAccountService;
 import com.lemsun.core.IAccount;
 import com.lemsun.core.jackson.JsonObjectMapper;
+import com.lemsun.web.manager.controller.model.query.AccountQuery;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -209,5 +212,13 @@ public class AccountServiceImplTest extends TestSupport {
         //ExpandAccount expandAccounts=service.getExpandAccountByAccountId(accountId);
 
         //log.debug(String.valueOf(expandAccounts.getEmail()));
+    }
+
+    @Test
+    public void testResetPassword(){
+        IAccount account=service.getByAccount("jdb");
+        service.resetPassword(account.getId());
+
+        getLog().debug("充值成功");
     }
 }
