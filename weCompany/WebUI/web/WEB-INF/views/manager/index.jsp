@@ -11,11 +11,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=GBK">
     <title>洋芋网站管理系统</title>
     <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/icon.css">
     <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/style/manager.css"/>
     <script type="text/javascript">
-        function addTab(title, url){
+
+
+    function addTab(title, url){
             if ($('#tabs').tabs('exists', title)){
                 $('#tabs').tabs('select', title);//选中并刷新
                 var currTab = $('#tabs').tabs('getSelected');
@@ -148,7 +151,94 @@
         }
 
         $(function() {
+            $.extend($.fn.linkbutton.methods, {
+                /**
+                 * 激活选项（覆盖重写）
+                 * @param {Object} jq
+                 */
+                enable: function(jq){
+                    return jq.each(function(){
+                        var state = $.data(this, 'linkbutton');
+                        if ($(this).hasClass('l-btn-disabled')) {
+                            var itemData = state._eventsStore;
+                            //恢复超链接
+                            if (itemData.href) {
+                                $(this).attr("href", itemData.href);
+                            }
+                            //回复点击事件
+                            if (itemData.onclicks) {
+                                for (var j = 0; j < itemData.onclicks.length; j++) {
+                                    $(this).bind('click', itemData.onclicks[j]);
+                                }
+                            }
+                            //设置target为null，清空存储的事件处理程序
+                            itemData.target = null;
+                            itemData.onclicks = [];
+                            $(this).removeClass('l-btn-disabled');
+                        }
+                    });
+                },
+                /**
+                 * 禁用选项（覆盖重写）
+                 * @param {Object} jq
+                 */
+                disable: function(jq){
+                    return jq.each(function(){
+                        var state = $.data(this, 'linkbutton');
+                        if (!state._eventsStore)
+                            state._eventsStore = {};
+                        if (!$(this).hasClass('l-btn-disabled')) {
+                            var eventsStore = {};
+                            eventsStore.target = this;
+                            eventsStore.onclicks = [];
+                            //处理超链接
+                            var strHref = $(this).attr("href");
+                            if (strHref) {
+                                eventsStore.href = strHref;
+                                $(this).attr("href", "javascript:void(0)");
+                            }
+                            //处理直接耦合绑定到onclick属性上的事件
+                            var onclickStr = $(this).attr("onclick");
+                            if (onclickStr && onclickStr != "") {
+                                eventsStore.onclicks[eventsStore.onclicks.length] = new Function(onclickStr);
+                                $(this).attr("onclick", "");
+                            }
+                            //处理使用jquery绑定的事件
+                            var eventDatas = $(this).data("events") || $._data(this, 'events');
+                            if (eventDatas["click"]) {
+                                var eventData = eventDatas["click"];
+                                for (var i = 0; i < eventData.length; i++) {
+                                    if (eventData[i].namespace != "menu") {
+                                        eventsStore.onclicks[eventsStore.onclicks.length] = eventData[i]["handler"];
+                                        $(this).unbind('click', eventData[i]["handler"]);
+                                        i--;
+                                    }                     }
+                            }                state._eventsStore = eventsStore;
+                            $(this).addClass('l-btn-disabled');
+                        }
+                    });
+                }
+            });
             tabCloseEven();
+            $('#dd').dialog({
+                closed:true,
+                title:'编辑目录名称',
+                modal:true,
+                buttons:[{
+                    text:'保存',
+                    iconCls:'icon-ok',
+                    handler:function(){
+                        alert('ok');
+                    }
+                },{
+                    text:'取消',
+                    iconCls:'icon-cancel',
+                    handler:function(){
+                        $('#dd').dialog('close');
+                    }
+                }]
+            });
+
             $('.cs-navi-tab').click(function() {
                 var $this = $(this);
                 var href = $this.attr('src');
@@ -156,15 +246,51 @@
                 addTab(title, href);
             });
             $('#tt').tree({
-                url:'/file/list',
+                url:'/picture/folder',
                 onClick:function(node){
-                    addTab("文件管理","/file/index?node="+node.id);
+                    var en=node.id!='';
+
+                        $('#btnReName').linkbutton(en?'enable':'disable');
+                        $('#btnRmdir').linkbutton(en?'enable':'disable');
+                        $('#btnMkdir').linkbutton('enable');
+
+
+                    addTab("图片管理","/picture/index?node="+node.id);
                 }
             });
+            $('#btnMkdir').linkbutton({
+                disabled:true,
+                iconCls:'icon-add',
+                plain:true
+            });
+            $('#btnMkdir').click(function(){
+                $('#dd').dialog('open');
+            });
+            $('#btnReName').linkbutton({
+                disabled:true,
+                iconCls:'icon-edit',
+                plain:true
+            });
+            $('#btnReName').click(function () {
+                $('#dd').dialog('open');
+            })
+            $('#btnRmdir').linkbutton({
+                disabled:true,
+                iconCls:'icon-remove',
+                plain:true
+            });
+            $('#btnRmdir').click(function(){
+                $('#dd').dialog('open');
+            })
         });
     </script>
 </head>
 <body class="easyui-layout">
+<div id="dd" icon="icon-save" style="padding:5px;width:260px;height:120px;">
+    <label>目录名称：</label>
+    <input type="text" name="folder" id="folderName">
+</div>
+
 <div region="north" border="true" class="cs-north">
     <div class="cs-north-bg"><div class="cs-north-logo">洋芋网站后台管理系统</div></div>
 </div>
@@ -175,45 +301,17 @@
             <a href="javascript:void(0);" src="/forum/index" class="cs-navi-tab">栏目管理</a></p>
             <a href="javascript:void(0);" src="/category/index" class="cs-navi-tab">分类管理</a></p>
         </div>
-        <div title="文件管理">
-            <ul id="tt"></ul>
+        <div title="图片管理" class="easyui-layout">
+            <div region="north" border="false" style="background:#fafafa;height:26px;padding:0px 5px">
+                <a href="#" id="btnMkdir" title="创建目录"></a>
+                <a href="#" id="btnReName" title="重命名"></a>
+                <a href="#" id="btnRmdir" title="删除目录"></a>
+            </div>
+            <div region="center" border="false"><ul id="tt"></ul></div>
         </div>
         <!--动态读取所有栏目-->
         <div title="Menu and Button">
-            <a href="javascript:void(0);" src="demo/menu.html" class="cs-navi-tab">menu</a></p>
-            <a href="javascript:void(0);" src="demo/menubutton.html" class="cs-navi-tab">menubutton</a></p>
-            <a href="javascript:void(0);" src="demo/linkbutton.html" class="cs-navi-tab">linkbutton</a></p>
-            <a href="javascript:void(0);" src="demo/splitbutton.html" class="cs-navi-tab">splitbutton</a></p>
-        </div>
-        <div title="Form">
-            <a href="javascript:void(0);" src="demo/form.html" class="cs-navi-tab">form</a></p>
-            <a href="javascript:void(0);" src="demo/validatebox.html" class="cs-navi-tab">validatebox</a></p>
-            <a href="javascript:void(0);" src="demo/combo.html" class="cs-navi-tab">combo</a></p>
-            <a href="javascript:void(0);" src="demo/combobox.html" class="cs-navi-tab">combobox</a></p>
-            <a href="javascript:void(0);" src="demo/combotree.html" class="cs-navi-tab">combotree</a></p>
-            <a href="javascript:void(0);" src="demo/combogrid.html" class="cs-navi-tab">combogrid</a></p>
-            <a href="javascript:void(0);" src="demo/numberbox.html" class="cs-navi-tab">numberbox</a></p>
-            <a href="javascript:void(0);" src="demo/numberbox2.html" class="cs-navi-tab">numberbox1</a></p>
-            <a href="javascript:void(0);" src="demo/datebox.html" class="cs-navi-tab">datebox</a></p>
-            <a href="javascript:void(0);" src="demo/datetimebox.html" class="cs-navi-tab">datetimebox</a></p>
-            <a href="javascript:void(0);" src="demo/calendar.html" class="cs-navi-tab">calendar</a></p>
-            <a href="javascript:void(0);" src="demo/timespinner.html" class="cs-navi-tab">timespinner</a></p>
-            <a href="javascript:void(0);" src="demo/numberspinner.html" class="cs-navi-tab">numberspinner</a></p>
-            <a href="javascript:void(0);" src="demo/slider.html" class="cs-navi-tab">slider</a></p>
-        </div>
-        <div title="Window">
-            <a href="javascript:void(0);" src="demo/window.html" class="cs-navi-tab">window</a></p>
-            <a href="javascript:void(0);" src="demo/dialog.html" class="cs-navi-tab">dialog</a></p>
-            <a href="javascript:void(0);" src="demo/messager.html" class="cs-navi-tab">messager</a></p>
-        </div>
-        <div title="DataGrid and Tree">
-            <a href="javascript:void(0);" src="demo/datagrid.html" class="cs-navi-tab">datagrid</a></p>
-            <a href="javascript:void(0);" src="demo/propertygrid.html" class="cs-navi-tab">propertygrid</a></p>
-            <a href="javascript:void(0);" src="demo/tree.html" class="cs-navi-tab">tree</a></p>
-            <a href="javascript:void(0);" src="demo/tree2.html" class="cs-navi-tab">tree1</a></p>
-            <a href="javascript:void(0);" src="demo/treegrid.html" class="cs-navi-tab">treegrid</a></p>
-            <a href="javascript:void(0);" src="demo/treegrid2.html" class="cs-navi-tab">treegrid1</a></p>
-            <a href="javascript:void(0);" src="demo/treegrid3.html" class="cs-navi-tab">treegrid2</a></p>
+
         </div>
     </div>
 </div>

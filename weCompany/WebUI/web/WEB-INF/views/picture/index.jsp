@@ -30,6 +30,8 @@
             margin-left:30px;
             margin-top: 20px;
             display:inline;
+            margin-right:-3px;
+            zoom:1;
         }
         #products li a {
             /*display:block;*/
@@ -61,8 +63,7 @@
 </head>
 <body class="easyui-layout">
 <div region="north" border="false" style="background:#fafafa;padding:5px">
-    <a href="#" id="btnMkdir" class="easyui-linkbutton" plain="true" iconCls="icon-add">创建目录</a>
-    <a href="#" id="btnRmdir" class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除目录</a>|
+    |
     <a href="#"  class="easyui-linkbutton" plain="true" iconCls="icon-add">上传文件</a>
     <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除文件</a>
 </div>
@@ -74,10 +75,10 @@
     <ul id="products">
         <c:forEach items="${picList}" var="s">
                 <li><a href="#">
-                    <img src="${s}" alt="" width="200"
+                    <img src="/upload${p}/${s}" alt="" width="200"
                          height="200"/></a>
                     <span><a href="#">${s}</a></span>
-                    <input type="checkbox" name="ch1" value="${s}"/>
+                    <input type="checkbox" name="ch1" value="/upload${p}/${s}"/>
                 </li>
         </c:forEach>
     </ul>
