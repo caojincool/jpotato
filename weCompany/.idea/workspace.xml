@@ -7,79 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bff64e24-24b4-4cc6-bcb5-f3fbb97c44d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/uploadify-cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/uploadify.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/mapper/Baobao.mapper" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/impl/BaobaoServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/src/main/test/com/dp/test/BaobaoServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Company.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/query/CompanyQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/mapper/IBaobaoMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/service/IBaobaoService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/IQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/db.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/jquery.uploadify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/jquery.uploadify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/web/uploadify/uploadify.css" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\ArticleDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\CategoryDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\ForumDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\LoginLogDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\TreeDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\dao\UserDao.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\domain\Tree.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\IArticleService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\IForumService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\ITreeService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\IUserService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\impl\ArticleService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\impl\ForumService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\impl\TreeService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Baobao\src\main\java\com\dp\baobao\service\impl\UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\resource\commons-logging.properties" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\test\com\dp\ui\ArticleServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\test\com\dp\ui\ForumServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\test\com\dp\ui\TreeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\test\com\dp\ui\UserServiceTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/lemsun-client/src/com/lemsun/client/core/mvc/lmsview/AbstractLmsView.java" afterPath="$PROJECT_DIR$/../vClient/lemsun-client/src/com/lemsun/client/core/mvc/lmsview/AbstractLmsView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Article.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/Baobao.iml" afterPath="$PROJECT_DIR$/Baobao/Baobao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Category.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Forum.java" afterPath="$PROJECT_DIR$/Baobao/src/main/java/com/dp/baobao/domain/Forum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" afterPath="$PROJECT_DIR$/../vClient/WebServer-Client/src/com/lemsun/client/web/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/WebUI.iml" afterPath="$PROJECT_DIR$/WebUI/WebUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/applicationContext-data.xml" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/applicationContext-data.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/resource/applicationContext.xml" afterPath="$PROJECT_DIR$/Test/src/main/resource/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/WebServer-Client/web/WEB-INF/config.properties" afterPath="$PROJECT_DIR$/../vClient/WebServer-Client/web/WEB-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/config.properties" afterPath="$PROJECT_DIR$/../vServer/WebServer-Admin/web/WEB-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/global-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/category/index.jsp" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/category/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/index.jsp" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/manager/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/picture/index.jsp" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/picture/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/src/main/resource/log4j.properties" afterPath="$PROJECT_DIR$/Test/src/main/resource/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/category/view.jsp" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/views/category/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebUI/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../vServer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\Test\src\main\test\com\dp\ui\SuperTest.java" afterPath="$PROJECT_DIR$/Test/src/main/test/com/dp/test/SuperTest.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\CategoryController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/CategoryController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\ForumController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/ForumController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\FzghbController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/FzghbController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\HomeController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/HomeController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\ManagerController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/ManagerController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\PictureController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/PictureController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\controller\PresidentController.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/controller/PresidentController.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\model\CategoryEntity.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/model/CategoryEntity.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\model\EasyUINode.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/model/EasyUINode.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\model\FolderInfo.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/model/FolderInfo.java" />
-      <change type="MOVED" beforePath="D:\Documents\IdeaProject\jpotato\weCompany\WebUI\src\main\java\com\dp\ui\model\ResponseEntity.java" afterPath="$PROJECT_DIR$/WebUI/src/main/java/com/dp/test/model/ResponseEntity.java" />
     </list>
     <ignored path="weCompany.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1167,7 +1095,7 @@
       <workItem from="1418352157945" duration="2676000" />
       <workItem from="1418625080230" duration="866000" />
       <workItem from="1421563433847" duration="135000" />
-      <workItem from="1421996305382" duration="16148000" />
+      <workItem from="1421996305382" duration="16247000" />
     </task>
     <task id="LOCAL-00001" summary="加入spring security框架">
       <created>1413431911956</created>
@@ -1181,11 +1109,23 @@
       <option name="project" value="LOCAL" />
       <updated>1416876065072</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="加入easyui&#10;">
+      <created>1422018272257</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1422018272257</updated>
+    </task>
+    <task id="LOCAL-00004" summary="加入easyui&#10;">
+      <created>1422018308545</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1422018308545</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312205000" />
+    <option name="totallyTimeSpent" value="312304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
