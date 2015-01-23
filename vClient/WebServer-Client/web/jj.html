@@ -1,0 +1,402 @@
+<script type="text/javascript" src="/C000000252/highcharts.js"></script>
+<script type="text/javascript" src="/C000000252/exporting.js"></script>
+<style type="text/css">
+    .ui-datepicker-calendar {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        $("#start").datepicker({
+            minDate: '-5y', maxDate: '+1y',
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm',
+            onChangeMonthYear: function (dateText, year, month, inst) {
+                var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                $(this).datepicker('setDate', new Date(year, month, 1));
+            },
+            onClose: function (dateText, inst) {
+                var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                $(this).datepicker('setDate', new Date(year, month, 1));
+            }
+        });
+
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    '2013年',
+                    '2014年',
+                    '2015年',
+                    '2016年',
+                    '2017年',
+                    '2018年',
+                    '2019年',
+                    '2020年'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} 万元</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '计划总投资',
+                data: [@{jhtzxx}]
+            }, {
+                name: '累计完成投资',
+                data: [@{wctzxx}]
+            },{
+                name: '累计挂账完成',
+                data:[@{gzwcxx}]
+            }]
+        });
+
+        $('#container2').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '本年每月投资情况图'
+            },
+            subtitle: {
+                text: '分析图'
+            },
+            xAxis: {
+                categories: ['1月', '2月', '3月', '4月', '5月', '6月',
+                    '7月', '8月', '9月', '10月', '11月', '12月']
+            },
+            yAxis: {
+                title: {
+                    text: '万元'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value + '万元'
+                    }
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{
+                name: '挂账完成',
+                marker: {
+                    symbol: 'square'
+                },
+                data: [@{gzdata}]
+            },{
+                name: '完成投资',
+                marker:{symbol: 'diamond'},
+                data: [@{data}]
+            }]
+        });
+
+        $('#test').treegrid({
+            title:'查询详细',
+            iconCls:'icon-save',
+            //width:700,
+            height:350,
+            nowrap: false,
+            rownumbers: true,
+            animate:true,
+            collapsible:true,
+            url:'/C000000518?action=query&d=2014',
+            idField:'区块',
+            treeField:'区块',
+            frozenColumns:[[
+                {title:'项目编码',field:'区块',width:200,
+                    formatter:function(value){
+                        return '<span style="color:red">'+value+'</span>';
+                    }
+                }
+            ]],
+            columns:[[
+                //{ field:"区块" , width:"100" ,rowspan:"3" ,title:'项目编码'},
+                { field:"工程量" , width:"100", rowspan:"3" ,title:'计划安排工程量'},
+                { field:"工作量" , width:"100", rowspan:"3" ,title:'计划安排工作量（万元）'},
+                { field:"" , width:"80" ,colspan:"7" ,title:'本月完成投资（万元）'},
+                { field:"" , width:"80" ,colspan:"7" ,title:'本年累计完成投资（万元）'},
+                { field:"" , width:"80" ,colspan:"7" ,title:'开工至今累计完成投资（万元）'},
+                { field:"" , width:"80" ,colspan:"7" ,title:'本月挂账完成情况（万元）'},
+                { field:"" , width:"80" ,colspan:"7" ,title:'本年累计挂账完成情况（万元）'}
+            ],[
+                { field:"dj" , width:"80" ,rowspan:"2" ,title:'合计'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'土建'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'设备'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'其他'},
+                { field:"dq" , width:"80" ,rowspan:"2" ,title:'合计'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'土建'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'设备'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'其他'},
+                { field:"dx" , width:"80" ,rowspan:"2" ,title:'合计'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'土建'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'设备'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'其他'},
+                { field:"dae" , width:"80" ,rowspan:"2" ,title:'合计'},
+                { field:"" , width:"80" ,colspan:"2",title:'土建'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'设备'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'其他'},
+                { field:"dal" , width:"80" ,rowspan:"2" ,title:'合计'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'土建'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'设备'},
+                { field:"" , width:"80" ,colspan:"2" ,title:'其他'}
+            ],[
+                { field:"dk" , width:"80" ,title:'数量'},
+                { field:"dl" , width:"80" ,title:'金额'},
+                { field:"dm" , width:"80" ,title:'数量'},
+                { field:"dn" , width:"80" ,title:'金额'},
+                { field:"do" , width:"80" ,title:'数量'},
+                { field:"dp" , width:"80" ,title:'金额'},
+
+                { field:"dr" , width:"80" ,title:'数量'},
+                { field:"ds" , width:"80" ,title:'金额'},
+                { field:"dt" , width:"80" ,title:'数量'},
+                { field:"du" , width:"80" ,title:'金额'},
+                { field:"dv" , width:"80" ,title:'数量'},
+                { field:"dw" , width:"80" ,title:'金额'},
+
+                { field:"dy" , width:"80" ,title:'数量'},
+                { field:"dz" , width:"80" ,title:'金额'},
+                { field:"daa" , width:"80" ,title:'>数量'},
+                { field:"dab" , width:"80" ,title:'金额'},
+                { field:"dac" , width:"80" ,title:'数量'},
+                { field:"dad" , width:"80",title:'金额'},
+
+                { field:"daf" , width:"80" ,title:'数量'},
+                { field:"dag" , width:"80" ,title:'金额'},
+                { field:"dah" , width:"80" ,title:'数量'},
+                { field:"dai" , width:"80" ,title:'金额'},
+                { field:"daj" , width:"80" ,title:'数量'},
+                { field:"dak" , width:"80" ,title:'金额'},
+
+                { field:"dam" , width:"80" ,title:'数量'},
+                { field:"dan" , width:"80" ,title:'金额'},
+                { field:"dao" , width:"80" ,title:'数量'},
+                { field:"dap" , width:"80" ,title:'金额'},
+                { field:"daq" , width:"80" ,title:'数量'},
+                { field:"dar" , width:"80" ,title:'金额'}
+            ]],
+            onBeforeLoad:function(row,param){
+                if (row){
+                    $(this).treegrid('options').url = 'treegrid_subdata.json';
+                } else {
+                    $(this).treegrid('options').url = '/C000000518?action=query&d=2014';
+                }
+            },
+            onContextMenu: function(e,row){
+                e.preventDefault();
+                $(this).treegrid('unselectAll');
+                $(this).treegrid('select', row.区块);
+                $('#mm').menu('show', {
+                    left: e.pageX,
+                    top: e.pageY
+                });
+            }
+        });
+    });
+</script>
+<div class="page-title ui-widget-content ui-corner-all">
+
+    <div class="other">
+        <div class="three-column">
+            <div class="columnn1">
+                <div class="portlet">
+                    <div class="portlet-header">数据查询</div>
+                    <div class="portlet-content" style="height: 400px;">
+
+                        <fieldset style="margin-top:16px;">
+                            <legend>各项投资</legend>
+                            <table style="width:100%;">
+                                <tr style="height:50px;">
+                                    <td colspan="6" style="text-align:right;">单位：万元</td>
+                                </tr>
+                                <tr style="height:50px;">
+                                    <td>
+                                        本年计划总投资：
+                                        <!--:
+                                            var sql="SELECT sum(p) as a from C000000309_XX_13 where LEN(e)=3 and d in(SELECT code from C000000349_XX_13  where j=(SELECT DATEPART(YEAR, GETDATE())))";
+                                            var rsa=sqlRunnerService.select("C000000003",sql);   
+
+                                            var sql1="SELECT sum(j) as a from C000000494_XX_13 where f like (SELECT CONVERT(varchar(7),GETDATE(),120)+'%') and e='已报'";
+                                            var rsb=sqlRunnerService.select("C000000003",sql1); 
+
+                                            var sql2="SELECT sum(q) as a from C000000494_XX_13 where f like (SELECT CONVERT(varchar(7),GETDATE(),120)+'%') and e='已报'";
+                                            var rsc=sqlRunnerService.select("C000000003",sql2);      
+
+                                            var sql3="SELECT sum(ae) as a from C000000494_XX_13 where f like (SELECT CONVERT(varchar(7),GETDATE(),120)+'%') and e='已报'";
+                                            var rsd=sqlRunnerService.select("C000000003",sql3);  
+
+                                            var sql4="SELECT sum(al) as a from C000000494_XX_13 where f like (SELECT CONVERT(varchar(7),GETDATE(),120)+'%') and e='已报'";
+                                            var rse=sqlRunnerService.select("C000000003",sql4);   
+                                        -->
+                                        <span style="color:red">@{rsa.getValue(0,'a')}</span>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        本月完成投资：<span style="color:red">@{rsb.getValue(0,'a')}</span>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        本年累计完成投资：<span style="color:red">@{rsc.getValue(0,'a')}</span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr style="height:50px;">
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        本月挂账完成：<span style="color:red">@{rsd.getValue(0,'a')}</span>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        本年累计挂账完成：<span style="color:red">@{rse.getValue(0,'a')}</span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+
+                        <form action="#" style="display: none;" method="post" enctype="multipart/form-data" class="forms" name="form"
+                              target="_blank">
+                            <fieldset>
+                                <legend>查询条件</legend>
+                                <ul style="margin-top:20px;">
+                                    <li style="height:50px;">
+                                        查询日期:
+                                        <input id="start" style="width:80px;" type="text" tabindex="1" maxlength="255"
+                                               value="请选择" class="date-picker" name="cxrq"/>
+                                        所属区块:
+                                        <select id="myselect" name="ssqk" onclick="">
+                                            <option value="请选择" selected='selected'>请选择</option>
+                                            <!--:for(var a=0;a<qkbcount;a++){-->
+                                            <option value="@{zxqkb.getValue(a,'Code')}">@{zxqkb.getValue(a,'D')}
+                                            </option>
+                                            <!--:}-->
+                                        </select>
+                                        项目编码:
+                                        <select id="" name="xmbm" style="width:160px;">
+                                            <option value="请选择" selected='selected'>请选择</option>
+                                            <!--:for(var a=0;a<xmbcount;a++){-->
+                                            <option value="@{zxxmb.getValue(a,'Code')}">@{zxxmb.getValue(a,'D')}
+                                            </option>
+                                            <!--:}-->
+                                        </select>
+                                    </li>
+
+                                    <!--:var attach = resourceService.getAttachInfo('C000000509', filename);
+                                    var fname = java.net.URLEncoder.encode(attach.name, 'utf-8');-->
+                                    <li class="buttons">
+                                        <button type="submit" name="cx" value="hz"
+                                                class="ui-state-default ui-corner-all" id="tjsj">
+                                            查询汇总
+                                        </button>
+                                        <!--:var attach1 = resourceService.getAttachInfo('C000000507', filename);
+                                        var fname1 = java.net.URLEncoder.encode(attach1.name, 'utf-8');-->
+                                        <button type="submit" name="cx" value="mx"
+                                                class="ui-state-default ui-corner-all">
+                                            查询明细
+                                        </button>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="columnn1">
+                <div class="portlet form-bg">
+
+                    <div class="portlet-header">各年固定资产投资情况</div>
+                    <div class="portlet-content">
+
+                        <div id="container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-title ui-widget-content ui-corner-all">
+                <div class="other">
+                    <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
+                                    href="#tabs-1">数据查询显示</a></li>
+                            <li class="ui-state-default ui-corner-top"><a href="#tabs-2">本年每月投资情况图</a></li>
+                        </ul>
+                        <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <div class="portlet-content">
+                                <div style="overflow-y:auto;height:550px" class="hastable" id="dfbdiv">
+                                    <table >
+                                        <tr>
+                                            <th>时间查询:</th>
+                                            <th width="100"><input type="text" ></th>
+                                            <th>区块查询:</th>
+                                            <th width="100"><input type="text" ></th>
+                                            <th>项目名称:</th>
+                                            <th width="100"><input type="text" ></th>
+                                            <th ><input type="button" value="查询"></th>
+                                        </tr>
+                                    </table>
+                                    <table id="test"></table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                            <div style="overflow-y:auto;height:550px" class="portlet-content">
+                                <div class="hastable">
+                                    <div class="columnn2">
+                                        <div class="portlet">
+                                            <div class="portlet-header">本年每月投资情况图</div>
+                                            <div class="portlet-content">
+                                                <div id="container2"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
