@@ -7,8 +7,7 @@ import java.util.UUID;
  * Created by dpyang on 2014/10/7.
  */
 public class Article {
-
-    private UUID id;
+    private String id;
     private String name;
     private String nameEn;
     private String content;
@@ -22,17 +21,17 @@ public class Article {
     private int viewCount;
     private Date createDate;
     private Date updateDate;
-    private UUID categoryID;
-    private String gurl;        //购买链接
-    private String zpic;        //主图,以|作为分割
-    private String homePic;     //首页滚动图片
+    private Category category;
+    private String sellUrl;        //购买链接
+    private String images;        //主图,以|作为分割
+    private String code;     //自定义编码
 
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -140,35 +139,35 @@ public class Article {
         this.updateDate = updateDate;
     }
 
-    public UUID getCategoryID() {
-        return categoryID;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategoryID(UUID categoryID) {
-        this.categoryID = categoryID;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public String getGurl() {
-        return gurl;
+    public String getSellUrl() {
+        return sellUrl;
     }
 
-    public void setGurl(String gurl) {
-        this.gurl = gurl;
+    public void setSellUrl(String sellUrl) {
+        this.sellUrl = sellUrl;
     }
 
-    public String getZpic() {
-        return zpic;
+    public String getImages() {
+        return images;
     }
 
-    public void setZpic(String zpic) {
-        this.zpic = zpic;
+    public void setImages(String images) {
+        this.images = images;
     }
 
-    public String getHomePic() {
-        return homePic;
+    public String getCode() {
+        return code;
     }
 
-    public void setHomePic(String homePic) {
-        this.homePic = homePic;
+    public void setCode(String code) {
+        this.code = code;
     }
 }

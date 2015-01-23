@@ -8,282 +8,214 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
-    <title>洋芋网站管理系统</title>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/icon.css">
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/style/manager.css"/>
-    <script type="text/javascript">
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>洋芋网站管理系统</title>
+<link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/icon.css">
+<script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/style/manager.css"/>
+<script type="text/javascript">
 
 
-    function addTab(title, url){
-            if ($('#tabs').tabs('exists', title)){
-                $('#tabs').tabs('select', title);//选中并刷新
-                var currTab = $('#tabs').tabs('getSelected');
-                //var url = $(currTab.panel('options').content).attr('src');
-                if(url != undefined && currTab.panel('options').title != 'Home') {
-                    $('#tabs').tabs('update',{
-                        tab:currTab,
-                        options:{
-                            content:createFrame(url)
-                        }
-                    })
+    function addTab(title, url) {
+        if ($('#tabs').tabs('exists', title)) {
+            $('#tabs').tabs('select', title);//选中并刷新
+            var currTab = $('#tabs').tabs('getSelected');
+            //var url = $(currTab.panel('options').content).attr('src');
+            if (url != undefined && currTab.panel('options').title != 'Home') {
+                $('#tabs').tabs('update', {
+                    tab: currTab,
+                    options: {
+                        content: createFrame(url)
+                    }
+                })
+            }
+        } else {
+            var content = createFrame(url);
+            $('#tabs').tabs('add', {
+                title: title,
+                content: content,
+                closable: true
+            });
+        }
+        tabClose();
+    }
+    function createFrame(url) {
+        var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+        return s;
+    }
+    function tabClose() {
+        /*双击关闭TAB选项卡*/
+        $(".tabs-inner").dblclick(function () {
+            var subtitle = $(this).children(".tabs-closable").text();
+            $('#tabs').tabs('close', subtitle);
+        })
+        /*为选项卡绑定右键*/
+        $(".tabs-inner").bind('contextmenu', function (e) {
+            $('#mm').menu('show', {
+                left: e.pageX,
+                top: e.pageY
+            });
+
+            var subtitle = $(this).children(".tabs-closable").text();
+
+            $('#mm').data("currtab", subtitle);
+            $('#tabs').tabs('select', subtitle);
+            return false;
+        });
+    }
+    //绑定右键菜单事件
+    function tabCloseEven() {
+        //刷新
+        $('#mm-tabupdate').click(function () {
+            var currTab = $('#tabs').tabs('getSelected');
+            var url = $(currTab.panel('options').content).attr('src');
+            if (url != undefined && currTab.panel('options').title != 'Home') {
+                $('#tabs').tabs('update', {
+                    tab: currTab,
+                    options: {
+                        content: createFrame(url)
+                    }
+                })
+            }
+        })
+        //关闭当前
+        $('#mm-tabclose').click(function () {
+            var currtab_title = $('#mm').data("currtab");
+            $('#tabs').tabs('close', currtab_title);
+        })
+        //全部关闭
+        $('#mm-tabcloseall').click(function () {
+            $('.tabs-inner span').each(function (i, n) {
+                var t = $(n).text();
+                if (t != 'Home') {
+                    $('#tabs').tabs('close', t);
                 }
-            } else {
-                var content = createFrame(url);
-                $('#tabs').tabs('add',{
-                    title:title,
-                    content:content,
-                    closable:true
+            });
+        });
+        //关闭除当前之外的TAB
+        $('#mm-tabcloseother').click(function () {
+            var prevall = $('.tabs-selected').prevAll();
+            var nextall = $('.tabs-selected').nextAll();
+            if (prevall.length > 0) {
+                prevall.each(function (i, n) {
+                    var t = $('a:eq(0) span', $(n)).text();
+                    if (t != 'Home') {
+                        $('#tabs').tabs('close', t);
+                    }
                 });
             }
-            tabClose();
-        }
-        function createFrame(url) {
-            var s = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
-            return s;
-        }
-        function tabClose() {
-            /*双击关闭TAB选项卡*/
-            $(".tabs-inner").dblclick(function(){
-                var subtitle = $(this).children(".tabs-closable").text();
-                $('#tabs').tabs('close',subtitle);
-            })
-            /*为选项卡绑定右键*/
-            $(".tabs-inner").bind('contextmenu',function(e){
-                $('#mm').menu('show', {
-                    left: e.pageX,
-                    top: e.pageY
-                });
-
-                var subtitle =$(this).children(".tabs-closable").text();
-
-                $('#mm').data("currtab",subtitle);
-                $('#tabs').tabs('select',subtitle);
-                return false;
-            });
-        }
-        //绑定右键菜单事件
-        function tabCloseEven() {
-            //刷新
-            $('#mm-tabupdate').click(function(){
-                var currTab = $('#tabs').tabs('getSelected');
-                var url = $(currTab.panel('options').content).attr('src');
-                if(url != undefined && currTab.panel('options').title != 'Home') {
-                    $('#tabs').tabs('update',{
-                        tab:currTab,
-                        options:{
-                            content:createFrame(url)
-                        }
-                    })
-                }
-            })
-            //关闭当前
-            $('#mm-tabclose').click(function(){
-                var currtab_title = $('#mm').data("currtab");
-                $('#tabs').tabs('close',currtab_title);
-            })
-            //全部关闭
-            $('#mm-tabcloseall').click(function(){
-                $('.tabs-inner span').each(function(i,n){
-                    var t = $(n).text();
-                    if(t != 'Home') {
-                        $('#tabs').tabs('close',t);
+            if (nextall.length > 0) {
+                nextall.each(function (i, n) {
+                    var t = $('a:eq(0) span', $(n)).text();
+                    if (t != 'Home') {
+                        $('#tabs').tabs('close', t);
                     }
                 });
-            });
-            //关闭除当前之外的TAB
-            $('#mm-tabcloseother').click(function(){
-                var prevall = $('.tabs-selected').prevAll();
-                var nextall = $('.tabs-selected').nextAll();
-                if(prevall.length>0){
-                    prevall.each(function(i,n){
-                        var t=$('a:eq(0) span',$(n)).text();
-                        if(t != 'Home') {
-                            $('#tabs').tabs('close',t);
-                        }
-                    });
-                }
-                if(nextall.length>0) {
-                    nextall.each(function(i,n){
-                        var t=$('a:eq(0) span',$(n)).text();
-                        if(t != 'Home') {
-                            $('#tabs').tabs('close',t);
-                        }
-                    });
-                }
+            }
+            return false;
+        });
+        //关闭当前右侧的TAB
+        $('#mm-tabcloseright').click(function () {
+            var nextall = $('.tabs-selected').nextAll();
+            if (nextall.length == 0) {
+                //msgShow('系统提示','后边没有啦~~','error');
+                alert('后边没有啦~~');
                 return false;
+            }
+            nextall.each(function (i, n) {
+                var t = $('a:eq(0) span', $(n)).text();
+                $('#tabs').tabs('close', t);
             });
-            //关闭当前右侧的TAB
-            $('#mm-tabcloseright').click(function(){
-                var nextall = $('.tabs-selected').nextAll();
-                if(nextall.length==0){
-                    //msgShow('系统提示','后边没有啦~~','error');
-                    alert('后边没有啦~~');
-                    return false;
-                }
-                nextall.each(function(i,n){
-                    var t=$('a:eq(0) span',$(n)).text();
-                    $('#tabs').tabs('close',t);
-                });
+            return false;
+        });
+        //关闭当前左侧的TAB
+        $('#mm-tabcloseleft').click(function () {
+            var prevall = $('.tabs-selected').prevAll();
+            if (prevall.length == 0) {
+                alert('到头了，前边没有啦~~');
                 return false;
+            }
+            prevall.each(function (i, n) {
+                var t = $('a:eq(0) span', $(n)).text();
+                $('#tabs').tabs('close', t);
             });
-            //关闭当前左侧的TAB
-            $('#mm-tabcloseleft').click(function(){
-                var prevall = $('.tabs-selected').prevAll();
-                if(prevall.length==0){
-                    alert('到头了，前边没有啦~~');
-                    return false;
-                }
-                prevall.each(function(i,n){
-                    var t=$('a:eq(0) span',$(n)).text();
-                    $('#tabs').tabs('close',t);
-                });
-                return false;
-            });
+            return false;
+        });
 
-            //退出
-            $("#mm-exit").click(function(){
-                $('#mm').menu('hide');
-            })
-        }
+        //退出
+        $("#mm-exit").click(function () {
+            $('#mm').menu('hide');
+        })
+    }
 
-        $(function() {
-            $.extend($.fn.linkbutton.methods, {
-                /**
-                 * 激活选项（覆盖重写）
-                 * @param {Object} jq
-                 */
-                enable: function(jq){
-                    return jq.each(function(){
-                        var state = $.data(this, 'linkbutton');
-                        if ($(this).hasClass('l-btn-disabled')) {
-                            var itemData = state._eventsStore;
-                            //恢复超链接
-                            if (itemData.href) {
-                                $(this).attr("href", itemData.href);
-                            }
-                            //回复点击事件
-                            if (itemData.onclicks) {
-                                for (var j = 0; j < itemData.onclicks.length; j++) {
-                                    $(this).bind('click', itemData.onclicks[j]);
-                                }
-                            }
-                            //设置target为null，清空存储的事件处理程序
-                            itemData.target = null;
-                            itemData.onclicks = [];
-                            $(this).removeClass('l-btn-disabled');
-                        }
-                    });
-                },
-                /**
-                 * 禁用选项（覆盖重写）
-                 * @param {Object} jq
-                 */
-                disable: function(jq){
-                    return jq.each(function(){
-                        var state = $.data(this, 'linkbutton');
-                        if (!state._eventsStore)
-                            state._eventsStore = {};
-                        if (!$(this).hasClass('l-btn-disabled')) {
-                            var eventsStore = {};
-                            eventsStore.target = this;
-                            eventsStore.onclicks = [];
-                            //处理超链接
-                            var strHref = $(this).attr("href");
-                            if (strHref) {
-                                eventsStore.href = strHref;
-                                $(this).attr("href", "javascript:void(0)");
-                            }
-                            //处理直接耦合绑定到onclick属性上的事件
-                            var onclickStr = $(this).attr("onclick");
-                            if (onclickStr && onclickStr != "") {
-                                eventsStore.onclicks[eventsStore.onclicks.length] = new Function(onclickStr);
-                                $(this).attr("onclick", "");
-                            }
-                            //处理使用jquery绑定的事件
-                            var eventDatas = $(this).data("events") || $._data(this, 'events');
-                            if (eventDatas["click"]) {
-                                var eventData = eventDatas["click"];
-                                for (var i = 0; i < eventData.length; i++) {
-                                    if (eventData[i].namespace != "menu") {
-                                        eventsStore.onclicks[eventsStore.onclicks.length] = eventData[i]["handler"];
-                                        $(this).unbind('click', eventData[i]["handler"]);
-                                        i--;
-                                    }                     }
-                            }                state._eventsStore = eventsStore;
-                            $(this).addClass('l-btn-disabled');
-                        }
-                    });
-                }
-            });
-            tabCloseEven();
-            $('#dd').dialog({
-                closed:true,
-                title:'编辑目录名称',
-                modal:true,
-                buttons:[{
-                    text:'保存',
-                    iconCls:'icon-ok',
-                    handler:function(){
+    $(function () {
+        tabCloseEven();
+        $('#dd').dialog({
+            closed: true,
+            title: '编辑目录名称',
+            modal: true,
+            buttons: [
+                {
+                    text: '保存',
+                    iconCls: 'icon-ok',
+                    handler: function () {
                         alert('ok');
                     }
-                },{
-                    text:'取消',
-                    iconCls:'icon-cancel',
-                    handler:function(){
+                },
+                {
+                    text: '取消',
+                    iconCls: 'icon-cancel',
+                    handler: function () {
                         $('#dd').dialog('close');
                     }
-                }]
-            });
-
-            $('.cs-navi-tab').click(function() {
-                var $this = $(this);
-                var href = $this.attr('src');
-                var title = $this.text();
-                addTab(title, href);
-            });
-            $('#tt').tree({
-                url:'/picture/folder',
-                onClick:function(node){
-                    var en=node.id!='';
-
-                        $('#btnReName').linkbutton(en?'enable':'disable');
-                        $('#btnRmdir').linkbutton(en?'enable':'disable');
-                        $('#btnMkdir').linkbutton('enable');
-
-
-                    addTab("图片管理","/picture/index?node="+node.id);
                 }
-            });
-            $('#btnMkdir').linkbutton({
-                disabled:true,
-                iconCls:'icon-add',
-                plain:true
-            });
-            $('#btnMkdir').click(function(){
-                $('#dd').dialog('open');
-            });
-            $('#btnReName').linkbutton({
-                disabled:true,
-                iconCls:'icon-edit',
-                plain:true
-            });
-            $('#btnReName').click(function () {
-                $('#dd').dialog('open');
-            })
-            $('#btnRmdir').linkbutton({
-                disabled:true,
-                iconCls:'icon-remove',
-                plain:true
-            });
-            $('#btnRmdir').click(function(){
-                $('#dd').dialog('open');
-            })
+            ]
         });
-    </script>
+
+        $('.cs-navi-tab').click(function () {
+            var $this = $(this);
+            var href = $this.attr('src');
+            var title = $this.text();
+            addTab(title, href);
+        });
+        $('#tt').tree({
+            url: '/picture/folder',
+            onClick: function (node) {
+                var en = node.id != '';
+                $('#btnReName').linkbutton(en ? 'enable' : 'disable');
+                $('#btnRmdir').linkbutton(en ? 'enable' : 'disable');
+                $('#btnMkdir').linkbutton('enable');
+                addTab("图片管理", "/picture/index?node=" + node.id);
+            }
+        });
+        $('#btnMkdir').linkbutton({
+            disabled: true,
+            iconCls: 'icon-add',
+            plain: true
+        });
+        $('#btnMkdir').click(function () {
+            $('#dd').dialog('open');
+        });
+        $('#btnReName').linkbutton({
+            disabled: true,
+            iconCls: 'icon-edit',
+            plain: true
+        });
+        $('#btnReName').click(function () {
+            $('#dd').dialog('open');
+        })
+        $('#btnRmdir').linkbutton({
+            disabled: true,
+            iconCls: 'icon-remove',
+            plain: true
+        });
+        $('#btnRmdir').click(function () {
+            $('#dd').dialog('open');
+        })
+    });
+</script>
 </head>
 <body class="easyui-layout">
 <div id="dd" icon="icon-save" style="padding:5px;width:260px;height:120px;">
@@ -292,7 +224,9 @@
 </div>
 
 <div region="north" border="true" class="cs-north">
-    <div class="cs-north-bg"><div class="cs-north-logo">洋芋网站后台管理系统</div></div>
+    <div class="cs-north-bg">
+        <div class="cs-north-logo">洋芋网站后台管理系统</div>
+    </div>
 </div>
 <div region="west" border="true" split="true" title="导航" class="cs-west">
     <div class="easyui-accordion" fit="true" border="false">
@@ -303,11 +237,13 @@
         </div>
         <div title="图片管理" class="easyui-layout">
             <div region="north" border="false" style="background:#fafafa;height:26px;padding:0px 5px">
-                <a href="#" id="btnMkdir" title="创建目录"></a>
-                <a href="#" id="btnReName" title="重命名"></a>
-                <a href="#" id="btnRmdir" title="删除目录"></a>
+            <a href="#" id="btnMkdir" title="创建目录"></a>
+            <a href="#" id="btnReName" title="重命名"></a>
+            <a href="#" id="btnRmdir" title="删除目录"></a>
+        </div>
+            <div region="center" border="false">
+                <ul id="tt"></ul>
             </div>
-            <div region="center" border="false"><ul id="tt"></ul></div>
         </div>
         <!--动态读取所有栏目-->
         <div title="Menu and Button">
@@ -317,13 +253,13 @@
 </div>
 
 <div id="mainPanle" region="center" border="true" border="false">
-    <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
+    <div id="tabs" class="easyui-tabs" fit="true" border="false">
         <div title="Home">
             <div class="cs-home-remark">
                 <h1>洋芋网站后台管理系统</h1> <br>
                 制作：洋芋 <br>
                 博客：<a href="http://www.dtscal.cn" target="_blank">www.dtscal.cn</a><br>
-                说明：
+                说明：嗲嗲
             </div>
         </div>
     </div>

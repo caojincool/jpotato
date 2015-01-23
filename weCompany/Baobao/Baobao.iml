@@ -9,6 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="spring" level="project" />
     <orderEntry type="library" name="spring-security" level="project" />
+    <orderEntry type="library" name="db" level="project" />
   </component>
 </module>
-

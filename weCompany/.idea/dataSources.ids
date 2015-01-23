@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - sampledb@localhost" uuid="bf39f447-45fc-4174-853a-27155d630cda">
+  <data-source name="MySQL - sampledb@localhost" uuid="bf39f447-45fc-4174-853a-27155d630cda">
     <database-info product="MySQL" version="5.1.73-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -672,71 +672,93 @@
       <column name="authority" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <index name="ix_auth_username" unique="true" columns="username,authority"/>
     </table>
-    <table name="group_authorities" schema="" catalog="sampledb" type="TABLE">
-      <column name="group_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="authority" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <index name="fk_group_authorities_group" unique="false" columns="group_id"/>
-    </table>
-    <table name="group_members" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="group_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="fk_group_members_group" unique="false" columns="group_id"/>
-    </table>
-    <table name="groups" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="group_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-    </table>
-    <table name="role" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK143BF46A51827FA1" table="user_role" schema="" catalog="sampledb" columns="role_id"/>
-    </table>
     <table name="t_article" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
-      <column name="name" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="nameEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="contentEn" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="keyWord" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="keyWordEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="descriptionEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="isEnabled" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="isFirst" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="viewCount" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="createDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updateDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="categoryID" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_Category_Article" table="t_category" schema="" catalog="sampledb" columns="id"/>
-      <index name="categoryID" unique="false" columns="categoryID"/>
+      <column name="_id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_categoryid" sqlType="CHAR" precision="36" scale="0" nullable="true" jdbcType="1"/>
+      <column name="_name" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_nameEn" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="_contentEn" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="_keyWord" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_keyWordEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_description" sqlType="VARCHAR" precision="512" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_descriptionEn" sqlType="VARCHAR" precision="512" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_isEnabled" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="_isFirst" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="_viewCount" sqlType="SMALLINT" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="_createDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="_updateDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="_sellUrl" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_images" sqlType="VARCHAR" precision="512" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_code" sqlType="CHAR" precision="5" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+      <foreign-key name="fk_article_category_id" columns="_categoryid" ref-table="t_category" ref-schema="" ref-catalog="sampledb" ref-columns="_id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="uq_article_code" unique="true" columns="_code"/>
+      <index name="fk_article_category_id" unique="false" columns="_categoryid"/>
     </table>
     <table name="t_category" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
-      <column name="orderId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
-      <column name="nameEn" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
-      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="contentEn" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="keyWord" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="keyWordEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="descriptionEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="isEnabled" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="categoryType" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_Category_Article" columns="id" ref-table="t_article" ref-schema="" ref-catalog="sampledb" ref-columns="categoryID" update-rule="0" delete-rule="0" deferrability="2"/>
+      <column name="_id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_orderId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="_name" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_nameEn" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="_contentEn" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="_keyWord" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_keyWordEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_description" sqlType="VARCHAR" precision="512" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_descriptionEn" sqlType="VARCHAR" precision="512" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_isEnable" sqlType="BIT" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="_categoryType" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_forumId" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_code" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+      <foreign-key name="fk_forum_category_id" columns="_forumId" ref-table="t_forum" ref-schema="" ref-catalog="sampledb" ref-columns="_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_article_category_id" table="t_article" schema="" catalog="sampledb" columns="_categoryid"/>
+      <index name="uq_category_code" unique="true" columns="_code"/>
+      <index name="fk_forum_category_id" unique="false" columns="_forumId"/>
+    </table>
+    <table name="t_company" schema="" catalog="sampledb" type="TABLE">
+      <column name="_id" sqlType="VARCHAR" precision="36" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_code" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_shortName" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_remark" sqlType="VARCHAR" precision="1024" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_url" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_phone" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_selPhone" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_servicePhone" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_address" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_postCode" sqlType="CHAR" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="_email" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_nameEn" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_shortNameEn" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_remarkEn" sqlType="VARCHAR" precision="1024" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_addressEn" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_keyWord" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_keyWrodEn" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+      <index name="uq_company_code" unique="true" columns="_code"/>
     </table>
     <table name="t_forum" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
-      <column name="name" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="nameEn" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12"/>
-      <column name="isEnabled" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <primary-key name="PRIMARY" columns="id"/>
+      <column name="_id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_name" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_nameEn" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_isEnabled" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="_code" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="_companyId" sqlType="CHAR" precision="36" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+      <exported-key name="fk_forum_category_id" table="t_category" schema="" catalog="sampledb" columns="_forumId"/>
+      <index name="uq_forum_code" unique="true" columns="_code"/>
+    </table>
+    <table name="t_km" schema="" catalog="sampledb" type="TABLE">
+      <column name="_id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_code" sqlType="VARCHAR" precision="4" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_name" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="_jldw" sqlType="VARCHAR" precision="4" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_parent" sqlType="CHAR" precision="36" scale="0" nullable="true" jdbcType="1" def="Jyc="/>
+      <column name="_path" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="_id"/>
+      <index name="fk_km_parent_id" unique="false" columns="_parent"/>
     </table>
     <table name="t_login_log" schema="" catalog="sampledb" type="TABLE">
       <column name="login_log_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -745,44 +767,14 @@
       <column name="login_datetime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="login_log_id"/>
     </table>
-    <table name="t_tree" schema="" catalog="sampledb" type="TABLE">
-      <column name="_id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
-      <column name="_name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="_parent" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
-      <column name="_path" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="_id"/>
-    </table>
     <table name="t_user" schema="" catalog="sampledb" type="TABLE">
-      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="user_name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="credits" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
-      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="last_ip" sqlType="VARCHAR" precision="23" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="user_id"/>
-    </table>
-    <table name="user" schema="" catalog="sampledb" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="disabled" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK143BF46AF6AD4381" table="user_role" schema="" catalog="sampledb" columns="user_id"/>
-    </table>
-    <table name="user_role" schema="" catalog="sampledb" type="TABLE">
-      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="user_id,role_id"/>
-      <foreign-key name="FK143BF46A51827FA1" columns="role_id" ref-table="role" ref-schema="" ref-catalog="sampledb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK143BF46AF6AD4381" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sampledb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK143BF46A51827FA1" unique="false" columns="role_id"/>
-      <index name="FK143BF46AF6AD4381" unique="false" columns="user_id"/>
-    </table>
-    <table name="users" schema="" catalog="sampledb" type="TABLE">
-      <column name="username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
-      <primary-key name="PRIMARY" columns="username"/>
+      <column name="_id" sqlType="CHAR" precision="36" scale="0" nullable="false" jdbcType="1"/>
+      <column name="_loginAccount" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_showName" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="_lastVisit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="_lastIp" sqlType="CHAR" precision="16" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="_id"/>
     </table>
   </data-source>
 </component>

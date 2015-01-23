@@ -6,7 +6,7 @@ import java.util.UUID;
  * Created by dpyang on 2014/10/7.
  */
 public class Category {
-    private UUID id;
+    private String id;
     private int orderId;
     private String name;
     private String nameEn;
@@ -18,13 +18,14 @@ public class Category {
     private String descriptionEn;
     private boolean isEnabled;
     private CategoryType categoryType;
-    private UUID forumId;
+    private Forum forum;
+    private String code;
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -116,18 +117,26 @@ public class Category {
         this.categoryType = categoryType;
     }
 
-    public UUID getForumId() {
-        return forumId;
+    public Forum getForum() {
+        return forum;
     }
 
-    public void setForumId(UUID forumId) {
-        this.forumId = forumId;
+    public void setForum(Forum forum) {
+        this.forum = forum;
     }
 
     public enum CategoryType {
         ARTICLE,
         ARTICLELIST,
         PRODUCTLIST
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
 

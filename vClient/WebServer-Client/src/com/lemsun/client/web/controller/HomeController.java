@@ -1,6 +1,7 @@
 package com.lemsun.client.web.controller;
 
 import com.lemsun.client.core.Host;
+import com.lemsun.client.core.jackson.JsonObjectMapper;
 import com.lemsun.client.core.service.ILmsViewService;
 import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class HomeController {
 
     @Autowired
     private ILmsViewService lmsViewService;
+
+    @Autowired
+    private JsonObjectMapper objectMapper;
 
     @RequestMapping(value = {"/", "/index"})
     public View index(HttpServletRequest request) throws Exception {
@@ -91,7 +95,7 @@ public class HomeController {
 
     @RequestMapping(value = "/zbjh", method = RequestMethod.POST)
     public View zbjh(MultipartHttpServletRequest request){
-        String
+
         return lmsViewService.getView("");
     }
 }
