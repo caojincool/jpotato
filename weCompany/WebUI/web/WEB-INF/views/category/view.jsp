@@ -98,6 +98,7 @@
                 <td>英文内容:</td>
                 <td><textarea name="contentEn" value="${category.contentEn}"></textarea></td>
             </tr>
+
             </tbody>
         </table>
     </form>
@@ -107,6 +108,8 @@
         <tr>
             <td></td>
             <td style="text-align: right">
+                <a href="#" class="easyui-linkbutton" iconcls="icon-save" onclick="submit();">提交</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-save" onclick="submit();">提交</a>
                 <a href="#" class="easyui-linkbutton" iconcls="icon-save" onclick="submit();">提交</a>
                 <a href="#" class="easyui-linkbutton" iconcls="icon-cancel" onclick="location.href = document.referrer;">返回</a>
             </td>

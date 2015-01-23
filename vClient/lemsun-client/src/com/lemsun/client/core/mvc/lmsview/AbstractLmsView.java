@@ -76,6 +76,7 @@ public abstract class AbstractLmsView implements ILmsView {
             {
                 try
                 {
+
                     Script s = getViewEngine().getContext().compileString(f.toScript(), f.getName(), 1, null);
                     innerScript.add(s);
                 }

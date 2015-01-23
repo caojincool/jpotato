@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dp.baobao.mapper.IBaobaoMapper">
+
+    <resultMap id="company" type="Company">
+        <id property="id" column="_id"/>
+        <result property="shortName" column="_shortName"/>
+        <result property="nameEn" column="_nameEn"/>
+        <result property="name" column="_name"/>
+        <result property="address" column="_address"/>
+        <result property="addressEn" column="_addressEn"/>
+        <result property="code" column="_code"/>
+        <result property="email" column="_email"/>
+        <result property="keyWord" column="_keyWord"/>
+        <result property="keyWordEn" column="_keyWordEn"/>
+        <result property="phone" column="_phone"/>
+        <result property="postCode" column="_postCode"/>
+        <result property="remark" column="_remark"/>
+        <result property="remarkEn" column="_remarkEn"/>
+        <result property="selPhone" column="_selPhone"/>
+        <result property="servicePhone" column="_servicePhone"/>
+        <result property="shortNameEn" column="_shortNameEn"/>
+        <result property="url" column="_url"/>
+    </resultMap>
+
+    <insert id="insertCompany">
+        INSERT INTO t_company(
+            _id,_code,_name,_shortName,_remark,_url,_phone,_selPhone,_servicePhone,_address,_postCode,_email,_nameEn,
+            _shortNameEn,_remarkEn,_addressEn,_keyWord,_keyWrodEn
+        ) VALUES (
+              #{id},#{code},#{name},#{shortName},#{remark},#{url},#{phone},#{selPhone},#{servicePhone},#{address},
+              #{postCode},#{email},#{nameEn},#{shortNameEn},#{remarkEn},#{addressEn},#{keyWord},#{keyWordEn}
+        )
+    </insert>
+
+    <update id="updateCompany">
+        UPDATE t_company set
+            _code=#{code},_name#{name},_shortName=#{shortName},_remark=#{remark},_url=#{url},_phone=#{phone}
+            ,_selPhone=#{selPhone},_servicePhone=#{servicePhone},_address#{address},_postCode=#{postCode}
+            ,_email=#{email},_nameEn=#{nameEn},_shortNameEn=#{shortNameEn},_remarkEn=#{remarkEn},_addressEn=#{addressEn}
+            ,_keyWord=#{keyWord},_keyWrodEn=#{keyWordEn}
+            WHERE _id=#{id}
+    </update>
+
+    <select id="getCompany" parameterType="CompanyQuery" resultMap="company">
+        SELECT * FROM t_company WHERE _id=#{id}
+    </select>
+    <select id="loadCompanies" resultType="company">
+        SELECT * FROM t_company
+    </select>
+</mapper>

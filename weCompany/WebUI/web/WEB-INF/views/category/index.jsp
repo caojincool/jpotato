@@ -128,6 +128,5 @@
 <div style="padding: 8px;" border="false" region="center">
     <table id="category"></table>
 </div>
-</div>
 </body>
 </html>

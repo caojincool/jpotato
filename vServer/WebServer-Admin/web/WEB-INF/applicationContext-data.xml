@@ -20,7 +20,6 @@
 
     <context:property-placeholder location="/WEB-INF/config.properties"/>
     <aop:aspectj-autoproxy />
-
     <context:component-scan base-package="com.lemsun.core"/>
     <context:component-scan base-package="com.lemsun.form"/>
     <context:component-scan base-package="com.lemsun.data"/>
@@ -33,7 +32,7 @@
 
     <mongo:mongo id="mongo" host="${db.host}" port="${db.port}" />
 
-    <mongo:db-factory id="mongoDbFactory" dbname="Lymcq" mongo-ref="mongo"    />
+    <mongo:db-factory id="mongoDbFactory" dbname="Sxmttb" mongo-ref="mongo" />
 
     <mongo:mapping-converter id="converter" />
 
