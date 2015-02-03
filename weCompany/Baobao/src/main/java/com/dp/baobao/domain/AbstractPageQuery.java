@@ -1,12 +1,13 @@
 package com.dp.baobao.domain;
 
 /**
+ * 分页查询基础对象，如果有查询分页的请继承这个类
  * Created by dpyang on 2015/1/26.
  */
 public class AbstractPageQuery implements IQuery{
     private String id;
-    private int offset,rows;
-    private String sortField;
+    private int page,rows;
+    private String sort;
     private String order;
 
     @Override
@@ -18,12 +19,12 @@ public class AbstractPageQuery implements IQuery{
         this.id = id;
     }
 
-    public int getOffset() {
-        return offset<3?0:offset;
+    public int getPage() {
+        return page<3?0:page;
     }
 
-    public void setOffset(int offset) {
-        this.offset = offset;
+    public void setPage(int page) {
+        this.page = page;
     }
 
     public int getRows() {
@@ -34,12 +35,12 @@ public class AbstractPageQuery implements IQuery{
         this.rows = rows;
     }
 
-    public String getSortField() {
-        return sortField;
+    public String getSort() {
+        return sort;
     }
 
-    public void setSortField(String sortField) {
-        this.sortField = sortField;
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
     public String getOrder() {

@@ -20,7 +20,7 @@
                 iconCls:'icon-save',
                 nowrap: false,
                 striped: true,
-                url:'/article/category/list',
+                url:'/article/page/list',
                 method:'post',
                 sortName: 'name',
                 sortOrder: 'desc',
@@ -34,7 +34,6 @@
                 ]],
                 columns:[[
                     {title:'名称',field:'name',width:100,aligh:'left'},
-                    {title:'所属栏目',field:'forumName',width:80,aligh:'left'},
                     {title:'所属类别',field:'categoryName',width:80,aligh:'left'},
                     {title:'关键词',field:'keyWord',width:80,aligh:'left'},
                     {title:'点击次数',field:'viewCount',width:80,aligh:'left'},

@@ -405,7 +405,7 @@
         <if test="categoryId!=null">
             where _categoryId=#{categoryId}
         </if>
-        limit #{offset},#{rows}
+        limit #{page},#{rows}
     </select>
     <select id="getArticleTotal" parameterType="IQuery" resultType="int">
         SELECT count(*) from t_article

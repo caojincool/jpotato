@@ -2,6 +2,7 @@ package com.dp.baobao.controller;
 
 import com.dp.baobao.domain.*;
 import com.dp.baobao.domain.query.ArticleQuery;
+import com.dp.baobao.model.EasyGridArticleEntity;
 import com.dp.baobao.model.ResponseEntity;
 import com.dp.baobao.service.IBaobaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 文章管理控制器
  * Created by dpyang on 2015/2/3.
  */
 @Controller
@@ -25,25 +27,22 @@ public class ArticleController {
 
     @RequestMapping("/index")
     public String index() {
-
-        ArticleQuery query=new ArticleQuery();
-        query.setCode("001");
-
-        Article article=baobaoService.getArticle(query);
         return "article/index";
     }
 
     @RequestMapping("/page/list")
-    public ResponseEntity<Page<Article>> pageList(IQuery query) {
+    public ResponseEntity<List<EasyGridArticleEntity>> pageList(ArticleQuery query) {
+        Page<Article> articles=baobaoService.loadPageArticle(query);
+
+        List<EasyGridArticleEntity> articleEntities=new ArrayList<>();
 
 
-        return new ResponseEntity<>(true, "temp");
+        return new ResponseEntity<>(true,articles.getTotal(),articles.getContent());
     }
 
     @RequestMapping("/view")
     public ModelAndView view() {
         ModelAndView view = new ModelAndView("article/view");
-
         return view;
     }
 
