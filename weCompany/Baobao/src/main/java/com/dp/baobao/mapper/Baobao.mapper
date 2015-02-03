@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dp.baobao.mapper.IBaobaoMapper">
-
     <resultMap id="company" type="Company">
         <id property="id" column="_id"/>
         <result property="shortName" column="_shortName"/>
@@ -23,6 +22,67 @@
         <result property="shortNameEn" column="_shortNameEn"/>
         <result property="url" column="_url"/>
     </resultMap>
+    <resultMap id="forum" type="Forum">
+        <id property="id" column="f_id"/>
+        <result property="name" column="f_name"/>
+        <result property="nameEn" column="f_nameEn"/>
+        <result property="isEnabled" column="f_isEnabled"/>
+        <result property="code" column="f_code"/>
+        <association property="company" javaType="Company" column="_companyId">
+            <id property="id" column="c_id"/>
+            <result property="code" column="c_code"/>
+            <result property="name" column="c_name"/>
+            <result property="nameEn" column="c_nameEn"/>
+            <result property="shortName" column="c_shortName"/>
+            <result property="shortNameEn" column="c_shortNameEn"/>
+        </association>
+    </resultMap>
+    <resultMap id="category" type="Category">
+        <id property="id" column="cg_id"/>
+        <result property="orderId" column="cg_orderId"/>
+        <result property="name" column="cg_name"/>
+        <result property="nameEn" column="cg_nameEn"/>
+        <result property="content" column="cg_content"/>
+        <result property="keyWord" column="cg_keyWord"/>
+        <result property="keyWordEn" column="cg_keyWordEn"/>
+        <result property="description" column="cg_description"/>
+        <result property="descriptionEn" column="cg_descriptionEn"/>
+        <result property="isEnabled" column="cg_isEnable"/>
+        <result property="categoryType" column="cg_categoryType"/>
+        <result property="code" column="cg_code"/>
+        <!--关联嵌套查询结-->
+        <association property="forum" column="_forumId" javaType="Forum">
+            <id property="id" column="fm_id"/>
+            <result property="code" column="fm_code"/>
+            <result property="name" column="fm_name"/>
+            <result property="nameEn" column="fm_nameEn"/>
+        </association>
+    </resultMap>
+    <resultMap id="artilce" type="Article">
+        <id property="id" column="a_id"/>
+        <result property="name" column="a_name"/>
+        <result property="nameEn" column="a_nameEn"/>
+        <result property="content" column="a_content"/>
+        <result property="contentEn" column="a_contentEn"/>
+        <result property="keyWord" column="a_keyWord"/>
+        <result property="keyWordEn" column="a_keyWordEn"/>
+        <result property="description" column="a_description"/>
+        <result property="descriptionEn" column="a_descriptionEn"/>
+        <result property="isEnabled" column="a_isEnabled"/>
+        <result property="isFirst" column="a_isFirst"/>
+        <result property="viewCount" column="a_viewCount"/>
+        <result property="createDate" column="a_createDate"/>
+        <result property="updateDate" column="a_updateDate"/>
+        <result property="sellUrl" column="a_sellUrl"/>
+        <result property="images" column="a_images"/>
+        <result property="code" column="a_code"/>
+        <association property="category" javaType="Category" column="_categoryid">
+            <id property="id" column="b_id"/>
+            <result property="code" column="b_code"/>
+            <result property="name" column="b_name"/>
+            <result property="nameEn" column="b_nameEn"/>
+        </association>
+    </resultMap>
 
     <insert id="insertCompany">
         INSERT INTO t_company(
@@ -33,6 +93,67 @@
               #{postCode},#{email},#{nameEn},#{shortNameEn},#{remarkEn},#{addressEn},#{keyWord},#{keyWordEn}
         )
     </insert>
+    <insert id="insertForum">
+        <selectKey keyProperty="id" order="BEFORE" resultType="string">
+            SELECT uuid() as id
+        </selectKey>
+        INSERT INTO t_forum(_id,_name,_nameEn,_isEnabled,_code,_companyId)
+        VALUES (#{id},#{name},#{nameEn},#{isEnabled},#{code},#{company.id})
+    </insert>
+    <insert id="insertCategory">
+        <selectKey keyProperty="id" order="BEFORE" resultType="string">
+            SELECT uuid() as id
+        </selectKey>
+        INSERT t_category(
+            _id,_name,_nameEn,_content,_contentEn,_keyWord,_keyWordEn,_description,
+            _descriptionEn,_isEnable,_categoryType,_forumId,_code,_orderId
+        )VALUES(
+            #{id},#{name},#{nameEn},#{content},#{contentEn},#{keyWord},#{keyWordEn},
+            #{description},#{descriptionEn},#{isEnabled},#{categoryType},
+            #{forum.id},#{code},#{orderId})
+    </insert>
+    <insert id="insertArticle">
+        <selectKey keyProperty="id" order="BEFORE" resultType="string">
+            SELECT uuid() as id
+        </selectKey>
+        INSERT t_article(
+        _id,
+        _categoryid,
+        _name,
+        _nameEn,
+        _content,
+        _contentEn,
+        _keyWord,
+        _keyWordEn,
+        _description,
+        _descriptionEn,
+        _isEnabled,
+        _isFirst,
+        _viewCount,
+        _updateDate,
+        _sellUrl,
+        _images,
+        _code
+      )VALUES(
+        #{id},
+        #{category.id},
+        #{name},
+        #{nameEn},
+        #{content},
+        #{contentEn},
+        #{keyWord},
+        #{keyWordEn},
+        #{description},
+        #{descriptionEn},
+        #{isEnabled},
+        #{isFirst},
+        #{viewCount},
+        #{updateDate},
+        #{sellUrl},
+        #{images},
+        #{code}
+      )
+    </insert>
 
     <update id="updateCompany">
         UPDATE t_company set
@@ -42,11 +163,254 @@
             ,_keyWord=#{keyWord},_keyWrodEn=#{keyWordEn}
             WHERE _id=#{id}
     </update>
+    <update id="updateForum">
+        UPDATE t_forum SET _name=#{name},_nameEn=#{nameEn},_isEnabled=#{isEnabled},_code=#{code} where _id=#{id}
+    </update>
+    <update id="updateCategory">
+        UPDATE t_category SET
+            _orderId=#{orderId},
+            _name=#{name},
+            _nameEn=#{nameEn},
+            _content=#{content},
+            _contentEn=#{contentEn},
+            _keyWord=#{keyWord},
+            _keyWordEn=#{keyWordEn},
+            _description=#{description},
+            _descriptionEn=#{descriptionEn},
+            _isEnable=#{isEnabled},
+            _categoryType=#{categoryType},
+            _forumId=#{forum.id},
+            _code=#{code}
+            where _id=#{id}
+    </update>
+    <update id="updateArticle">
+        UPDATE t_article SET
+        _categoryid=#{category.id},
+        _name=#{name},
+        _nameEn=#{nameEn},
+        _content=#{content},
+        _contentEn=#{contentEn},
+        _keyWord=#{keyWord},
+        _keyWordEn=#{keyWordEn},
+        _description=#{description},
+        _descriptionEn=#{descriptionEn},
+        _isEnabled=#{isEnabled},
+        _isFirst=#{isFirst},
+        _viewCount=#{viewCount},
+        _sellUrl=#{sellUrl},
+        _images=#{images},
+        _code=#{code}
+        where _id=#{id}
+    </update>
 
-    <select id="getCompany" parameterType="CompanyQuery" resultMap="company">
-        SELECT * FROM t_company WHERE _id=#{id}
+    <select id="getCompany" parameterType="IQuery" resultMap="company">
+        SELECT * FROM t_company WHERE _id=#{id} <if test="code!=null">or _code=#{code}</if>
     </select>
     <select id="loadCompanies" resultType="company">
         SELECT * FROM t_company
+    </select>
+    <select id="getForum" parameterType="IQuery" resultMap="forum">
+        SELECT
+          f._id          AS f_id,
+          f._name        AS f_name,
+          f._nameEn      AS f_nameEn,
+          f._isEnabled   AS f_isEnabled,
+          f._code        AS f_code,
+          f._companyId   AS f_companyId,
+          c._id          AS c_id,
+          c._code        AS c_code,
+          c._name        AS c_name,
+          c._shortName   AS c_shortName,
+          c._shortNameEn AS c_shortNameEn,
+          c._nameEn AS c_nameEn
+        FROM
+          t_forum AS f
+          INNER JOIN t_company AS c
+            ON f._id=#{id}
+          <if test="code!=null">or f._code=#{code}</if>
+          AND f._companyId = c._id
+    </select>
+    <select id="loadForums" resultMap="forum">
+        SELECT
+          f._id          AS f_id,
+          f._name        AS f_name,
+          f._nameEn      AS f_nameEn,
+          f._isEnabled   AS f_isEnabled,
+          f._code        AS f_code,
+          f._companyId   AS f_companyId,
+          c._id          AS c_id,
+          c._code        AS c_code,
+          c._name        AS c_name,
+          c._shortName   AS c_shortName,
+          c._shortNameEn AS c_shortNameEn,
+          c._nameEn AS c_nameEn
+        FROM
+          t_forum AS f
+          LEFT JOIN t_company AS c
+            ON f._companyId = c._id
+    </select>
+    <select id="loadForumsByCompanyId" parameterType="IQuery" resultMap="forum">
+        SELECT
+          f._id          AS f_id,
+          f._name        AS f_name,
+          f._nameEn      AS f_nameEn,
+          f._isEnabled   AS f_isEnabled,
+          f._code        AS f_code,
+          f._companyId   AS f_companyId,
+          c._id          AS c_id,
+          c._code        AS c_code,
+          c._name        AS c_name,
+          c._shortName   AS c_shortName,
+          c._shortNameEn AS c_shortNameEn,
+          c._nameEn AS c_nameEn
+        FROM
+          t_forum AS f
+          LEFT JOIN t_company AS c
+            ON c._id=#{id} <if test="code!=null">or c._code=#{code}</if>
+            and f._companyId = c._id
+    </select>
+    <select id="getCategory" parameterType="IQuery" resultMap="category">
+      SELECT
+            cg._id as cg_id,
+            cg._orderId as cg_orderId,
+            cg._name as cg_name,
+            cg._nameEn as cg_nameEn,
+            cg._content as cg_content,
+            cg._contentEn as cg_contentEn,
+            cg._keyWord as cg_keyWord,
+            cg._keyWordEn as cg_keyWordEn,
+            cg._description as cg_description,
+            cg._descriptionEn as cg_descriptionEn,
+            cg._isEnable as cg_isEnable,
+            cg._categoryType as cg_categoryType,
+            cg._forumId as cg_forumId,
+            cg._code as cg_code,
+            fm._id as fm_id,
+            fm._code as fm_code,
+            fm._name as fm_name,
+            fm._nameEn as fm_nameEn
+        FROM t_category as cg
+        INNER JOIN t_forum as fm ON cg._forumId = fm._id
+        WHERE fm._isEnabled = true and cg._id = #{id} <if test="code!=null"> or cg._code=#{code}</if>
+    </select>
+    <select id="loadCategories" resultMap="category">
+        SELECT
+            cg._id as cg_id,
+            cg._orderId as cg_orderId,
+            cg._name as cg_name,
+            cg._nameEn as cg_nameEn,
+            cg._content as cg_content,
+            cg._contentEn as cg_contentEn,
+            cg._keyWord as cg_keyWord,
+            cg._keyWordEn as cg_keyWordEn,
+            cg._description as cg_description,
+            cg._descriptionEn as cg_descriptionEn,
+            cg._isEnable as cg_isEnable,
+            cg._categoryType as cg_categoryType,
+            cg._forumId as cg_forumId,
+            cg._code as cg_code,
+            fm._id as fm_id,
+            fm._code as fm_code,
+            fm._name as fm_name,
+            fm._nameEn as fm_nameEn
+        FROM t_category as cg
+        LEFT JOIN t_forum as fm ON cg._forumId = fm._id
+        WHERE fm._isEnabled = true
+    </select>
+    <select id="loadCategoriesByForumId" parameterType="IQuery" resultType="category">
+        SELECT
+            cg._id as cg_id,
+            cg._orderId as cg_orderId,
+            cg._name as cg_name,
+            cg._nameEn as cg_nameEn,
+            cg._content as cg_content,
+            cg._contentEn as cg_contentEn,
+            cg._keyWord as cg_keyWord,
+            cg._keyWordEn as cg_keyWordEn,
+            cg._description as cg_description,
+            cg._descriptionEn as cg_descriptionEn,
+            cg._isEnable as cg_isEnable,
+            cg._categoryType as cg_categoryType,
+            cg._forumId as cg_forumId,
+            cg._code as cg_code,
+            fm._id as fm_id,
+            fm._name as fm_name,
+            fm._nameEn as fm_nameEn
+        FROM t_category as cg
+        INNER JOIN t_forum as fm ON cg._forumId = fm._id
+        WHERE fm._isEnabled = true AND fm._id = #{id} <if test="code!=null">or fm._code=@{code}</if>
+    </select>
+    <select id="getArticle" parameterType="IQuery" resultMap="artilce">
+        SELECT
+        a._id            AS a_id,
+        a._categoryid    AS a_categoryid,
+        a._name          AS a_name,
+        a._nameEn        AS a_nameEn,
+        a._content       AS a_content,
+        a._contentEn     AS a_contentEn,
+        a._keyWord       AS a_keyWord,
+        a._keyWordEn     AS a_keyWordEn,
+        a._description   AS a_description,
+        a._descriptionEn AS a_descriptionEn,
+        a._isEnabled     AS a_isEnabled,
+        a._isFirst       AS a_isFirst,
+        a._viewCount     AS a_viewCount,
+        a._createDate    AS a_createDate,
+        a._updateDate    AS a_updateDate,
+        a._sellUrl       AS a_sellUrl,
+        a._images        AS a_images,
+        a._code          AS a_code,
+        b._id            AS b_id,
+        b._code          AS b_code,
+        b._name          AS b_name,
+        b._nameEn        AS b_nameEn
+        FROM
+        t_article as a
+        INNER JOIN t_category as b ON a._id=#{id}
+        <if test="code!=null">
+            or a._code=#{code}
+        </if>
+        <if test="isEnabled==true">
+          and a._isEnabled=#{isEnabled}
+        </if>
+        and a._categoryid = b._id
+    </select>
+    <select id="loadPageArticles" parameterType="IQuery" resultMap="artilce">
+        SELECT
+        a._id            AS a_id,
+        a._categoryid    AS a_categoryid,
+        a._name          AS a_name,
+        a._nameEn        AS a_nameEn,
+        a._content       AS a_content,
+        a._contentEn     AS a_contentEn,
+        a._keyWord       AS a_keyWord,
+        a._keyWordEn     AS a_keyWordEn,
+        a._description   AS a_description,
+        a._descriptionEn AS a_descriptionEn,
+        a._isEnabled     AS a_isEnabled,
+        a._isFirst       AS a_isFirst,
+        a._viewCount     AS a_viewCount,
+        a._createDate    AS a_createDate,
+        a._updateDate    AS a_updateDate,
+        a._sellUrl       AS a_sellUrl,
+        a._images        AS a_images,
+        a._code          AS a_code,
+        b._id            AS b_id,
+        b._code          AS b_code,
+        b._name          AS b_name,
+        b._nameEn        AS b_nameEn
+        FROM
+        t_article as a
+        INNER JOIN t_category as b ON a._categoryid = b._id
+        <if test="categoryId!=null">
+            where _categoryId=#{categoryId}
+        </if>
+        limit #{offset},#{rows}
+    </select>
+    <select id="getArticleTotal" parameterType="IQuery" resultType="int">
+        SELECT count(*) from t_article
+        <if test="categoryId!=null">
+          where _categoryId=#{categoryId}
+        </if>
     </select>
 </mapper>

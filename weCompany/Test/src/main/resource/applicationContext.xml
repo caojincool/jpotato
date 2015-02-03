@@ -28,16 +28,14 @@
         <property name="typeAliases">
             <array>
                 <value>com.dp.baobao.domain.Company</value>
-                <value>com.dp.baobao.domain.query.CompanyQuery</value>
+                <value>com.dp.baobao.domain.Forum</value>
+                <value>com.dp.baobao.domain.Category</value>
+                <value>com.dp.baobao.domain.Article</value>
+                <value>com.dp.baobao.domain.IQuery</value>
             </array>
         </property>
     </bean>
-
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.dp.baobao.mapper" />
     </bean>
-
-    <!--<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">-->
-        <!--<constructor-arg index="0" ref="sqlSessionFactory"/>-->
-    <!--</bean>-->
 </beans>

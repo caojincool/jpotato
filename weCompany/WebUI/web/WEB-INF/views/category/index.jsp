@@ -6,12 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/icon.css">
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.3.2/themes/gray/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.3.2/themes/icon.css">
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery.easyui.min.js"></script>
     <script type="text/javascript">
         $(function(){
 

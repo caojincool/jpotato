@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Web:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Web_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Web" />
+          <element id="module-output" name="Baobao" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Spring-3.2.11.RELEASE" />
+          <element id="library" level="application" name="Spring MVC-3.2.11.RELEASE" />
+          <element id="library" level="project" name="db" />
+          <element id="library" level="project" name="spring" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Web/web/Web" />
+    </root>
+  </artifact>
+</component>

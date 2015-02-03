@@ -1,5 +1,6 @@
 package com.dp.baobao.domain.query;
 
+import com.dp.baobao.domain.AbstractQuery;
 import com.dp.baobao.domain.Company;
 import com.dp.baobao.domain.IQuery;
 import org.apache.ibatis.type.Alias;
@@ -7,24 +8,13 @@ import org.apache.ibatis.type.Alias;
 /**
  * Created by dpyang on 2015/1/23.
  */
-@Alias("CompanyQuery")
-public class CompanyQuery implements IQuery {
-    private String id;
+public class CompanyQuery extends AbstractQuery {
     private String code;
 
     public CompanyQuery(){}
 
     public CompanyQuery(String id){
-        this.id=id;
-    }
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        setId(id);
     }
 
     public String getCode() {

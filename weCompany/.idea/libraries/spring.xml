@@ -6,7 +6,6 @@
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-pool2-2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.33-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.7.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-aop-3.2.11.RELEASE.jar!/" />
@@ -28,6 +27,7 @@
       <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.0.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.0.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.0.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-fileupload-1.2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

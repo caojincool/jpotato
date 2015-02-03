@@ -1,10 +1,13 @@
 package com.dp.baobao.domain;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.UUID;
 
 /**
  * Created by dpyang on 2014/10/7.
  */
+@Alias("Forum")
 public class Forum {
     private String id;
     private String name;

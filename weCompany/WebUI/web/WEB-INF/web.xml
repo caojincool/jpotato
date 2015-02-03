@@ -12,12 +12,14 @@
         <param-name>log4jConfigLocation</param-name>
         <param-value>/WEB-INF/classes/log4j.properties</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
     <servlet>
         <servlet-name>global</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -26,9 +28,14 @@
 
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/jquery-easyui-1.2.6/*</url-pattern>
+        <url-pattern>/jquery-easyui-1.3.2/*</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/script/*</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/uploadify/*</url-pattern>

@@ -1,3 +1,4 @@
+<%@ page import="java.util.Random" %>
 <%--
   Created by IntelliJ IDEA.
   User: dpyang
@@ -6,132 +7,156 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.3.2/themes/gray/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.3.2/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
     <style type="text/css">
         <!--
         * {
-            margin:0;
-            padding:0;
-            font-size:12px;
-            text-decoration:none;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            text-decoration: none;
         }
-        #products {
-            list-style: none;
-            margin:10px 0px;
-        }
-        #products li {
-            width:210px;
-            height:210px;
-            margin-left:30px;
-            margin-top: 50px;
-            display:inline-block;
-            margin-right:0px;
-            _margin-right:-3px;
+
+        .imageList {
             float: left;
+            display: block;
+            width: 180px;
+            height: 200px;
+            padding: 10px;
         }
-        #products li a {
-            display:block;
+
+        .selected {
+            background-color: #ffa8a8;
         }
-        #products li a img {
-            border:1px solid #666;
-            padding:1px;
+
+        .overitem {
+            background-color: #E7E7E7;
         }
-        #products li span a {
-            width:200px;
-            height:30px;
-            line-height:24px;
-            text-align:center;
-            white-space:nowrap;
-            text-overflow:ellipsis;
+
+        .imageList p {
+            text-align: center;
             overflow: hidden;
+            line-height: 22px;
+        }
+
+        .ellipsis {
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            -moz-binding: url('ellipsis.xml#ellipsis');
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .upload {
+            padding: 10px auto;
         }
 
         -->
     </style>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
-
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery.easyui.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/uploadify/jquery.uploadify.min.js"></script>
     <script type="text/javascript">
-        $(function(){
+        $(function () {
+            var url = location.href;
+            var id = url.substring(url.indexOf("?") + 1, url.length).split('=');
 
-            $('#dialogUpload').dialog({
-                title:'对话框',
-                width:350,
-                height:260,
-
-                modal:true,
-                closed:true,
-                buttons:[{
-                    text:'关闭',
-                    handler:function(){
-                        $('#dialogUpload').dialog('close');
+            $('.imageList').hover(function () {
+                $(this).addClass("overitem");
+            }, function () {
+                $(this).removeClass("overitem");
+            }).click(function () {
+                $(this).toggleClass("selected")
+            });
+            $('#btnRemove').click(function () {
+                var imgs = $('.selected > img');
+                if (imgs.length == 0) {
+                    $.messager.alert('友情提示', '请选择要删除的文件！', 'error');
+                    return;
+                }
+                var titles = '';
+                var fs = [];
+                $.each(imgs, function (i, d) {
+                    titles += $(d).attr('title') + "<br>";
+                    fs.push($(d).attr('title'));
+                });
+                $.messager.confirm('确认', '您确认删除' + titles + '?', function (r) {
+                    if (r) {
+                        $.ajax({
+                            type: 'post',
+                            url: '/fileMg/fileRM',
+                            data: {id: decodeURIComponent(id[1]), fs: fs},
+                            success: function (d) {
+                                if (d.success) {
+                                    location.reload(true);
+                                } else {
+                                    $.messager.alert('提示', d.message, 'info');
+                                }
+                            }
+                        })
                     }
-                },{
-                    text:'上传',
-                    handler:function(){
-                        $('#uploadify').uploadify('upload','*');
+                });
+            });
+
+            //避免在谷歌浏览器中崩溃
+            setTimeout(function () {
+                $('#uploadify').uploadify({
+                    buttonText: '上传',
+                    swf: '/uploadify/uploadify.swf',
+                    uploader: '/fileMg/upload',
+                    fileTypeExts: '*.gif; *.jpg; *.png; *.doc;',
+                    width: 50,
+                    formData: {id: decodeURIComponent(id[1])},
+                    height: 20,
+                    queueSizeLimit: 20,
+                    onUploadError: function (file, errorCode, errorMsg, errorString) {
+                        $.messager.alert('友情提示', '出错了！', 'error');
+                    },
+                    onQueueComplete: function (queueData) {
+                        //假加载
+                        var value = $('#q').progressbar('getValue');
+                        if (value < 100) {
+                            value += Math.floor(Math.random() * 10);
+                            $('#q').progressbar('setValue', value);
+                            setTimeout(arguments.callee, 200);
+                        }
+                        location.reload(true);
                     }
-                }]
-            });
-
-            $('#uploadify').uploadify({
-                queueID:'queue',
-                buttonText:'浏览',
-
-                swf:'/uploadify/uploadify.swf',
-                uploader:'/abc/abc',
-                fileTypeExts:'*.gif; *.jpg; *.png',
-                width:120,
-                auto:false,
-                height:10,
-                onUploadStart:function(f){
-                    alert('fff'+ f.name);
-                },
-                onUploadComplete:function(f){
-                    alert('abc'+ f.name);
-                },
-                onSelect:function(f){
-                    $('#temp').hide();
-                },
-                multi: true
-            });
-
-            $('#btnOpen').click(function(){
-                $('#dialogUpload').dialog('open');
-            });
+                });
+            }, 10);
         });
     </script>
 </head>
-<body class="easyui-layout">
-<div region="north" border="false" style="background:#fafafa;padding:5px">
-    <a href="#" id="btnOpen"  class="easyui-linkbutton" plain="true" iconCls="icon-add">上传文件</a>
-    <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除文件</a>
-</div>
+<body class="easyui-layout" style="margin: 6px;">
+<div region="center" title="所有文件">
+    <c:if test="${files.size()>0}">
+        <c:forEach items="${files}" var="f">
+            <div class="imageList">
+                <img width="160" height="160" src="/upload${f.value}" title="${f.key}">
+                <br>
 
-<div region="center" title="" border="false">
-    <div id="dialogUpload">
-        <div id="temp"><input type="file" name="uploadify" id="uploadify" /></div>
-        <div id="queue"></div>
-    </div>
-    <form id="frmPic">
-    <ul id="products">
-        <c:forEach items="${picList}" var="s">
-                <li><a href="#">
-                    <img src="/upload${p}/${s}" alt="" width="200"
-                         height="200"/></a>
-                    <span><a href="#">${s}</a></span>
-                    <input type="checkbox" name="ch1" value="/upload${p}/${s}"/>
-                </li>
+                <p class="ellipsis">${f.key}</p>
+            </div>
         </c:forEach>
-    </ul>
-    </form>
+    </c:if>
+</div>
+<div region="south" style="height:40px">
+    <table width="100%">
+        <tr>
+            <td width="100"><input type="file" name="uploadify" id="uploadify" multiple="true"/></td>
+            <td align="center">
+                <div id="q" class="easyui-progressbar" style="width: 500px;"></div>
+            </td>
+            <td width="100"><a href="javascript:void(0)" class="easyui-linkbutton" id="btnRemove">删除文件</a></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

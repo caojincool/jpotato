@@ -1,11 +1,14 @@
 package com.dp.baobao.domain;
 
+import org.apache.ibatis.type.Alias;
+
 import java.sql.Date;
 import java.util.UUID;
 
 /**
  * Created by dpyang on 2014/10/7.
  */
+@Alias("Article")
 public class Article {
     private String id;
     private String name;
@@ -13,7 +16,7 @@ public class Article {
     private String content;
     private String contentEn;
     private String keyWord;
-    private String keywordEn;
+    private String keyWordEn;
     private String description;
     private String descriptionEn;
     private boolean isEnabled;
@@ -75,12 +78,12 @@ public class Article {
         this.keyWord = keyWord;
     }
 
-    public String getKeywordEn() {
-        return keywordEn;
+    public String getKeyWordEn() {
+        return keyWordEn;
     }
 
-    public void setKeywordEn(String keywordEn) {
-        this.keywordEn = keywordEn;
+    public void setKeyWordEn(String keyWordEn) {
+        this.keyWordEn = keyWordEn;
     }
 
     public String getDescription() {

@@ -10,9 +10,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=GBK">
     <title>洋芋网站管理系统</title>
-    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.2.6/themes/gray/easyui.css"/>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/jquery-easyui-1.2.6/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.3.2/themes/gray/easyui.css"/>
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/jquery-easyui-1.3.2/jquery.easyui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/style/manager.css"/>
     <script type="text/javascript">
         $(function () {

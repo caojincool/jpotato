@@ -8,9 +8,8 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Baobao" />
     <orderEntry type="library" name="spring" level="project" />
     <orderEntry type="library" name="junit" level="project" />
+    <orderEntry type="module" module-name="Baobao" />
   </component>
 </module>
-

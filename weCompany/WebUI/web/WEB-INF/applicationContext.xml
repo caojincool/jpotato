@@ -10,14 +10,40 @@
 
     <context:property-placeholder location="/WEB-INF/jdbc.properties"/>
 
+    <!--扫描类包-->
     <context:component-scan base-package="com.dp.baobao"/>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
-            p:driverClassName="${jdbc.driverClassName}"
-            p:url="${jdbc.url}"
-            p:username="${jdbc.username}"
-            p:password="${jdbc.password}"/>
-    <!--配置jdbc模版-->
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
-          p:dataSource-ref="dataSource"/>
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}" />
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:com/dp/baobao/mapper/**/*.mapper" />
+        <property name="typeAliases">
+            <array>
+                <value>com.dp.baobao.domain.Company</value>
+                <value>com.dp.baobao.domain.Forum</value>
+                <value>com.dp.baobao.domain.Category</value>
+                <value>com.dp.baobao.domain.Article</value>
+                <value>com.dp.baobao.domain.IQuery</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.dp.baobao.mapper"/>
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
 </beans>
